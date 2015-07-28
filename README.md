@@ -6,22 +6,17 @@ Fetch information useful to EveryPolitician from Wikidata
 
 Add this line to your application's Gemfile:
 
-    gem 'wikidata-fetcher'
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install wikidata-fetcher
+    gem "wikidata-fetcher", git: "https://github.com/everypolitician/wikidata-fetcher.git"
 
 ## Usage
 
 ```
 require 'wikidata/fetcher'
 
-WikiData::Category.new('Catégorie:Membre du Congrès de la Nouvelle-Calédonie', 'fr').wikidata_ids.each do |id|
+category = 'Catégorie:Membre du Congrès de la Nouvelle-Calédonie'
+language = 'fr' # default 'en'
+
+WikiData::Category.new(category, language).wikidata_ids.each do |id|
   data = WikiData::Fetcher.new(id: id).data 
 end
 ```
