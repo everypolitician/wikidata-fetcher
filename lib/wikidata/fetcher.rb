@@ -4,6 +4,44 @@ require 'mediawiki_api'
 require 'wikidata'
 
 class WikiData
+
+  class Category
+
+    def initialize(page, lang='en')
+      @_page = page
+      @_lang = lang
+    end
+
+    def client
+      @_client ||= MediawikiApi::Client.new "https://#{@_lang}.wikipedia.org/w/api.php"
+    end
+
+    def member_ids
+      cat_args = { 
+        cmtitle: @_page,
+        token_type: false,
+        list: 'categorymembers',
+        # TODO: cope with more than 500
+        cmlimit: '500'
+      }
+      response = client.action :query, cat_args
+      response.data['categorymembers'].find_all { |m| m['ns'] == 0 }.map { |m| m['pageid'] }.sort
+    end
+
+    def wikidata_ids
+      ids = member_ids
+      page_args = { 
+        prop: 'pageprops',
+        ppprop: 'wikibase_item',
+        # TODO: cope with more than 50
+        pageids: ids.take(50).join("|"),
+        token_type: false,
+      }
+      response = client.action :query, page_args
+      response.data['pages'].map { |p| p.last['pageprops']['wikibase_item'] }
+    end
+  end
+
   class Fetcher
     
     def initialize(h)
