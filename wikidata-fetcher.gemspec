@@ -8,8 +8,8 @@ Gem::Specification.new do |spec|
   spec.version       = Wikidata::Fetcher::VERSION
   spec.authors       = ["Tony Bowden"]
   spec.email         = ["tony@mysociety.org"]
-  spec.summary       = %q{TODO: Fetch Wikidata.}
-  spec.description   = %q{TODO: Use Wikidata to get extra information on politicians.}
+  spec.summary       = %q{Fetch Wikidata.}
+  spec.description   = %q{Use Wikidata to get extra information on politicians.}
   spec.homepage      = "https://github.com/everypolitician/wikidata-fetcher"
   spec.license       = "MIT"
 
@@ -18,8 +18,8 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency 'mediawiki_api', 
-  spec.add_dependency 'wikidata-client', '~> 0.0.7', require: 'wikidata'
+  spec.add_dependency 'mediawiki_api'
+  spec.add_dependency 'wikidata-client', '~> 0.0.7'
   spec.add_dependency 'diskcached'
 
   spec.add_development_dependency "bundler", "~> 1.6"
