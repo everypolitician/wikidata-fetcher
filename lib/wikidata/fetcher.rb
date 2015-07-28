@@ -99,6 +99,7 @@ class WikiData
       'P373' => 'Commons category', 
       'P410' => 'Military rank', 
       'P463' => 'Member of', 
+      'P488' => 'Chairperson',
       'P495' => 'Country of origin', 
       'P512' => 'Academic degree', 
       'P551' => 'Residence', 
