@@ -21,6 +21,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'mediawiki_api'
   spec.add_dependency 'wikidata-client', '~> 0.0.7'
   spec.add_dependency 'diskcached'
+  spec.add_dependency 'colorize'
 
   spec.add_development_dependency "bundler", "~> 1.6"
   spec.add_development_dependency "rake"
