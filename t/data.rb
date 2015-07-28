@@ -27,6 +27,14 @@ describe 'non-English' do
   it 'should have no English name' do
     subject.data('en')[:name].must_be_nil
   end
+
+  it 'can fetch multiple names' do
+    data = subject.data('en', 'et')
+    data[:name__et].must_equal 'Kadri Simson'
+    data[:name__en].must_be_nil
+    data[:name].must_equal 'Kadri Simson'
+  end
+
 end
 
 describe 'broken' do
