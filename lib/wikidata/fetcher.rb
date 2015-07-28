@@ -68,7 +68,7 @@ class WikiData
         raise "Different ID" if @id != h[:id]
       elsif h[:title]
         @wd = cached.cache("wikidata-title-#{h[:title]}") { Wikidata::Item.find_by_title h[:title] }
-        @id = @wd.id
+        @id = @wd.id rescue nil
       else
         raise "No id"
       end
@@ -91,6 +91,7 @@ class WikiData
       'P102' => 'Party',
       'P106' => 'Occupation', 
       'P108' => 'Employer', 
+      'P109' => 'Signature', 
       'P140' => 'Religion',
       'P166' => 'Award received', 
       'P172' => 'Ethnic group',  # ?
@@ -104,11 +105,13 @@ class WikiData
       'P512' => 'Academic degree', 
       'P551' => 'Residence', 
       'P607' => 'Conflicts', 
+      'P800' => 'Notable work',
       'P866' => 'Perlentaucher ID',
       'P900' => '<deleted>',
       'P910' => 'Main category',
       'P937' => 'Work location',
       'P990' => 'voice recording',
+      'P1019' => 'feed URL',
       'P1038' => 'Relative',
       'P1050' => 'Medical condition',
       'P1185' => 'Rodovid ID',
@@ -134,6 +137,7 @@ class WikiData
       'P269' => [ 'identifier__SUDOC', 'value' ], 
       'P345' => [ 'identifier__IMDB', 'value' ], 
       'P349' => [ 'identifier__NDL', 'value' ], 
+      'P409' => [ 'identifier__NLA', 'value' ], 
       'P434' => [ 'identifier__MusicBrainz', 'value' ], 
       'P511' => [ 'honorific_prefix', 'title' ], 
       'P553' => [ 'website', 'title' ],
