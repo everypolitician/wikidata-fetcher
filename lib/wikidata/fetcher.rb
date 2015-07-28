@@ -25,16 +25,24 @@ class WikiData
       @_client ||= MediawikiApi::Client.new "https://#{@_lang}.wikipedia.org/w/api.php"
     end
 
-    def member_ids
+    def _categorymembers_search(args={})
       cat_args = { 
         cmtitle: @_page,
         token_type: false,
         list: 'categorymembers',
-        # TODO: cope with more than 500
         cmlimit: '500'
-      }
-      response = cached.cache("mems-#{Digest::SHA1.hexdigest cat_args[:cmtitle]}") { client.action :query, cat_args }
-      response.data['categorymembers'].find_all { |m| m['ns'] == 0 }.map { |m| m['pageid'] }.sort
+      }.merge(args)
+      cached.cache("mems-#{Digest::SHA1.hexdigest cat_args.to_s}") { client.action :query, cat_args }
+    end
+
+    def member_ids
+      search = _categorymembers_search
+      all = search.data['categorymembers']
+      while search['continue']
+        search = _categorymembers_search(cmcontinue: search['continue']['cmcontinue'])
+        all << search.data['categorymembers']
+      end
+      all.flatten.find_all { |m| m['ns'] == 0 }.map { |m| m['pageid'] }.sort
     end
 
     def wikidata_ids
@@ -45,7 +53,7 @@ class WikiData
           pageids: ids.join("|"),
           token_type: false,
         }
-        response = cached.cache("wbids-#{Digest::SHA1.hexdigest page_args[:pageids]}") { client.action :query, page_args }
+        response = cached.cache("wbids-#{Digest::SHA1.hexdigest page_args.to_s}") { client.action :query, page_args }
         response.data['pages'].find_all { |p| p.last.key? 'pageprops' }.map { |p| p.last['pageprops']['wikibase_item'] }
       }.flatten
     end

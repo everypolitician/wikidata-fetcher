@@ -10,6 +10,7 @@ describe 'category' do
 
   it 'should have more than 100 responses' do
     subject.wikidata_ids.count.must_be :>, 100
+    subject.wikidata_ids.count.must_be :<, 500
   end
 
   it 'should include someone from the start of the list' do
@@ -21,3 +22,21 @@ describe 'category' do
   end
 
 end
+
+describe 'large category' do
+  subject { WikiData::Category.new('Category:UK MPs 2015–20') }
+
+  it 'should get some ids' do
+    subject.wikidata_ids.class.must_equal Array
+  end
+
+  it 'should have more than 500 responses' do
+    subject.wikidata_ids.count.must_be :>, 500
+  end
+
+  it 'should include someone from the end of the list' do
+    subject.wikidata_ids.must_include 'Q20732037'
+  end
+
+end
+
