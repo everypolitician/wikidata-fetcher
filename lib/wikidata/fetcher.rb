@@ -165,6 +165,9 @@ class WikiData
         data["name__#{lang}".to_sym] = value
         data[:name] ||= value
       end
+      unless data[:name]
+        warn "No names in requested languages — only in #{wd.hash['labels'].keys}".magenta
+      end
 
       claims.reject { |c| @@skip[c] || @@want[c] }.each do |c|
         puts "Unknown claim: https://www.wikidata.org/wiki/Property:#{c}".red
