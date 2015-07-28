@@ -91,16 +91,16 @@ class WikiData
       'P1953' => [ 'identifier__discogs', 'value' ], 
     }
     
-    def data
+    def data(lang='en')
       wd = Wikidata::Item.find @id 
       return unless wd && wd.hash.key?('claims')
 
       claims = (wd.hash['claims'] || {}).keys.sort_by { |p| p[1..-1].to_i }
 
-      #TODO: other languages
+      name = wd.labels[lang].value rescue nil
       data = {
         id: wd.id,
-        name: wd.labels['en'].value,
+        name: name,
       }
 
       claims.reject { |c| @@skip[c] || @@want[c] }.each do |c|
