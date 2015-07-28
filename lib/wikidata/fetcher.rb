@@ -78,12 +78,14 @@ class WikiData
       'P7' => 'Brother',
       'P9' => 'Sister',
       'P19' => 'Place of Birth',
+      'P20' => 'Place of Death',
       'P22' => 'Father',
       'P25' => 'Mother',
       'P26' => 'Spouse',
       'P27' => 'Country of Citizenship',
       'P31' => 'Instance of',
       'P39' => 'Position Held',
+      'P40' => 'Child',
       'P69' => 'Educated at',
       'P91' => 'Sexual orientation',
       'P101' => 'Field of Work',
@@ -95,6 +97,7 @@ class WikiData
       'P140' => 'Religion',
       'P166' => 'Award received', 
       'P172' => 'Ethnic group',  # ?
+      'P184' => 'Doctoral advisor', 
       'P241' => 'Military branch', 
       'P361' => 'party of', 
       'P373' => 'Commons category', 
@@ -105,8 +108,10 @@ class WikiData
       'P512' => 'Academic degree', 
       'P551' => 'Residence', 
       'P607' => 'Conflicts', 
+      'P650' => 'RKDartists', 
       'P800' => 'Notable work',
       'P866' => 'Perlentaucher ID',
+      'P898' => 'IPA', #
       'P900' => '<deleted>',
       'P910' => 'Main category',
       'P937' => 'Work location',
@@ -120,6 +125,7 @@ class WikiData
       'P1344' => 'Participant in',
       'P1412' => 'Languages',
       'P1447' => 'SportsReference ID',
+      'P1448' => 'Official name', # ?
       'P1559' => 'Name in native language', # ?
       'P1819' => 'genealogics ID',
       'P1971' => 'Number of children',
@@ -148,6 +154,7 @@ class WikiData
       'P735' => [ 'given_name', 'title' ],
       'P856' => [ 'website', 'value' ],
       'P968' => [ 'email', 'value' ],
+      'P1006' => [ 'identifier__PTBNP', 'value' ], 
       'P1006' => [ 'identifier__NTA', 'value' ], 
       'P1035' => [ 'honorific_suffix', 'title' ], 
       'P1045' => [ 'identifier__sycomore', 'value' ],
@@ -156,13 +163,18 @@ class WikiData
       'P1263' => [ 'identifier__NNDB', 'value' ], 
       'P1273' => [ 'identifier__CANTIC', 'value' ], 
       'P1284' => [ 'identifier__Muzinger', 'value' ], 
+      'P1331' => [ 'identifier__PACE', 'value' ], 
       'P1430' => [ 'identifier__OpenPlaques', 'value' ], 
+      'P513'  => [ 'birth_name', 'value' ],  # obsolete, but take it if it's there
       'P1477' => [ 'birth_name', 'value' ], 
       'P1714' => [ 'identifier__journalisted', 'value' ], 
+      'P1741' => [ 'identifier__GTAA', 'value' ], 
+      'P1749' => [ 'identifier__parlement', 'value' ], 
       'P1808' => [ 'identifier__senatDOTfr', 'value' ], 
       'P1816' => [ 'identifier__NPG', 'value' ], 
       'P1996' => [ 'identifier__parliamentDOTuk', 'value' ], 
       'P1953' => [ 'identifier__discogs', 'value' ], 
+      'P2002' => [ 'twitter', 'value' ], 
     }
 
     def data(*lang)
@@ -195,6 +207,7 @@ class WikiData
           warn "#{e} with #{meth} on #{c}".red
         end
       end
+
       data
     end
       
