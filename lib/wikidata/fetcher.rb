@@ -91,6 +91,7 @@ class WikiData
       'P373' => 'Commons category', 
       'P410' => 'Military rank', 
       'P463' => 'Member of', 
+      'P495' => 'Country of origin', 
       'P512' => 'Academic degree', 
       'P551' => 'Residence', 
       'P607' => 'Conflicts', 
@@ -107,6 +108,7 @@ class WikiData
       'P1344' => 'Participant in',
       'P1412' => 'Languages',
       'P1447' => 'SportsReference ID',
+      'P1559' => 'Name in native language', # ?
       'P1819' => 'genealogics ID',
       'P1971' => 'Number of children',
     }
@@ -136,6 +138,7 @@ class WikiData
       'P1006' => [ 'identifier__NTA', 'value' ], 
       'P1035' => [ 'honorific_suffix', 'title' ], 
       'P1045' => [ 'identifier__sycomore', 'value' ],
+      'P1146' => [ 'identifier__IIAF', 'value' ], 
       'P1186' => [ 'identifier__EuroparlMEP', 'value' ], 
       'P1263' => [ 'identifier__NNDB', 'value' ], 
       'P1273' => [ 'identifier__CANTIC', 'value' ], 
