@@ -9,7 +9,7 @@ require 'wikidata'
 class WikiData
 
   @@cache_dir = '.cache'
-  @@cache_time = 60 * 60 * 24
+  @@cache_time = 60 * 60 * 12
   def cached
     @_cache ||= Diskcached.new(@@cache_dir, @@cache_time)
   end
