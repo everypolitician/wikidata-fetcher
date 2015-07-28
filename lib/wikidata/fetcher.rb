@@ -38,16 +38,16 @@ class WikiData
     end
 
     def wikidata_ids
-      ids = member_ids
-      page_args = { 
-        prop: 'pageprops',
-        ppprop: 'wikibase_item',
-        # TODO: cope with more than 50
-        pageids: ids.take(50).join("|"),
-        token_type: false,
-      }
-      response = cached.cache("wbids-#{Digest::SHA1.hexdigest page_args[:pageids]}") { client.action :query, page_args }
-      response.data['pages'].map { |p| p.last['pageprops']['wikibase_item'] }
+      member_ids.each_slice(50).map { |ids|
+        page_args = { 
+          prop: 'pageprops',
+          ppprop: 'wikibase_item',
+          pageids: ids.join("|"),
+          token_type: false,
+        }
+        response = cached.cache("wbids-#{Digest::SHA1.hexdigest page_args[:pageids]}") { client.action :query, page_args }
+        response.data['pages'].find_all { |p| p.last.key? 'pageprops' }.map { |p| p.last['pageprops']['wikibase_item'] }
+      }.flatten
     end
   end
 
