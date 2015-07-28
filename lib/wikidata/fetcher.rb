@@ -62,8 +62,13 @@ class WikiData
   class Fetcher < WikiData
     
     def initialize(h)
-      # for now, we only support lookup by ID
-      @id = h[:id] or raise "No ID"
+      if h[:id]
+        @wd = cached.cache("wikidata-#{h[:id]}") { Wikidata::Item.find h[:id] }
+        @id = @wd.id
+        raise "Different ID" if @id != h[:id]
+      else
+        raise "No id"
+      end
     end
 
     @@skip = { 
@@ -153,20 +158,19 @@ class WikiData
     }
 
     def data(*lang)
-      wd = cached.cache("wikidata-#{@id}") { Wikidata::Item.find @id }
-      return unless wd && wd.hash.key?('claims')
+      return unless @wd && @wd.hash.key?('claims')
 
-      claims = (wd.hash['claims'] || {}).keys.sort_by { |p| p[1..-1].to_i }
+      claims = (@wd.hash['claims'] || {}).keys.sort_by { |p| p[1..-1].to_i }
 
-      name = wd.labels['en'].value rescue nil
-      data = { id: wd.id }
+      name = @wd.labels['en'].value rescue nil
+      data = { id: @wd.id }
       [lang, 'en'].flatten.uniq.each do |lang|
-        value = wd.labels[lang].value rescue nil
+        value = @wd.labels[lang].value rescue nil
         data["name__#{lang}".to_sym] = value
         data[:name] ||= value
       end
       unless data[:name]
-        warn "No names in requested languages — only in #{wd.hash['labels'].keys}".magenta
+        warn "No names in requested languages — only in #{@wd.hash['labels'].keys}".magenta
       end
 
       claims.reject { |c| @@skip[c] || @@want[c] }.each do |c|
@@ -177,7 +181,7 @@ class WikiData
         att, meth, *more = @@want[c]
         att = att.to_sym
         begin
-          data[att] = wd.property(c).send(meth)
+          data[att] = @wd.property(c).send(meth)
           data[att] = more.inject(data[att]) { |acc, n| acc.send(n) }
         rescue => e
           warn "#{e} with #{meth} on #{c}".red
