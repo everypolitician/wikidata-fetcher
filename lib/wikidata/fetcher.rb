@@ -1,11 +1,20 @@
 require "wikidata/fetcher/version"
 
+require 'colorize'
+require 'digest/sha1'
+require 'diskcached'
 require 'mediawiki_api'
 require 'wikidata'
 
 class WikiData
 
-  class Category
+  @@cache_dir = '.cache'
+  @@cache_time = 60 * 60 * 24
+  def cached
+    @_cache ||= Diskcached.new(@@cache_dir, @@cache_time)
+  end
+
+  class Category < WikiData
 
     def initialize(page, lang='en')
       @_page = page
@@ -24,7 +33,7 @@ class WikiData
         # TODO: cope with more than 500
         cmlimit: '500'
       }
-      response = client.action :query, cat_args
+      response = cached.cache("mems-#{Digest::SHA1.hexdigest cat_args[:cmtitle]}") { client.action :query, cat_args }
       response.data['categorymembers'].find_all { |m| m['ns'] == 0 }.map { |m| m['pageid'] }.sort
     end
 
@@ -37,12 +46,12 @@ class WikiData
         pageids: ids.take(50).join("|"),
         token_type: false,
       }
-      response = client.action :query, page_args
+      response = cached.cache("wbids-#{Digest::SHA1.hexdigest page_args[:pageids]}") { client.action :query, page_args }
       response.data['pages'].map { |p| p.last['pageprops']['wikibase_item'] }
     end
   end
 
-  class Fetcher
+  class Fetcher < WikiData
     
     def initialize(h)
       # for now, we only support lookup by ID
@@ -92,7 +101,7 @@ class WikiData
     }
     
     def data(lang='en')
-      wd = Wikidata::Item.find @id 
+      wd = cached.cache("wikidata-#{@id}") { Wikidata::Item.find @id }
       return unless wd && wd.hash.key?('claims')
 
       claims = (wd.hash['claims'] || {}).keys.sort_by { |p| p[1..-1].to_i }
