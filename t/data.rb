@@ -29,3 +29,12 @@ describe 'non-English' do
   end
 end
 
+describe 'broken' do
+  subject { WikiData::Fetcher.new(id: 'Q264766') }
+
+  # https://github.com/klacointe/wikidata-client/issues/13
+  it 'should have no birth date' do
+    subject.data[:birth_name].must_be_nil
+  end
+end
+

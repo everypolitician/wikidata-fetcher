@@ -168,8 +168,12 @@ class WikiData
       claims.find_all { |c| @@want.key? c }.each do |c|
         att, meth, *more = @@want[c]
         att = att.to_sym
-        data[att] = wd.property(c).send(meth)
-        data[att] = more.inject(data[att]) { |acc, n| acc.send(n) }
+        begin
+          data[att] = wd.property(c).send(meth)
+          data[att] = more.inject(data[att]) { |acc, n| acc.send(n) }
+        rescue => e
+          warn "#{e} with #{meth} on #{c}".red
+        end
       end
       data
     end
