@@ -18,7 +18,14 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+require 'wikidata/fetcher'
+
+WikiData::Category.new('Catégorie:Membre du Congrès de la Nouvelle-Calédonie', 'fr').wikidata_ids.each do |id|
+  data = WikiData::Fetcher.new(id: id).data 
+end
+```
+
 
 ## Contributing
 
