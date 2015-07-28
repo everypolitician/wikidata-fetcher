@@ -46,3 +46,16 @@ describe 'broken' do
   end
 end
 
+describe 'by title' do
+  subject { WikiData::Fetcher.new(title: 'Taavi Rõivas') }
+
+  it 'should fetch the correct person' do
+    subject.data[:id].must_equal 'Q3785077'
+  end
+
+  it 'should have the birth date' do
+    subject.data[:birth_date].must_equal '1979-09-26'
+  end
+
+end
+

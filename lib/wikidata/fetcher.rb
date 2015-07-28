@@ -66,6 +66,9 @@ class WikiData
         @wd = cached.cache("wikidata-#{h[:id]}") { Wikidata::Item.find h[:id] }
         @id = @wd.id
         raise "Different ID" if @id != h[:id]
+      elsif h[:title]
+        @wd = cached.cache("wikidata-title-#{h[:title]}") { Wikidata::Item.find_by_title h[:title] }
+        @id = @wd.id
       else
         raise "No id"
       end
