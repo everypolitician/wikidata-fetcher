@@ -188,12 +188,20 @@ class WikiData
         data[:name] ||= value
       end
       unless data[:name]
-        warn "No names in requested languages — only in #{@wd.hash['labels'].keys}".magenta
+        warn "No names for #{data[:id]} in requested languages — only in #{@wd.hash['labels'].keys}".magenta
       end
 
       # Short-circuit if there are no claims
       return data unless @wd.hash.key?('claims')
+
       claims = (@wd.hash['claims'] || {}).keys.sort_by { |p| p[1..-1].to_i }
+
+      # Short-circuit if this is not a human
+      typeof = @wd.property('P31').title 
+      if typeof != 'human'
+        warn "#{data[:id]} is a #{typeof}. Skipping".cyan
+        return nil
+      end
 
       claims.reject { |c| @@skip[c] || @@want[c] }.each do |c|
         puts "Unknown claim: https://www.wikidata.org/wiki/Property:#{c}".red
