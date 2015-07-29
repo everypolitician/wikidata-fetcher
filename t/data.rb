@@ -46,6 +46,14 @@ describe 'broken' do
   end
 end
 
+describe 'no claims' do
+  subject { WikiData::Fetcher.new(id: 'Q20648365') }
+
+  it 'should have a name, even if no claims' do
+    subject.data[:name].must_equal 'Jeff Smith'
+  end
+end
+
 describe 'by title' do
   subject { WikiData::Fetcher.new(title: 'Taavi Rõivas') }
 

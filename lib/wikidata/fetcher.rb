@@ -178,9 +178,7 @@ class WikiData
     }
 
     def data(*lang)
-      return unless @wd && @wd.hash.key?('claims')
-
-      claims = (@wd.hash['claims'] || {}).keys.sort_by { |p| p[1..-1].to_i }
+      return unless @wd
 
       name = @wd.labels['en'].value rescue nil
       data = { id: @wd.id }
@@ -192,6 +190,10 @@ class WikiData
       unless data[:name]
         warn "No names in requested languages — only in #{@wd.hash['labels'].keys}".magenta
       end
+
+      # Short-circuit if there are no claims
+      return data unless @wd.hash.key?('claims')
+      claims = (@wd.hash['claims'] || {}).keys.sort_by { |p| p[1..-1].to_i }
 
       claims.reject { |c| @@skip[c] || @@want[c] }.each do |c|
         puts "Unknown claim: https://www.wikidata.org/wiki/Property:#{c}".red
