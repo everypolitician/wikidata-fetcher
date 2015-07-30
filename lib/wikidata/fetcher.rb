@@ -123,6 +123,7 @@ class WikiData
       'P1185' => 'Rodovid ID',
       'P1196' => 'Manner of death',
       'P1303' => 'instrument played',
+      'P1321' => 'Place of Origin (Swiss)',
       'P1343' => 'Described by source',
       'P1344' => 'Participant in',
       'P1399' => 'Convicted of', #
@@ -156,6 +157,7 @@ class WikiData
       'P734' => [ 'family_name', 'title' ],
       'P735' => [ 'given_name', 'title' ],
       'P856' => [ 'website', 'value' ],
+      'P902' => [ 'identifier__HDS', 'value' ], 
       'P906' => [ 'identifier__SELIBR', 'value' ], 
       'P968' => [ 'email', 'value' ],
       'P1006' => [ 'identifier__PTBNP', 'value' ], 
@@ -167,6 +169,7 @@ class WikiData
       'P1263' => [ 'identifier__NNDB', 'value' ], 
       'P1273' => [ 'identifier__CANTIC', 'value' ], 
       'P1284' => [ 'identifier__Muzinger', 'value' ], 
+      'P1307' => [ 'identifier__parlamentDOTch', 'value' ], 
       'P1331' => [ 'identifier__PACE', 'value' ], 
       'P1415' => [ 'identifier__Oxforddnb', 'value' ], 
       'P1430' => [ 'identifier__OpenPlaques', 'value' ], 
