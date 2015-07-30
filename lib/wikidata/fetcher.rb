@@ -105,6 +105,7 @@ class WikiData
       'P463' => 'Member of', 
       'P488' => 'Chairperson',
       'P495' => 'Country of origin', 
+      'P509' => 'Cause of death',
       'P512' => 'Academic degree', 
       'P551' => 'Residence', 
       'P607' => 'Conflicts', 
@@ -120,9 +121,11 @@ class WikiData
       'P1038' => 'Relative',
       'P1050' => 'Medical condition',
       'P1185' => 'Rodovid ID',
+      'P1196' => 'Manner of death',
       'P1303' => 'instrument played',
       'P1343' => 'Described by source',
       'P1344' => 'Participant in',
+      'P1399' => 'Convicted of', #
       'P1412' => 'Languages',
       'P1447' => 'SportsReference ID',
       'P1448' => 'Official name', # ?
@@ -153,6 +156,7 @@ class WikiData
       'P734' => [ 'family_name', 'title' ],
       'P735' => [ 'given_name', 'title' ],
       'P856' => [ 'website', 'value' ],
+      'P906' => [ 'identifier__SELIBR', 'value' ], 
       'P968' => [ 'email', 'value' ],
       'P1006' => [ 'identifier__PTBNP', 'value' ], 
       'P1006' => [ 'identifier__NTA', 'value' ], 
@@ -164,6 +168,7 @@ class WikiData
       'P1273' => [ 'identifier__CANTIC', 'value' ], 
       'P1284' => [ 'identifier__Muzinger', 'value' ], 
       'P1331' => [ 'identifier__PACE', 'value' ], 
+      'P1415' => [ 'identifier__Oxforddnb', 'value' ], 
       'P1430' => [ 'identifier__OpenPlaques', 'value' ], 
       'P513'  => [ 'birth_name', 'value' ],  # obsolete, but take it if it's there
       'P1477' => [ 'birth_name', 'value' ], 
