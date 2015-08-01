@@ -102,6 +102,7 @@ class WikiData
       'P361' => 'party of', 
       'P373' => 'Commons category', 
       'P410' => 'Military rank', 
+      'P451' => 'Cohabitant', 
       'P463' => 'Member of', 
       'P488' => 'Chairperson',
       'P495' => 'Country of origin', 
@@ -162,6 +163,7 @@ class WikiData
       'P968' => [ 'email', 'value' ],
       'P1006' => [ 'identifier__PTBNP', 'value' ], 
       'P1006' => [ 'identifier__NTA', 'value' ], 
+      'P1015' => [ 'identifier__BIBSYS', 'value' ], 
       'P1035' => [ 'honorific_suffix', 'title' ], 
       'P1045' => [ 'identifier__sycomore', 'value' ],
       'P1146' => [ 'identifier__IIAF', 'value' ], 
@@ -183,6 +185,7 @@ class WikiData
       'P1996' => [ 'identifier__parliamentDOTuk', 'value' ], 
       'P1953' => [ 'identifier__discogs', 'value' ], 
       'P2002' => [ 'twitter', 'value' ], 
+      'P2013' => [ 'facebook', 'value' ], 
     }
 
     def data(*lang)
