@@ -94,6 +94,7 @@ class WikiData
       'P106' => 'Occupation', 
       'P108' => 'Employer', 
       'P109' => 'Signature', 
+      'P119' => 'Place of burial',
       'P140' => 'Religion',
       'P166' => 'Award received', 
       'P172' => 'Ethnic group',  # ?
@@ -102,6 +103,8 @@ class WikiData
       'P361' => 'party of', 
       'P373' => 'Commons category', 
       'P410' => 'Military rank', 
+      'P428' => 'Botanist author', 
+      'P443' => 'Pronunciation audio', 
       'P451' => 'Cohabitant', 
       'P463' => 'Member of', 
       'P488' => 'Chairperson',
@@ -173,6 +176,7 @@ class WikiData
       'P1284' => [ 'identifier__Muzinger', 'value' ], 
       'P1307' => [ 'identifier__parlamentDOTch', 'value' ], 
       'P1331' => [ 'identifier__PACE', 'value' ], 
+      'P1375' => [ 'identifier__NSK', 'value' ], 
       'P1415' => [ 'identifier__Oxforddnb', 'value' ], 
       'P1430' => [ 'identifier__OpenPlaques', 'value' ], 
       'P513'  => [ 'birth_name', 'value' ],  # obsolete, but take it if it's there
@@ -185,6 +189,7 @@ class WikiData
       'P1996' => [ 'identifier__parliamentDOTuk', 'value' ], 
       'P1953' => [ 'identifier__discogs', 'value' ], 
       'P2002' => [ 'twitter', 'value' ], 
+      'P2003' => [ 'instagram', 'value' ], 
       'P2013' => [ 'facebook', 'value' ], 
     }
 
