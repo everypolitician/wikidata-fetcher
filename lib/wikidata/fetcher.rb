@@ -65,7 +65,7 @@ class WikiData
       if h[:id]
         @wd = cached.cache("wikidata-#{h[:id]}") { Wikidata::Item.find h[:id] }
         @id = @wd.id
-        raise "Different ID" if @id != h[:id]
+        warn "Different ID (#{@id}) for #{h[:id]}" if @id != h[:id]
       elsif h[:title]
         @wd = cached.cache("wikidata-title-#{h[:title]}") { Wikidata::Item.find_by_title h[:title] }
         @id = @wd.id rescue nil
@@ -86,6 +86,7 @@ class WikiData
       'P31' => 'Instance of',
       'P39' => 'Position Held',
       'P40' => 'Child',
+      'P54' => 'Member of sports team',
       'P69' => 'Educated at',
       'P91' => 'Sexual orientation',
       'P101' => 'Field of Work',
