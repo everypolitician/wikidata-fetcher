@@ -97,6 +97,8 @@ class WikiData
       'P109' => 'Signature', 
       'P119' => 'Place of burial',
       'P140' => 'Religion',
+      'P155' => 'follows',  #?
+      'P157' => 'killed by',  #?
       'P166' => 'Award received', 
       'P172' => 'Ethnic group',  # ?
       'P184' => 'Doctoral advisor', 
@@ -150,6 +152,7 @@ class WikiData
       'P245' => [ 'identifier__ULAN', 'value' ], 
       'P268' => [ 'identifier__BNF', 'value' ], 
       'P269' => [ 'identifier__SUDOC', 'value' ], 
+      'P271' => [ 'identifier__CiNii', 'value' ], 
       'P345' => [ 'identifier__IMDB', 'value' ], 
       'P349' => [ 'identifier__NDL', 'value' ], 
       'P409' => [ 'identifier__NLA', 'value' ], 
@@ -171,6 +174,7 @@ class WikiData
       'P1035' => [ 'honorific_suffix', 'title' ], 
       'P1045' => [ 'identifier__sycomore', 'value' ],
       'P1146' => [ 'identifier__IIAF', 'value' ], 
+      'P1157' => [ 'identifier__UScongress', 'value' ], 
       'P1186' => [ 'identifier__EuroparlMEP', 'value' ], 
       'P1263' => [ 'identifier__NNDB', 'value' ], 
       'P1273' => [ 'identifier__CANTIC', 'value' ], 
