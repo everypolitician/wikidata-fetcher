@@ -185,7 +185,7 @@ class WikiData
       'P1017' => [ 'identifier__BAV', 'value' ], 
       'P1035' => [ 'honorific_suffix', 'title' ], 
       'P1045' => [ 'identifier__sycomore', 'value' ],
-      'P1047' => [ 'identifier__catholic-hierarchy', 'value' ],
+      'P1047' => [ 'identifier__catholic_hierarchy', 'value' ],
       'P1146' => [ 'identifier__IIAF', 'value' ], 
       'P1157' => [ 'identifier__UScongress', 'value' ], 
       'P1186' => [ 'identifier__EuroparlMEP', 'value' ], 
@@ -199,8 +199,8 @@ class WikiData
       'P1415' => [ 'identifier__Oxforddnb', 'value' ], 
       'P1430' => [ 'identifier__OpenPlaques', 'value' ], 
       'P513'  => [ 'birth_name', 'value' ],  # obsolete, but take it if it's there
+      'P1469' => [ 'identifier__FIFA', 'value' ], 
       'P1477' => [ 'birth_name', 'value' ], 
-      'P1649' => [ 'identifier__FIFA', 'value' ], 
       'P1695' => [ 'identifier__NLP', 'value' ], 
       'P1714' => [ 'identifier__journalisted', 'value' ], 
       'P1741' => [ 'identifier__GTAA', 'value' ], 
