@@ -64,7 +64,7 @@ class WikiData
     def initialize(h)
       if h[:id]
         @wd = cached.cache("wikidata-#{h[:id]}") { Wikidata::Item.find h[:id] }
-        @id = @wd.id
+        @id = @wd.id or raise "No ID for #{h[:id]} = #{@wd}"
         warn "Different ID (#{@id}) for #{h[:id]}" if @id != h[:id]
       elsif h[:title]
         @wd = cached.cache("wikidata-title-#{h[:title]}") { Wikidata::Item.find_by_title h[:title] }
@@ -101,6 +101,7 @@ class WikiData
       'P119' => 'Place of burial',
       'P140' => 'Religion',
       'P155' => 'follows',  #?
+      'P156' => 'followed by',  #?
       'P157' => 'killed by',  #?
       'P166' => 'Award received', 
       'P172' => 'Ethnic group',  # ?
@@ -118,9 +119,12 @@ class WikiData
       'P509' => 'Cause of death',
       'P512' => 'Academic degree', 
       'P551' => 'Residence', 
+      'P555' => 'Tennis doubles record',
+      'P564' => 'Tennis singles record',
       'P607' => 'Conflicts', 
       'P641' => 'Sport', 
       'P650' => 'RKDartists', 
+      'P741' => 'tennis playing hand', 
       'P800' => 'Notable work',
       'P866' => 'Perlentaucher ID',
       'P898' => 'IPA', #
@@ -165,9 +169,11 @@ class WikiData
       'P409' => [ 'identifier__NLA', 'value' ], 
       'P434' => [ 'identifier__MusicBrainz', 'value' ], 
       'P511' => [ 'honorific_prefix', 'title' ], 
+      'P536' => [ 'identifier__ATP', 'value' ], 
       'P553' => [ 'website', 'title' ],
       'P569' => [ 'birth_date', 'date', 'to_date', 'to_s' ], 
       'P570' => [ 'death_date', 'date', 'to_date', 'to_s' ], 
+      'P599' => [ 'identifier__ITF', 'value' ],
       'P646' => [ 'identifier__freebase', 'value' ],
       'P691' => [ 'identifier__NKC', 'value' ],
       'P734' => [ 'family_name', 'title' ],
@@ -212,6 +218,7 @@ class WikiData
       'P2002' => [ 'twitter', 'value' ], 
       'P2003' => [ 'instagram', 'value' ], 
       'P2013' => [ 'facebook', 'value' ], 
+      'P2015' => [ 'identifier__hansard', 'value' ], 
     }
 
     def data(*lang)
