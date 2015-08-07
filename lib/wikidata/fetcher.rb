@@ -231,6 +231,8 @@ class WikiData
         value = @wd.labels[lang].value rescue nil
         data["name__#{lang}".to_sym] = value
         data[:name] ||= value
+
+        data["wikipedia__#{lang}".to_sym] = @wd.hash["sitelinks"]["#{lang}wiki"].title rescue ""
       end
       unless data[:name]
         warn "No names for #{data[:id]} in requested languages — only in #{@wd.hash['labels'].keys}".magenta
