@@ -241,9 +241,9 @@ class WikiData
       claims = (@wd.hash['claims'] || {}).keys.sort_by { |p| p[1..-1].to_i }
 
       # Short-circuit if this is not a human
-      typeof = @wd.property('P31').title 
+      typeof = @wd.property('P31').title rescue '!unknown'
       if typeof != 'human'
-        warn "#{data[:id]} is a #{typeof}. Skipping".cyan
+        warn "#{data[:id]} is_instance_of #{typeof}. Skipping".cyan
         return nil
       end
 
