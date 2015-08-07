@@ -92,6 +92,7 @@ class WikiData
       'P54' => 'Member of sports team',
       'P69' => 'Educated at',
       'P91' => 'Sexual orientation',
+      'P94' => 'coat of arms image',
       'P101' => 'Field of Work',
       'P103' => 'Native language',
       'P102' => 'Party',
@@ -99,6 +100,7 @@ class WikiData
       'P108' => 'Employer', 
       'P109' => 'Signature', 
       'P119' => 'Place of burial',
+      'P135' => 'movement',
       'P140' => 'Religion',
       'P155' => 'follows',  #?
       'P156' => 'followed by',  #?
@@ -118,6 +120,7 @@ class WikiData
       'P495' => 'Country of origin', 
       'P509' => 'Cause of death',
       'P512' => 'Academic degree', 
+      'P535' => 'Find a Grave', 
       'P551' => 'Residence', 
       'P555' => 'Tennis doubles record',
       'P564' => 'Tennis singles record',
@@ -125,7 +128,9 @@ class WikiData
       'P641' => 'Sport', 
       'P650' => 'RKDartists', 
       'P741' => 'tennis playing hand', 
+      'P793' => 'significant event',
       'P800' => 'Notable work',
+      'P812' => 'Academic major',
       'P866' => 'Perlentaucher ID',
       'P898' => 'IPA', #
       'P900' => '<deleted>',
@@ -134,10 +139,12 @@ class WikiData
       'P937' => 'Work location',
       'P990' => 'voice recording',
       'P1019' => 'feed URL',
+      'P1026' => 'doctoral thesis',
       'P1038' => 'Relative',
       'P1050' => 'Medical condition',
       'P1185' => 'Rodovid ID',
       'P1196' => 'Manner of death',
+      'P1233' => 'Speculative fiction DB',
       'P1303' => 'instrument played',
       'P1321' => 'Place of Origin (Swiss)',
       'P1343' => 'Described by source',
@@ -147,7 +154,9 @@ class WikiData
       'P1442' => 'Image of grave',
       'P1447' => 'SportsReference ID',
       'P1448' => 'Official name', # ?
+      'P1472' => 'Commons Creator page', 
       'P1559' => 'Name in native language', # ?
+      'P1683' => 'quote', 
       'P1801' => 'commemorative plaque',
       'P1819' => 'genealogics ID',
       'P1971' => 'Number of children',
@@ -170,15 +179,20 @@ class WikiData
       'P434' => [ 'identifier__MusicBrainz', 'value' ], 
       'P511' => [ 'honorific_prefix', 'title' ], 
       'P536' => [ 'identifier__ATP', 'value' ], 
+      'P549' => [ 'identifier__MGP', 'value' ], 
       'P553' => [ 'website', 'title' ],
       'P569' => [ 'birth_date', 'date', 'to_date', 'to_s' ], 
       'P570' => [ 'death_date', 'date', 'to_date', 'to_s' ], 
       'P599' => [ 'identifier__ITF', 'value' ],
       'P646' => [ 'identifier__freebase', 'value' ],
+      'P651' => [ 'identifier__BPN', 'value' ],
       'P691' => [ 'identifier__NKC', 'value' ],
+      'P723' => [ 'identifier__DBNL', 'value' ],
       'P734' => [ 'family_name', 'title' ],
       'P735' => [ 'given_name', 'title' ],
+      'P742' => [ 'pseudonym', 'title' ],
       'P856' => [ 'website', 'value' ],
+      'P865' => [ 'identifier__BMLO', 'value' ], 
       'P902' => [ 'identifier__HDS', 'value' ], 
       'P906' => [ 'identifier__SELIBR', 'value' ], 
       'P949' => [ 'identifier__NLI', 'value' ], 
@@ -198,16 +212,23 @@ class WikiData
       'P1207' => [ 'identifier__NUKAT', 'value' ], 
       'P1263' => [ 'identifier__NNDB', 'value' ], 
       'P1273' => [ 'identifier__CANTIC', 'value' ], 
-      'P1284' => [ 'identifier__Muzinger', 'value' ], 
+      'P1284' => [ 'identifier__Munzinger', 'value' ], 
+      'P1285' => [ 'identifier__Munzinger', 'value' ], 
+      'P1288' => [ 'identifier__Munzinger', 'value' ], 
+      'P1291' => [ 'identifier__ADS', 'value' ], 
       'P1307' => [ 'identifier__parlamentDOTch', 'value' ], 
       'P1331' => [ 'identifier__PACE', 'value' ], 
+      'P1368' => [ 'identifier__LNB', 'value' ], 
       'P1375' => [ 'identifier__NSK', 'value' ], 
       'P1415' => [ 'identifier__Oxforddnb', 'value' ], 
       'P1430' => [ 'identifier__OpenPlaques', 'value' ], 
       'P513'  => [ 'birth_name', 'value' ],  # obsolete, but take it if it's there
       'P1469' => [ 'identifier__FIFA', 'value' ], 
       'P1477' => [ 'birth_name', 'value' ], 
+      'P1650' => [ 'identifier__BBF', 'value' ], 
       'P1695' => [ 'identifier__NLP', 'value' ], 
+      'P1710' => [ 'identifier__saebi', 'value' ], 
+      'P1711' => [ 'identifier__britishmuseum', 'value' ], 
       'P1713' => [ 'identifier__bundestag', 'value' ], 
       'P1714' => [ 'identifier__journalisted', 'value' ], 
       'P1741' => [ 'identifier__GTAA', 'value' ], 
@@ -218,6 +239,7 @@ class WikiData
       'P1953' => [ 'identifier__discogs', 'value' ], 
       'P2002' => [ 'twitter', 'value' ], 
       'P2003' => [ 'instagram', 'value' ], 
+      'P2005' => [ 'identifier__halensis', 'value' ], 
       'P2013' => [ 'facebook', 'value' ], 
       'P2015' => [ 'identifier__hansard', 'value' ], 
     }
@@ -237,6 +259,7 @@ class WikiData
       unless data[:name]
         warn "No names for #{data[:id]} in requested languages — only in #{@wd.hash['labels'].keys}".magenta
       end
+
 
       # Short-circuit if there are no claims
       return data unless @wd.hash.key?('claims')
