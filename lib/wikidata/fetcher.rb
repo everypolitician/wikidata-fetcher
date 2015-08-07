@@ -208,6 +208,7 @@ class WikiData
       'P1469' => [ 'identifier__FIFA', 'value' ], 
       'P1477' => [ 'birth_name', 'value' ], 
       'P1695' => [ 'identifier__NLP', 'value' ], 
+      'P1713' => [ 'identifier__bundestag', 'value' ], 
       'P1714' => [ 'identifier__journalisted', 'value' ], 
       'P1741' => [ 'identifier__GTAA', 'value' ], 
       'P1749' => [ 'identifier__parlement', 'value' ], 
