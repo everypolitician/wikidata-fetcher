@@ -14,6 +14,23 @@ class WikiData
     @_cache ||= Diskcached.new(@@cache_dir, @@cache_time)
   end
 
+  def self.ids_from_pages(lang, titles)
+    client = MediawikiApi::Client.new "https://#{lang}.wikipedia.org/w/api.php"
+    res = titles.each_slice(50).map { |sliced|
+      page_args = { 
+        prop: 'pageprops',
+        ppprop: 'wikibase_item',
+        titles: sliced.join("|"),
+        token_type: false,
+      }
+      response = client.action :query, page_args 
+      response.data['pages'].find_all { |p| p.last.key? 'pageprops' }.map { |p| 
+        [ p.last['title'], p.last['pageprops']['wikibase_item'] ]
+      }
+    }
+    Hash[ res.flatten(1) ]
+  end
+  
   class Category < WikiData
 
     def initialize(page, lang='en')
