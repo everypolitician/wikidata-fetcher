@@ -80,7 +80,7 @@ class WikiData
     
     def initialize(h)
       if h[:id]
-        @wd = cached.cache("wikidata-#{h[:id]}") { Wikidata::Item.find h[:id] }
+        @wd = cached.cache("wikidata-#{h[:id]}") { Wikidata::Item.find h[:id] } or raise "No such item #{h[:id]}"
         @id = @wd.id or raise "No ID for #{h[:id]} = #{@wd}"
         warn "Different ID (#{@id}) for #{h[:id]}" if @id != h[:id]
       elsif h[:title]
@@ -177,6 +177,8 @@ class WikiData
       'P1801' => 'commemorative plaque',
       'P1819' => 'genealogics ID',
       'P1971' => 'Number of children',
+      'P2020' => 'worldfootball.net',
+      'P2021' => 'Erdős number',
     }
 
     @@want = { 
@@ -228,12 +230,14 @@ class WikiData
       'P1186' => [ 'identifier__EuroparlMEP', 'value' ], 
       'P1207' => [ 'identifier__NUKAT', 'value' ], 
       'P1263' => [ 'identifier__NNDB', 'value' ], 
+      'P1266' => [ 'identifier__AlloCine', 'value' ], 
       'P1273' => [ 'identifier__CANTIC', 'value' ], 
       'P1284' => [ 'identifier__Munzinger', 'value' ], 
       'P1285' => [ 'identifier__Munzinger', 'value' ], 
       'P1288' => [ 'identifier__Munzinger', 'value' ], 
       'P1291' => [ 'identifier__ADS', 'value' ], 
       'P1307' => [ 'identifier__parlamentDOTch', 'value' ], 
+      'P1266' => [ 'identifier__EGAXA', 'value' ], 
       'P1331' => [ 'identifier__PACE', 'value' ], 
       'P1368' => [ 'identifier__LNB', 'value' ], 
       'P1375' => [ 'identifier__NSK', 'value' ], 
@@ -252,6 +256,7 @@ class WikiData
       'P1749' => [ 'identifier__parlement', 'value' ], 
       'P1808' => [ 'identifier__senatDOTfr', 'value' ], 
       'P1816' => [ 'identifier__NPG', 'value' ], 
+      'P1946' => [ 'identifier__N6I', 'value' ], 
       'P1996' => [ 'identifier__parliamentDOTuk', 'value' ], 
       'P1953' => [ 'identifier__discogs', 'value' ], 
       'P2002' => [ 'twitter', 'value' ], 
