@@ -175,7 +175,7 @@ class WikiData
       'P1448' => 'Official name', # ?
       'P1449' => 'nickname',  # TODO
       'P1472' => 'Commons Creator page', 
-      'P1477' => 'birth_name'  # TODO
+      'P1477' => 'birth_name',  # TODO
       'P1556' => 'lifestyle',
       'P1559' => 'Name in native language', # ?
       'P1563' => 'MacTutor id',
