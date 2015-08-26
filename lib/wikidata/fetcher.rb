@@ -173,10 +173,13 @@ class WikiData
       'P1442' => 'Image of grave',
       'P1447' => 'SportsReference ID',
       'P1448' => 'Official name', # ?
+      'P1449' => 'nickname', # - might be worth grabbing, but is multilingual
       'P1472' => 'Commons Creator page', 
       'P1556' => 'lifestyle',
       'P1559' => 'Name in native language', # ?
+      'P1563' => 'MacTutor id',
       'P1683' => 'quote', 
+      'P1728' => 'AllMusic ID',
       'P1801' => 'commemorative plaque',
       'P1819' => 'genealogics ID',
       'P1971' => 'Number of children',
@@ -244,6 +247,7 @@ class WikiData
       'P1296' => [ 'identifier__GNC', 'value' ], 
       'P1307' => [ 'identifier__parlamentDOTch', 'value' ], 
       'P1309' => [ 'identifier__EGAXA', 'value' ], 
+      'P1315' => [ 'identifier__NLAtrove', 'value' ], 
       'P1331' => [ 'identifier__PACE', 'value' ], 
       'P1368' => [ 'identifier__LNB', 'value' ], 
       'P1375' => [ 'identifier__NSK', 'value' ], 
@@ -251,7 +255,7 @@ class WikiData
       'P1417' => [ 'identifier__Britannica', 'value' ], 
       'P1430' => [ 'identifier__OpenPlaques', 'value' ], 
       'P1438' => [ 'identifier__JewishEnc', 'value' ], 
-      'P1449' => [ 'nickname', 'value' ],
+      # 'P1449' => [ 'nickname', 'value' ], # multilingual value
       'P1469' => [ 'identifier__FIFA', 'value' ], 
       'P1477' => [ 'birth_name', 'value' ], 
       'P513'  => [ 'birth_name', 'value' ],  # obsolete, but take it if it's there
@@ -273,6 +277,7 @@ class WikiData
       'P2005' => [ 'identifier__halensis', 'value' ], 
       'P2013' => [ 'facebook', 'value' ], 
       'P2015' => [ 'identifier__hansard', 'value' ], 
+      'P2035' => [ 'linkedin', 'value' ], 
     }
 
     def data(*lang)
