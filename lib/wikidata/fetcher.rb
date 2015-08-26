@@ -173,8 +173,9 @@ class WikiData
       'P1442' => 'Image of grave',
       'P1447' => 'SportsReference ID',
       'P1448' => 'Official name', # ?
-      'P1449' => 'nickname', # - might be worth grabbing, but is multilingual
+      'P1449' => 'nickname',  # TODO
       'P1472' => 'Commons Creator page', 
+      'P1477' => 'birth_name'  # TODO
       'P1556' => 'lifestyle',
       'P1559' => 'Name in native language', # ?
       'P1563' => 'MacTutor id',
@@ -257,7 +258,7 @@ class WikiData
       'P1438' => [ 'identifier__JewishEnc', 'value' ], 
       # 'P1449' => [ 'nickname', 'value' ], # multilingual value
       'P1469' => [ 'identifier__FIFA', 'value' ], 
-      'P1477' => [ 'birth_name', 'value' ], 
+      # 'P1477' => [ 'birth_name', 'value' ], # multilingual
       'P513'  => [ 'birth_name', 'value' ],  # obsolete, but take it if it's there
       'P1650' => [ 'identifier__BBF', 'value' ], 
       'P1695' => [ 'identifier__NLP', 'value' ], 
