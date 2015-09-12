@@ -16,10 +16,11 @@ class WikiData
 
   def self.ids_from_pages(lang, titles)
     client = MediawikiApi::Client.new "https://#{lang}.wikipedia.org/w/api.php"
-    res = titles.each_slice(50).map { |sliced|
+    res = titles.compact.each_slice(50).map { |sliced|
       page_args = { 
         prop: 'pageprops',
         ppprop: 'wikibase_item',
+        redirects: 1,
         titles: sliced.join("|"),
         token_type: false,
       }
@@ -63,10 +64,11 @@ class WikiData
     end
 
     def wikidata_ids
-      member_ids.each_slice(50).map { |ids|
+      member_ids.compact.each_slice(50).map { |ids|
         page_args = { 
           prop: 'pageprops',
           ppprop: 'wikibase_item',
+          redirects: 1,
           pageids: ids.join("|"),
           token_type: false,
         }
