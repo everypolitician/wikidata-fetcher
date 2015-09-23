@@ -289,19 +289,19 @@ class WikiData
     def data(*lang)
       return unless @wd
 
-      name = @wd.labels['en'].value rescue nil
-      data = { id: @wd.id }
-      [lang, 'en'].flatten.uniq.each do |lang|
-        value = @wd.labels[lang].value rescue nil
-        data["name__#{lang}".to_sym] = value
-        data[:name] ||= value
+      data = { 
+        id: @wd.id,
+      }
 
-        data["wikipedia__#{lang}".to_sym] = @wd.hash["sitelinks"]["#{lang}wiki"].title rescue ""
-      end
-      unless data[:name]
-        warn "No names for #{data[:id]} in requested languages — only in #{@wd.hash['labels'].keys}".magenta
+      @wd.labels.each do |k, v|
+        data["name__#{k}".to_sym] = v.value
       end
 
+      data[:name] = [lang, 'en'].flatten.map { |l| data["name__#{l}".to_sym] }.compact.first
+
+      @wd.sitelinks.each do |k, v|
+        data["wikipedia__#{k.sub(/wiki$/,'')}".to_sym] = v.title
+      end
 
       # Short-circuit if there are no claims
       return data unless @wd.hash.key?('claims')

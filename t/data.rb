@@ -35,6 +35,11 @@ describe 'non-English' do
     data[:name].must_equal 'Kadri Simson'
   end
 
+  it 'knows names in languages not asked for' do
+    data = subject.data('en', 'et')
+    data[:name__fi].must_equal 'Kadri Simson'
+  end
+
   it 'knows multiple wikipedia pages' do
     data = subject.data('en', 'et')
     data[:wikipedia__et].must_equal 'Kadri Simson'
