@@ -294,7 +294,7 @@ class WikiData
       }
 
       @wd.labels.each do |k, v|
-        data["name__#{k}".to_sym] = v.value
+        data["name__#{k.tr('-','_')}".to_sym] = v.value
       end
 
       data[:name] = [lang, 'en'].flatten.map { |l| data["name__#{l}".to_sym] }.compact.first

@@ -12,6 +12,10 @@ describe 'data' do
     subject[:name].must_equal 'Juhan Parts'
   end
 
+  it 'should cope with extended language names' do
+    subject[:name__zh_hant].must_equal '尤漢·帕茨'
+  end
+
   it 'should have a birth date' do
     subject[:birth_date].must_equal '1966-08-27'
   end
