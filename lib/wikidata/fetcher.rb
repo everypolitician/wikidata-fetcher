@@ -25,7 +25,7 @@ class WikiData
         token_type: false,
       }
       response = client.action :query, page_args 
-      redirected_from = Hash[response.data['redirects'].map { |h| [ h['to'], h['from'] ] }]
+      redirected_from = Hash[(response.data['redirects'] || []).map { |h| [ h['to'], h['from'] ] }]
       response.data['pages'].find_all { |p| p.last.key? 'pageprops' }.map { |p| 
         [ redirected_from[p.last['title']] || p.last['title'], p.last['pageprops']['wikibase_item'] ]
       }
