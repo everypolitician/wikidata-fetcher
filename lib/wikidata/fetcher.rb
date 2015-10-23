@@ -276,6 +276,7 @@ class WikiData
       'P1749' => [ 'identifier__parlement', 'value' ], 
       'P1808' => [ 'identifier__senatDOTfr', 'value' ], 
       'P1816' => [ 'identifier__NPG', 'value' ], 
+      'P1839' => [ 'identifier__FEC', 'value' ], 
       'P1946' => [ 'identifier__N6I', 'value' ], 
       'P1996' => [ 'identifier__parliamentDOTuk', 'value' ], 
       'P1953' => [ 'identifier__discogs', 'value' ], 
