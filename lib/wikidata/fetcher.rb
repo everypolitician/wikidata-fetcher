@@ -242,6 +242,7 @@ class WikiData
       'P1157' => [ 'identifier__UScongress', 'value' ], 
       'P1186' => [ 'identifier__EuroparlMEP', 'value' ], 
       'P1207' => [ 'identifier__NUKAT', 'value' ], 
+      'P1214' => [ 'identifier__Riksdagen', 'value' ], 
       'P1229' => [ 'identifier__openpolis', 'value' ], 
       'P1263' => [ 'identifier__NNDB', 'value' ], 
       'P1266' => [ 'identifier__AlloCine', 'value' ], 
