@@ -287,6 +287,7 @@ class WikiData
       'P2013' => [ 'facebook', 'value' ], 
       'P2015' => [ 'identifier__hansard', 'value' ], 
       'P2035' => [ 'linkedin', 'value' ], 
+      'P2280' => [ 'identifier__parlaments_at', 'value' ], 
     }
 
     def data(*lang)
