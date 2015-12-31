@@ -28,7 +28,7 @@ module EveryPolitician
       noko = self.noko_for(URI.decode h[:url])
       binding.pry if h[:debug] == true
       names = noko.xpath(h[:xpath]).map(&:text).uniq
-      raise "No names found in #{url}" if names.count.zero?
+      raise "No names found in #{h[:url]}" if names.count.zero?
       return names
     end
 
