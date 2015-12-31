@@ -118,14 +118,22 @@ class WikiData
       cached.cache("mems-#{Digest::SHA1.hexdigest cat_args.to_s}") { client.action :query, cat_args }
     end
 
-    def member_ids
+    def members
       search = _categorymembers_search
       all = search.data['categorymembers']
       while search['continue']
         search = _categorymembers_search(cmcontinue: search['continue']['cmcontinue'])
         all << search.data['categorymembers']
       end
-      all.flatten.find_all { |m| m['ns'] == 0 }.map { |m| m['pageid'] }.sort
+      all.flatten.find_all { |m| m['ns'] == 0 }
+    end
+
+    def member_ids
+      members.map { |m| m['pageid'] }.sort
+    end
+
+    def member_titles
+      members.map { |m| m['title'] }.sort
     end
 
     def wikidata_ids
