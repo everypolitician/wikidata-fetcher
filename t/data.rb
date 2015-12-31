@@ -47,7 +47,7 @@ describe 'non-English' do
   it 'knows multiple wikipedia pages' do
     data = subject.data('en', 'et')
     data[:wikipedia__et].must_equal 'Kadri Simson'
-    data[:wikipedia__en].to_s.must_equal ''
+    data[:wikipedia__en].must_equal 'Kadri Simson'
   end
 end
 
