@@ -6,7 +6,6 @@ require 'diskcached'
 require 'mediawiki_api'
 require 'wikidata'
 
-
 module EveryPolitician
   
   module Wikidata
@@ -24,6 +23,22 @@ module EveryPolitician
       JSON.parse(result, symbolize_names: true).map { |h| h[:wikiname] }.compact
     end
 
+    require 'pry'
+    def self.wikipedia_xpath(h)
+      noko = self.noko_for(URI.decode h[:url])
+      binding.pry if h[:debug] == true
+      names = noko.xpath(h[:xpath]).map(&:text).uniq
+      raise "No names found in #{url}" if names.count.zero?
+      return names
+    end
+
+    require 'open-uri'
+    require 'nokogiri'
+
+    def self.noko_for(url)
+      Nokogiri::HTML(open(URI.escape(URI.unescape(url))).read) 
+    end
+        
     #-------------------------------------------------------------------
 
     require 'scraperwiki'
@@ -182,6 +197,8 @@ class WikiData
       'P361' => 'party of', 
       'P373' => 'Commons category', 
       'P410' => 'Military rank', 
+      'P413' => 'position on team',
+      'P425' => 'field of this profession',
       'P428' => 'Botanist author', 
       'P443' => 'Pronunciation audio', 
       'P451' => 'Cohabitant', 
@@ -213,6 +230,7 @@ class WikiData
       'P1026' => 'doctoral thesis',
       'P1038' => 'Relative',
       'P1050' => 'Medical condition',
+      'P1066' => 'Student of',
       'P1185' => 'Rodovid ID',
       'P1196' => 'Manner of death',
       'P1233' => 'Speculative fiction DB',
@@ -228,9 +246,9 @@ class WikiData
       'P1449' => 'nickname',  # TODO
       'P1472' => 'Commons Creator page', 
       'P1477' => 'birth_name',  # TODO
-      'P1556' => 'lifestyle',
       'P1559' => 'Name in native language', # ?
       'P1563' => 'MacTutor id',
+      'P1576' => 'lifestyle',
       'P1683' => 'quote', 
       'P1728' => 'AllMusic ID',
       'P1801' => 'commemorative plaque',
@@ -256,6 +274,7 @@ class WikiData
       'P396' => [ 'identifier__SBN_it', 'value' ], 
       'P409' => [ 'identifier__NLA', 'value' ], 
       'P434' => [ 'identifier__MusicBrainz', 'value' ], 
+      'P496' => [ 'identifier__ORCID', 'value' ], 
       'P511' => [ 'honorific_prefix', 'title' ], 
       'P536' => [ 'identifier__ATP', 'value' ], 
       'P549' => [ 'identifier__MGP', 'value' ], 
@@ -264,12 +283,14 @@ class WikiData
       'P570' => [ 'death_date', 'date', 'to_date', 'to_s' ], 
       'P599' => [ 'identifier__ITF', 'value' ],
       'P646' => [ 'identifier__freebase', 'value' ],
+      'P648' => [ 'identifier__OLID', 'value' ],
       'P651' => [ 'identifier__BPN', 'value' ],
       'P691' => [ 'identifier__NKC', 'value' ],
       'P723' => [ 'identifier__DBNL', 'value' ],
       'P734' => [ 'family_name', 'title' ],
       'P735' => [ 'given_name', 'title' ],
       'P742' => [ 'pseudonym', 'title' ],
+      'P768' => [ 'electoral_district', 'title' ], #
       'P856' => [ 'website', 'value' ],
       'P865' => [ 'identifier__BMLO', 'value' ], 
       'P902' => [ 'identifier__HDS', 'value' ], 
@@ -277,6 +298,7 @@ class WikiData
       'P947' => [ 'identifier__RSL', 'value' ], 
       'P949' => [ 'identifier__NLI', 'value' ], 
       'P950' => [ 'identifier__BNE', 'value' ], 
+      'P951' => [ 'identifier__NSZL', 'value' ], 
       'P968' => [ 'email', 'value' ],
       'P998' => [ 'identifier__dmoz', 'value' ], 
       'P1005' => [ 'identifier__PTBNP', 'value' ], 
@@ -291,8 +313,10 @@ class WikiData
       'P1157' => [ 'identifier__UScongress', 'value' ], 
       'P1186' => [ 'identifier__EuroparlMEP', 'value' ], 
       'P1207' => [ 'identifier__NUKAT', 'value' ], 
+      'P1213' => [ 'identifier__NLC', 'value' ], 
       'P1214' => [ 'identifier__Riksdagen', 'value' ], 
       'P1229' => [ 'identifier__openpolis', 'value' ], 
+      'P1258' => [ 'identifier__rotten_tomatoes', 'value' ], 
       'P1263' => [ 'identifier__NNDB', 'value' ], 
       'P1266' => [ 'identifier__AlloCine', 'value' ], 
       'P1273' => [ 'identifier__CANTIC', 'value' ], 
@@ -316,6 +340,7 @@ class WikiData
       'P1469' => [ 'identifier__FIFA', 'value' ], 
       # 'P1477' => [ 'birth_name', 'value' ], # multilingual
       'P513'  => [ 'birth_name', 'value' ],  # obsolete, but take it if it's there
+      'P1615' => [ 'identifier__CLARA', 'value' ], 
       'P1650' => [ 'identifier__BBF', 'value' ], 
       'P1695' => [ 'identifier__NLP', 'value' ], 
       'P1710' => [ 'identifier__saebi', 'value' ], 
@@ -327,6 +352,8 @@ class WikiData
       'P1808' => [ 'identifier__senatDOTfr', 'value' ], 
       'P1816' => [ 'identifier__NPG', 'value' ], 
       'P1839' => [ 'identifier__FEC', 'value' ], 
+      'P1883' => [ 'identifier__declarator', 'value' ], 
+      'P1890' => [ 'identifier__BNC', 'value' ], 
       'P1946' => [ 'identifier__N6I', 'value' ], 
       'P1996' => [ 'identifier__parliamentDOTuk', 'value' ], 
       'P1953' => [ 'identifier__discogs', 'value' ], 
@@ -335,7 +362,12 @@ class WikiData
       'P2005' => [ 'identifier__halensis', 'value' ], 
       'P2013' => [ 'facebook', 'value' ], 
       'P2015' => [ 'identifier__hansard', 'value' ], 
+      'P2019' => [ 'identifier__allmovie', 'value' ], 
+      'P2029' => [ 'identifier__DoUB', 'value' ], 
       'P2035' => [ 'linkedin', 'value' ], 
+      'P2168' => [ 'identifier__SFDb', 'value' ], 
+      'P2169' => [ 'identifier__publicwhip', 'value' ], 
+      'P2170' => [ 'identifier__current_hansard', 'value' ], 
       'P2280' => [ 'identifier__parlaments_at', 'value' ], 
     }
 

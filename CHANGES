@@ -1,5 +1,8 @@
-0.7.0  2015-12-31
+0.7.1  2015-12-31
+  - Add wikipedia XPath method
+  - Additional properties
 
+0.7.0  2015-12-31
   - Add some Scraper helper functions in EveryPolitician::Wikidata
 
 0.6.4  2015-11-28
