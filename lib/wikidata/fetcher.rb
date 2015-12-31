@@ -23,6 +23,22 @@ module EveryPolitician
       JSON.parse(result, symbolize_names: true).map { |h| h[:wikiname] }.compact
     end
 
+    require 'pry'
+    def self.wikipedia_xpath(h)
+      noko = self.noko_for(URI.decode h[:url])
+      binding.pry if h[:debug] == true
+      names = noko.xpath(h[:xpath]).map(&:text).uniq
+      raise "No names found in #{url}" if names.count.zero?
+      return names
+    end
+
+    require 'open-uri'
+    require 'nokogiri'
+
+    def self.noko_for(url)
+      Nokogiri::HTML(open(URI.escape(URI.unescape(url))).read) 
+    end
+        
     #-------------------------------------------------------------------
 
     require 'scraperwiki'
