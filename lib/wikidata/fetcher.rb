@@ -366,6 +366,8 @@ class WikiData
       'P2029' => [ 'identifier__DoUB', 'value' ], 
       'P2035' => [ 'linkedin', 'value' ], 
       'P2168' => [ 'identifier__SFDb', 'value' ], 
+      'P2169' => [ 'identifier__publicwhip', 'value' ], 
+      'P2170' => [ 'identifier__current_hansard', 'value' ], 
       'P2280' => [ 'identifier__parlaments_at', 'value' ], 
     }
 
