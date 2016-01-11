@@ -13,12 +13,43 @@ Add this line to your application's Gemfile:
 ```
 require 'wikidata/fetcher'
 
-category = 'Catégorie:Membre du Congrès de la Nouvelle-Calédonie'
-language = 'fr' # default 'en'
+#------------------------------------------
+# Step 1: Get a list of Wikipedia pagenames
+#------------------------------------------
 
-WikiData::Category.new(category, language).wikidata_ids.each do |id|
-  data = WikiData::Fetcher.new(id: id).data 
-end
+# from a Wikipedia page, by XPath
+en_names = EveryPolitician::Wikidata.wikipedia_xpath( 
+  url: 'https://en.wikipedia.org/wiki/Template:Peruvian_Congress_2011-2016',
+  xpath: '//table//td[contains(@class,"navbox-list")]//li//a[not(@class="new")]/@title',
+) 
+
+# or from a Wikipedia Category
+es_names = WikiData::Category.new( 'Categoría:Congresistas de Perú 2011-2016', 'es').member_titles
+
+# or from a Morph scraper
+names = EveryPolitician::Wikidata.morph_wikinames(source: 'tmtmtmtm/tuvalu-parliament-wikipedia', column: 'wikiname')
+
+#-----------------------------------------------------------
+# Step 2: Scrape the data from Wikidata based on these names
+#-----------------------------------------------------------
+
+EveryPolitician::Wikidata.scrape_wikidata(names: { en: names })
+
+# NB: this can take multiple lists, and can also output the data as it fetches it:
+
+EveryPolitician::Wikidata.scrape_wikidata(names: { 
+  es: es_names,
+  en: en_names,
+}, output: true)
+
+#-----------------------------
+# Step 3: Notify the Rebuilder
+#-----------------------------
+
+EveryPolitician::Wikidata.notify_rebuilder
+
+(This requires MORPH_REBUILDER_URL to be set in the environment)
+
 ```
 
 
