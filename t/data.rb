@@ -1,7 +1,7 @@
-require 'minitest/autorun'
-require 'wikidata/fetcher'
+require 'test_helper'
 
 describe 'data' do
+  around { |test| VCR.use_cassette('Parts', &test) }
   subject { WikiData::Fetcher.new(id: 'Q312894').data }
 
   it 'should know its ID' do
@@ -22,10 +22,11 @@ describe 'data' do
 end
 
 describe 'non-English' do
-  subject { WikiData::Fetcher.new(id: 'Q13570003') }
+  around { |test| VCR.use_cassette('Bierasniewa', &test) }
+  subject { WikiData::Fetcher.new(id: 'Q14917860') }
 
-  it 'should know a non-English name' do
-    subject.data('et')[:name].must_equal 'Kadri Simson'
+  it 'should have a Polish name' do
+    subject.data('pl')[:name].must_equal 'Alena Bierasniewa'
   end
 
   it 'should have no English name' do
@@ -33,9 +34,25 @@ describe 'non-English' do
   end
 
   it 'can fetch multiple names' do
+    data = subject.data('pl', 'by', 'en')
+    data[:name__en].must_be_nil
+    data[:name__by].must_be_nil
+    data[:name].must_equal 'Alena Bierasniewa'
+  end
+end
+
+describe 'Kadri Simpson' do
+  around { |test| VCR.use_cassette('Simpson', &test) }
+  subject { WikiData::Fetcher.new(id: 'Q13570003') }
+
+  it 'should know a non-English name' do
+    subject.data('et')[:name].must_equal 'Kadri Simson'
+  end
+
+  it 'can fetch multiple names' do
     data = subject.data('en', 'et')
     data[:name__et].must_equal 'Kadri Simson'
-    data[:name__en].must_be_nil
+    data[:name__en].must_equal 'Kadri Simson'
     data[:name].must_equal 'Kadri Simson'
   end
 
@@ -52,6 +69,7 @@ describe 'non-English' do
 end
 
 describe 'broken' do
+  around { |test| VCR.use_cassette('broken', &test) }
   subject { WikiData::Fetcher.new(id: 'Q264766') }
   # https://github.com/klacointe/wikidata-client/issues/13
   it 'should have no birth date' do
@@ -60,6 +78,7 @@ describe 'broken' do
 end
 
 describe 'odd instance' do
+  around { |test| VCR.use_cassette('nonhuman', &test) }
   subject { WikiData::Fetcher.new(id: 'Q868585') }
   it 'should have nothing for non-human' do
     subject.data('fr').must_be_nil
@@ -67,6 +86,7 @@ describe 'odd instance' do
 end
 
 describe 'no claims' do
+  around { |test| VCR.use_cassette('noclaims', &test) }
   subject { WikiData::Fetcher.new(id: 'Q20648365') }
 
   it 'should have a name, even if no claims' do
@@ -75,7 +95,8 @@ describe 'no claims' do
 end
 
 describe 'by title' do
-  subject { WikiData::Fetcher.new(title: 'Taavi Rõivas') }
+  around { |test| VCR.use_cassette('Rõivas', &test) }
+  subject { WikiData::Fetcher.new(id: 'Q3785077') }
 
   it 'should fetch the correct person' do
     subject.data[:id].must_equal 'Q3785077'
@@ -84,6 +105,14 @@ describe 'by title' do
   it 'should have the birth date' do
     subject.data[:birth_date].must_equal '1979-09-26'
   end
+end
 
+describe 'partial date' do
+  around { |test| VCR.use_cassette('Eesmaa', &test) }
+  subject { WikiData::Fetcher.new(id: 'Q11857954') }
+
+  it 'should have a short birth date' do
+    subject.data[:birth_date].must_equal '1946'
+  end
 end
 

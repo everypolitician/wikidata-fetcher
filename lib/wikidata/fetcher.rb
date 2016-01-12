@@ -5,6 +5,7 @@ require 'digest/sha1'
 require 'diskcached'
 require 'mediawiki_api'
 require 'wikidata'
+require 'wikisnakker'
 
 module EveryPolitician
   
@@ -155,12 +156,10 @@ class WikiData
     
     def initialize(h)
       if h[:id]
-        @wd = cached.cache("wikidata-#{h[:id]}") { Wikidata::Item.find h[:id] } or raise "No such item #{h[:id]}"
+        # @wd = cached.cache("wikidata-#{h[:id]}") { Wikidata::Item.find h[:id] } or raise "No such item #{h[:id]}"
+        @wd = cached.cache("wikisnakker-#{h[:id]}") { Wikisnakker::Item.find(h[:id]) or raise "No such item #{h[:id]}" }
         @id = @wd.id or raise "No ID for #{h[:id]} = #{@wd}"
         warn "Different ID (#{@id}) for #{h[:id]}" if @id != h[:id]
-      elsif h[:title]
-        @wd = cached.cache("wikidata-title-#{h[:title]}") { Wikidata::Item.find_by_title h[:title] }
-        @id = @wd.id rescue nil
       else
         raise "No id"
       end
@@ -387,7 +386,7 @@ class WikiData
       }
 
       @wd.labels.each do |k, v|
-        data["name__#{k.tr('-','_')}".to_sym] = v.value
+        data["name__#{k.tr('-','_')}".to_sym] = v['value']
       end
 
       data[:name] = [lang, 'en'].flatten.map { |l| data["name__#{l}".to_sym] }.compact.first
@@ -397,30 +396,23 @@ class WikiData
       end
 
       # Short-circuit if there are no claims
-      return data unless @wd.hash.key?('claims')
-
-      claims = (@wd.hash['claims'] || {}).keys.sort_by { |p| p[1..-1].to_i }
+      return data if @wd.properties.empty?
 
       # Short-circuit if this is not a human
-      typeof = @wd.property('P31').title rescue '!unknown'
-      if typeof != 'human'
-        warn "#{data[:id]} is_instance_of #{typeof}. Skipping".cyan
+      typeof =  @wd.P31s.map { |p| p.value.label('en') }
+      unless typeof.include? 'human'
+        warn "#{data[:id]} is_instance_of #{typeof.join(' & ')}. Skipping".cyan
         return nil
       end
 
-      claims.reject { |c| @@skip[c] || @@want[c] }.each do |c|
+      @wd.properties.reject { |c| @@skip[c] || @@want[c] }.each do |c|
         puts "Unknown claim: https://www.wikidata.org/wiki/Property:#{c}".red
       end
 
-      claims.find_all { |c| @@want.key? c }.each do |c|
-        att, meth, *more = @@want[c]
-        att = att.to_sym
-        begin
-          data[att] = @wd.property(c).send(meth)
-          data[att] = more.inject(data[att]) { |acc, n| acc.send(n) }
-        rescue => e
-          warn "#{e} with #{meth} on #{c}".red
-        end
+      @@want.each do |property, how|
+        d = @wd[property] or next
+        data[how.first.to_sym] = d.value.respond_to?(:label) ? d.value.label('en') : d.value
+        # warn " %s (%s): %s = %s".cyan % [data[:id], data[:name], how.first, data[how.first.to_sym]]
       end
 
       data
