@@ -49,8 +49,10 @@ module EveryPolitician
       langpairs = h[:names].map { |lang, names| WikiData.ids_from_pages(lang.to_s, names) }
       combined  = langpairs.reduce({}) { |h, people| h.merge(people.invert) }
 
+      found = WikiData::Fetcher.find(combined.keys)
+
       combined.each do |id, name|
-        data = WikiData::Fetcher.new(id: id).data(langs) rescue nil
+        data = found[id].data(langs) rescue nil
         unless data
           warn "No data for #{id}"
           next
