@@ -157,7 +157,7 @@ class WikiData
   class Fetcher < WikiData
 
     def self.find(ids)
-      Hash[ ids.map { |id| [id, new(id: id)] } ]
+      Hash[ Wikisnakker::Item.find(ids).map { |item| [item.id, new(item: item)] } ]
     end
     
     def initialize(h)
@@ -166,6 +166,9 @@ class WikiData
         @wd = cached.cache("wikisnakker-#{h[:id]}") { Wikisnakker::Item.find(h[:id]) or raise "No such item #{h[:id]}" }
         @id = @wd.id or raise "No ID for #{h[:id]} = #{@wd}"
         warn "Different ID (#{@id}) for #{h[:id]}" if @id != h[:id]
+      elsif h[:item]
+        @wd = h[:item]
+        @id = @wd.id or raise "No ID for #{h[:id]} = #{@wd}"
       else
         raise "No id"
       end
