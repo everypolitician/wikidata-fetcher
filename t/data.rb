@@ -107,3 +107,12 @@ describe 'by title' do
   end
 end
 
+describe 'partial date' do
+  around { |test| VCR.use_cassette('Eesmaa', &test) }
+  subject { WikiData::Fetcher.new(id: 'Q11857954') }
+
+  it 'should have a short birth date' do
+    subject.data[:birth_date].must_equal '1946'
+  end
+end
+
