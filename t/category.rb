@@ -1,6 +1,7 @@
-require 'minitest/autorun'
+require 'test_helper'
 
 describe 'category' do
+  around { |test| VCR.use_cassette('riigikogu_13', &test) }
   subject { WikiData::Category.new('Kategooria:XIII_Riigikogu_liikmed', 'et') }
 
   it 'should get some ids' do
@@ -23,6 +24,7 @@ describe 'category' do
 end
 
 describe 'large category' do
+  around { |test| VCR.use_cassette('ukmps', &test) }
   subject { WikiData::Category.new('Category:UK MPs 2015–20') }
 
   it 'should get some ids' do
