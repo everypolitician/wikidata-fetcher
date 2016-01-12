@@ -49,8 +49,10 @@ module EveryPolitician
       langpairs = h[:names].map { |lang, names| WikiData.ids_from_pages(lang.to_s, names) }
       combined  = langpairs.reduce({}) { |h, people| h.merge(people.invert) }
 
+      found = WikiData::Fetcher.find(combined.keys)
+
       combined.each do |id, name|
-        data = WikiData::Fetcher.new(id: id).data(langs) rescue nil
+        data = found[id].data(langs) rescue nil
         unless data
           warn "No data for #{id}"
           next
@@ -153,13 +155,20 @@ class WikiData
   end
 
   class Fetcher < WikiData
+
+    def self.find(ids)
+      Hash[ Wikisnakker::Item.find(ids).map { |item| [item.id, new(item: item)] } ]
+    end
     
     def initialize(h)
       if h[:id]
-        # @wd = cached.cache("wikidata-#{h[:id]}") { Wikidata::Item.find h[:id] } or raise "No such item #{h[:id]}"
-        @wd = cached.cache("wikisnakker-#{h[:id]}") { Wikisnakker::Item.find(h[:id]) or raise "No such item #{h[:id]}" }
+        @wd = Wikisnakker::Item.find(h[:id]) or raise "No such item #{h[:id]}" 
         @id = @wd.id or raise "No ID for #{h[:id]} = #{@wd}"
         warn "Different ID (#{@id}) for #{h[:id]}" if @id != h[:id]
+      elsif h[:item]
+        # Already have a Wikisnakker::Item, eg from a bulk lookup
+        @wd = h[:item]
+        @id = @wd.id or raise "No ID for #{h[:id]} = #{@wd}"
       else
         raise "No id"
       end
