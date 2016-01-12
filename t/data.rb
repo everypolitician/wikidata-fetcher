@@ -22,10 +22,10 @@ describe 'data' do
 end
 
 describe 'non-English' do
-  subject { WikiData::Fetcher.new(id: 'Q13570003') }
+  subject { WikiData::Fetcher.new(id: 'Q14917860') }
 
-  it 'should know a non-English name' do
-    subject.data('et')[:name].must_equal 'Kadri Simson'
+  it 'should have a Polish name' do
+    subject.data('pl')[:name].must_equal 'Alena Bierasniewa'
   end
 
   it 'should have no English name' do
@@ -33,9 +33,24 @@ describe 'non-English' do
   end
 
   it 'can fetch multiple names' do
+    data = subject.data('pl', 'by', 'en')
+    data[:name__en].must_be_nil
+    data[:name__by].must_be_nil
+    data[:name].must_equal 'Alena Bierasniewa'
+  end
+end
+
+describe 'Kadri Simpson' do
+  subject { WikiData::Fetcher.new(id: 'Q13570003') }
+
+  it 'should know a non-English name' do
+    subject.data('et')[:name].must_equal 'Kadri Simson'
+  end
+
+  it 'can fetch multiple names' do
     data = subject.data('en', 'et')
     data[:name__et].must_equal 'Kadri Simson'
-    data[:name__en].must_be_nil
+    data[:name__en].must_equal 'Kadri Simson'
     data[:name].must_equal 'Kadri Simson'
   end
 
@@ -75,7 +90,9 @@ describe 'no claims' do
 end
 
 describe 'by title' do
-  subject { WikiData::Fetcher.new(title: 'Taavi Rõivas') }
+  # TODO: currently don't offer a 'by title' version. 
+  # subject { WikiData::Fetcher.new(title: 'Taavi Rõivas') }
+  subject { WikiData::Fetcher.new(id: 'Q3785077') }
 
   it 'should fetch the correct person' do
     subject.data[:id].must_equal 'Q3785077'
