@@ -1,5 +1,4 @@
 require 'minitest/autorun'
-require 'wikidata/fetcher'
 
 describe 'category' do
   subject { WikiData::Category.new('Kategooria:XIII_Riigikogu_liikmed', 'et') }
