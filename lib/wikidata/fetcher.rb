@@ -162,11 +162,11 @@ class WikiData
     
     def initialize(h)
       if h[:id]
-        # @wd = cached.cache("wikidata-#{h[:id]}") { Wikidata::Item.find h[:id] } or raise "No such item #{h[:id]}"
-        @wd = cached.cache("wikisnakker-#{h[:id]}") { Wikisnakker::Item.find(h[:id]) or raise "No such item #{h[:id]}" }
+        @wd = Wikisnakker::Item.find(h[:id]) or raise "No such item #{h[:id]}" 
         @id = @wd.id or raise "No ID for #{h[:id]} = #{@wd}"
         warn "Different ID (#{@id}) for #{h[:id]}" if @id != h[:id]
       elsif h[:item]
+        # Already have a Wikisnakker::Item, eg from a bulk lookup
         @wd = h[:item]
         @id = @wd.id or raise "No ID for #{h[:id]} = #{@wd}"
       else
