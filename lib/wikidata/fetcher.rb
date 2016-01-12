@@ -153,6 +153,10 @@ class WikiData
   end
 
   class Fetcher < WikiData
+
+    def self.find(ids)
+      Hash[ ids.map { |id| [id, new(id: id)] } ]
+    end
     
     def initialize(h)
       if h[:id]
