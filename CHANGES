@@ -1,5 +1,6 @@
 O.8.0  2016-01-12
   - Fetch data in bulk where possible
+  - Add 'before' and 'after' options to XPath-finder
 
 0.7.2  2015-12-31
   - Add some Scraper helper functions in EveryPolitician::Wikidata
