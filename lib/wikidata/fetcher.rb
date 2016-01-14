@@ -27,8 +27,19 @@ module EveryPolitician
     require 'pry'
     def self.wikipedia_xpath(h)
       noko = self.noko_for(URI.decode h[:url])
-      binding.pry if h[:debug] == true
+
+      if h[:after]
+        point = noko.xpath(h[:after]) or raise "Can't find #{h[:after]}"
+        point.xpath('.//preceding::*').remove 
+      end
+
+      if h[:before]
+        point = noko.xpath(h[:before]) or raise "Can't find #{h[:before]}"
+        point.xpath('.//following::*').remove 
+      end
+
       names = noko.xpath(h[:xpath]).map(&:text).uniq
+      binding.pry if h[:debug] == true
       raise "No names found in #{h[:url]}" if names.count.zero?
       return names
     end
