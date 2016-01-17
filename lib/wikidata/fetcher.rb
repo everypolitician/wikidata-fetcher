@@ -29,12 +29,14 @@ module EveryPolitician
       noko = self.noko_for(URI.decode h[:url])
 
       if h[:after]
-        point = noko.xpath(h[:after]) or raise "Can't find #{h[:after]}"
+        point = noko.xpath(h[:after]) 
+        raise "Can't find #{h[:after]}" if point.empty?
         point.xpath('.//preceding::*').remove 
       end
 
       if h[:before]
-        point = noko.xpath(h[:before]) or raise "Can't find #{h[:before]}"
+        point = noko.xpath(h[:before]) 
+        raise "Can't find #{h[:before]}" if point.empty?
         point.xpath('.//following::*').remove 
       end
 
