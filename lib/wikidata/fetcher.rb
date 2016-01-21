@@ -397,6 +397,9 @@ class WikiData
       'P2168' => [ 'identifier__SFDb', 'value' ], 
       'P2169' => [ 'identifier__publicwhip', 'value' ], 
       'P2170' => [ 'identifier__current_hansard', 'value' ], 
+      'P2180' => [ 'identifier__kansallisbiografia', 'value' ], 
+      'P2181' => [ 'identifier__eduskunta', 'value' ], 
+      'P2182' => [ 'identifier__valtioneuvostosta', 'value' ], 
       'P2280' => [ 'identifier__parlaments_at', 'value' ], 
     }
 
