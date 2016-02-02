@@ -61,6 +61,7 @@ module EveryPolitician
       langs = ((h[:lang] || h[:names].keys) + [:en]).flatten.uniq
       langpairs = h[:names].map { |lang, names| WikiData.ids_from_pages(lang.to_s, names) }
       combined  = langpairs.reduce({}) { |h, people| h.merge(people.invert) }
+      (h[:ids] ||= []).each { |id| combined[id] ||= nil }
 
       found = WikiData::Fetcher.find(combined.keys)
 
