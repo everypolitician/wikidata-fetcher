@@ -29,6 +29,9 @@ es_names = WikiData::Category.new( 'Categoría:Congresistas de Perú 2011-2016',
 # or from a Morph scraper
 names = EveryPolitician::Wikidata.morph_wikinames(source: 'tmtmtmtm/tuvalu-parliament-wikipedia', column: 'wikiname')
 
+# or from a WDQ query
+ids = EveryPolitician::Wikidata.wdq('claim[463:21124329]')
+
 #-----------------------------------------------------------
 # Step 2: Scrape the data from Wikidata based on these names
 #-----------------------------------------------------------
