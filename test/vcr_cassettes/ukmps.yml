@@ -1,0 +1,2003 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&cmlimit=500&cmtitle=Category%3AUK+MPs+2015%E2%80%9320&format=json&list=categorymembers
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:23 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '6841'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 2149198195, 305689971, 2591881096
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1066 pass+chfp(0), cp3013 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Set-Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; Path=/; Domain=.wikipedia.org
+      - WMF-Last-Access=21-Jan-2016;Path=/;HttpOnly;Expires=Mon, 22 Feb 2016 12:00:00
+        GMT
+      X-Analytics:
+      - https=1;nocookies=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","continue":{"cmcontinue":"page|515552455348492c205941534d494e0a5941534d494e2051555245534849|27266653","continue":"-||"},"query":{"categorymembers":[{"pageid":46639793,"ns":0,"title":"List
+        of MPs elected in the United Kingdom general election, 2015"},{"pageid":46782859,"ns":0,"title":"List
+        of United Kingdom MPs by seniority, 2015\u201320"},{"pageid":79409,"ns":0,"title":"Diane
+        Abbott"},{"pageid":30464103,"ns":0,"title":"Debbie Abrahams"},{"pageid":27266895,"ns":0,"title":"Nigel
+        Adams"},{"pageid":1873667,"ns":0,"title":"Adam Afriyie"},{"pageid":42592035,"ns":0,"title":"Tasmina
+        Ahmed-Sheikh"},{"pageid":26657615,"ns":0,"title":"Peter Aldous"},{"pageid":27306797,"ns":0,"title":"Heidi
+        Alexander"},{"pageid":19360784,"ns":0,"title":"Rushanara Ali"},{"pageid":38624156,"ns":0,"title":"Lucy
+        Allan (politician)"},{"pageid":227341,"ns":0,"title":"Graham Allen (politician)"},{"pageid":46646725,"ns":0,"title":"Heidi
+        Allen"},{"pageid":413956,"ns":0,"title":"David Amess"},{"pageid":1872613,"ns":0,"title":"David
+        Anderson (British politician)"},{"pageid":27264640,"ns":0,"title":"Stuart
+        Andrew"},{"pageid":46645977,"ns":0,"title":"Caroline Ansell"},{"pageid":46642592,"ns":0,"title":"Edward
+        Argar"},{"pageid":46646315,"ns":0,"title":"Richard Arkless"},{"pageid":31697595,"ns":0,"title":"Jon
+        Ashworth"},{"pageid":46645960,"ns":0,"title":"Victoria Atkins"},{"pageid":1996199,"ns":0,"title":"Ian
+        Austin (politician)"},{"pageid":414426,"ns":0,"title":"Richard Bacon (politician)"},{"pageid":414428,"ns":0,"title":"Adrian
+        Bailey"},{"pageid":27305991,"ns":0,"title":"Steve Baker (politician)"},{"pageid":26822115,"ns":0,"title":"Harriett
+        Baldwin"},{"pageid":27278540,"ns":0,"title":"Stephen Barclay"},{"pageid":46645804,"ns":0,"title":"Hannah
+        Bardell"},{"pageid":414450,"ns":0,"title":"John Baron (politician)"},{"pageid":414602,"ns":0,"title":"Kevin
+        Barron"},{"pageid":19248714,"ns":0,"title":"Gavin Barwell"},{"pageid":27268507,"ns":0,"title":"Guto
+        Bebb"},{"pageid":224819,"ns":0,"title":"Margaret Beckett"},{"pageid":414618,"ns":0,"title":"Henry
+        Bellingham (Norfolk MP)"},{"pageid":311079,"ns":0,"title":"Hilary Benn"},{"pageid":1847558,"ns":0,"title":"Richard
+        Benyon"},{"pageid":414632,"ns":0,"title":"John Bercow"},{"pageid":414638,"ns":0,"title":"Paul
+        Beresford"},{"pageid":26051384,"ns":0,"title":"Luciana Berger"},{"pageid":27309266,"ns":0,"title":"Jake
+        Berry"},{"pageid":46641760,"ns":0,"title":"James Berry (politician)"},{"pageid":414659,"ns":0,"title":"Clive
+        Betts"},{"pageid":27327541,"ns":0,"title":"Andrew Bingham"},{"pageid":46641161,"ns":0,"title":"Mhairi
+        Black"},{"pageid":45157857,"ns":0,"title":"Ian Blackford"},{"pageid":46641857,"ns":0,"title":"Kirsty
+        Blackman"},{"pageid":723216,"ns":0,"title":"Bob Blackman (politician)"},{"pageid":1854607,"ns":0,"title":"Roberta
+        Blackman-Woods"},{"pageid":27264341,"ns":0,"title":"Nicola Blackwood"},{"pageid":27274107,"ns":0,"title":"Tom
+        Blenkinsop"},{"pageid":19133811,"ns":0,"title":"Paul Blomfield"},{"pageid":219787,"ns":0,"title":"Crispin
+        Blunt"},{"pageid":1627728,"ns":0,"title":"Nick Boles"},{"pageid":1873658,"ns":0,"title":"Peter
+        Bone"},{"pageid":40616772,"ns":0,"title":"Victoria Borwick"},{"pageid":46641921,"ns":0,"title":"Phil
+        Boswell"},{"pageid":414457,"ns":0,"title":"Peter Bottomley"},{"pageid":27358422,"ns":0,"title":"Karen
+        Bradley"},{"pageid":221182,"ns":0,"title":"Ben Bradshaw"},{"pageid":414683,"ns":0,"title":"Graham
+        Brady"},{"pageid":9939550,"ns":0,"title":"Mickey Brady"},{"pageid":414686,"ns":0,"title":"Tom
+        Brake"},{"pageid":414689,"ns":0,"title":"Julian Brazier"},{"pageid":2948826,"ns":0,"title":"Kevin
+        Brennan (politician)"},{"pageid":27282843,"ns":0,"title":"Andrew Bridgen"},{"pageid":27272079,"ns":0,"title":"Steve
+        Brine"},{"pageid":46646040,"ns":0,"title":"Deidre Brock"},{"pageid":1854850,"ns":0,"title":"James
+        Brokenshire"},{"pageid":46641170,"ns":0,"title":"Alan Brown (Scottish politician)"},{"pageid":1853133,"ns":0,"title":"Lyn
+        Brown (politician)"},{"pageid":356898,"ns":0,"title":"Nick Brown"},{"pageid":27295985,"ns":0,"title":"Fiona
+        Bruce (politician)"},{"pageid":235641,"ns":0,"title":"Chris Bryant"},{"pageid":414777,"ns":0,"title":"Karen
+        Buck"},{"pageid":27362090,"ns":0,"title":"Robert Buckland"},{"pageid":414804,"ns":0,"title":"Richard
+        Burden"},{"pageid":46644838,"ns":0,"title":"Richard Burgon"},{"pageid":414818,"ns":0,"title":"Andy
+        Burnham"},{"pageid":27286927,"ns":0,"title":"Conor Burns"},{"pageid":414821,"ns":0,"title":"Simon
+        Burns"},{"pageid":1872014,"ns":0,"title":"David Burrowes"},{"pageid":414830,"ns":0,"title":"Alistair
+        Burt"},{"pageid":1695730,"ns":0,"title":"Dawn Butler"},{"pageid":765249,"ns":0,"title":"Liam
+        Byrne"},{"pageid":46646560,"ns":0,"title":"Ruth Cadbury"},{"pageid":10078436,"ns":0,"title":"Alun
+        Cairns"},{"pageid":419342,"ns":0,"title":"David Cameron"},{"pageid":46641756,"ns":0,"title":"Lisa
+        Cameron"},{"pageid":419348,"ns":0,"title":"Alan Campbell (politician)"},{"pageid":30876369,"ns":0,"title":"Gregory
+        Campbell (politician)"},{"pageid":419353,"ns":0,"title":"Ronnie Campbell"},{"pageid":434894,"ns":0,"title":"Alistair
+        Carmichael"},{"pageid":9341317,"ns":0,"title":"Neil Carmichael (Conservative
+        politician)"},{"pageid":1872760,"ns":0,"title":"Douglas Carswell"},{"pageid":46645796,"ns":0,"title":"James
+        Cartlidge"},{"pageid":360028,"ns":0,"title":"Bill Cash"},{"pageid":46642795,"ns":0,"title":"Maria
+        Caulfield"},{"pageid":46643722,"ns":0,"title":"Alex Chalk"},{"pageid":37742380,"ns":0,"title":"Sarah
+        Champion (politician)"},{"pageid":46641820,"ns":0,"title":"Douglas Chapman
+        (Scottish politician)"},{"pageid":27306991,"ns":0,"title":"Jenny Chapman"},{"pageid":46645822,"ns":0,"title":"Joanna
+        Cherry"},{"pageid":27316155,"ns":0,"title":"Rehman Chishti"},{"pageid":419388,"ns":0,"title":"Christopher
+        Chope"},{"pageid":46644326,"ns":0,"title":"Jo Churchill"},{"pageid":46437939,"ns":0,"title":"Greg
+        Clark"},{"pageid":100456,"ns":0,"title":"Kenneth Clarke"},{"pageid":728093,"ns":0,"title":"Nick
+        Clegg"},{"pageid":17311614,"ns":0,"title":"James Cleverly"},{"pageid":419138,"ns":0,"title":"Geoffrey
+        Clifton-Brown (born 1953)"},{"pageid":413890,"ns":0,"title":"Ann Clwyd"},{"pageid":419409,"ns":0,"title":"Vernon
+        Coaker"},{"pageid":419412,"ns":0,"title":"Ann Coffey"},{"pageid":26119658,"ns":0,"title":"Therese
+        Coffey"},{"pageid":27294272,"ns":0,"title":"Damian Collins"},{"pageid":26471684,"ns":0,"title":"Oliver
+        Colvile"},{"pageid":46645189,"ns":0,"title":"Julie Cooper (politician)"},{"pageid":1876802,"ns":0,"title":"Rosie
+        Cooper"},{"pageid":415035,"ns":0,"title":"Yvette Cooper"},{"pageid":415036,"ns":0,"title":"Jeremy
+        Corbyn"},{"pageid":46646539,"ns":0,"title":"Alberto Costa (British politician)"},{"pageid":46641532,"ns":0,"title":"Ronnie
+        Cowan (politician)"},{"pageid":1850820,"ns":0,"title":"Geoffrey Cox (British
+        politician)"},{"pageid":46644858,"ns":0,"title":"Jo Cox"},{"pageid":46642746,"ns":0,"title":"Neil
+        Coyle"},{"pageid":1873585,"ns":0,"title":"Stephen Crabb"},{"pageid":419516,"ns":0,"title":"David
+        Crausby"},{"pageid":46642212,"ns":0,"title":"Angela Crawley"},{"pageid":1860750,"ns":0,"title":"Mary
+        Creagh"},{"pageid":27273818,"ns":0,"title":"Stella Creasy"},{"pageid":27306911,"ns":0,"title":"Tracey
+        Crouch"},{"pageid":19288600,"ns":0,"title":"Jon Cruddas"},{"pageid":415166,"ns":0,"title":"John
+        Cryer"},{"pageid":46645990,"ns":0,"title":"Judith Cummins"},{"pageid":27354781,"ns":0,"title":"Alex
+        Cunningham"},{"pageid":419520,"ns":0,"title":"Jim Cunningham (British politician)"},{"pageid":27281000,"ns":0,"title":"Nic
+        Dakin"},{"pageid":27267341,"ns":0,"title":"Simon Danczuk"},{"pageid":420169,"ns":0,"title":"Wayne
+        David"},{"pageid":31704434,"ns":0,"title":"Byron Davies"},{"pageid":46646644,"ns":0,"title":"Christopher
+        Davies (Conservative politician)"},{"pageid":665207,"ns":0,"title":"David
+        Davies (Welsh politician)"},{"pageid":420173,"ns":0,"title":"Geraint Davies
+        (Labour politician)"},{"pageid":10078053,"ns":0,"title":"Glyn Davies (British
+        politician)"},{"pageid":46647572,"ns":0,"title":"James Davies (politician)"},{"pageid":46646159,"ns":0,"title":"Mims
+        Davies"},{"pageid":1859778,"ns":0,"title":"Philip Davies"},{"pageid":352474,"ns":0,"title":"David
+        Davis (British politician)"},{"pageid":46648167,"ns":0,"title":"Martyn Day
+        (politician)"},{"pageid":11200839,"ns":0,"title":"Gloria De Piero"},{"pageid":46642705,"ns":0,"title":"Thangam
+        Debbonaire"},{"pageid":27320488,"ns":0,"title":"Caroline Dinenage"},{"pageid":420191,"ns":0,"title":"Jonathan
+        Djanogly"},{"pageid":46642007,"ns":0,"title":"Martin Docherty"},{"pageid":416770,"ns":0,"title":"Nigel
+        Dodds"},{"pageid":415655,"ns":0,"title":"Pat Doherty"},{"pageid":407867,"ns":0,"title":"Jeffrey
+        Donaldson"},{"pageid":46647356,"ns":0,"title":"Stuart Donaldson (Scottish
+        politician)"},{"pageid":46642289,"ns":0,"title":"Michelle Donelan"},{"pageid":1872870,"ns":0,"title":"Nadine
+        Dorries"},{"pageid":46652764,"ns":0,"title":"Steve Double"},{"pageid":37656698,"ns":0,"title":"Stephen
+        Doughty"},{"pageid":1794635,"ns":0,"title":"Jim Dowd (politician)"},{"pageid":46643790,"ns":0,"title":"Peter
+        Dowd"},{"pageid":46647123,"ns":0,"title":"Oliver Dowden"},{"pageid":27282217,"ns":0,"title":"Jackie
+        Doyle-Price"},{"pageid":27291024,"ns":0,"title":"Richard Drax"},{"pageid":2955799,"ns":0,"title":"Jack
+        Dromey"},{"pageid":46646918,"ns":0,"title":"Flick Drummond"},{"pageid":1873595,"ns":0,"title":"James
+        Duddridge"},{"pageid":27274466,"ns":0,"title":"Michael Dugher"},{"pageid":159548,"ns":0,"title":"Iain
+        Duncan Smith"},{"pageid":414463,"ns":0,"title":"Alan Duncan"},{"pageid":1872846,"ns":0,"title":"Philip
+        Dunne (Ludlow MP)"},{"pageid":410506,"ns":0,"title":"Mark Durkan"},{"pageid":420127,"ns":0,"title":"Angela
+        Eagle"},{"pageid":420134,"ns":0,"title":"Maria Eagle"},{"pageid":27282040,"ns":0,"title":"Jonathan
+        Edwards (politician)"},{"pageid":420136,"ns":0,"title":"Clive Efford"},{"pageid":27261001,"ns":0,"title":"Julie
+        Elliott"},{"pageid":3532417,"ns":0,"title":"Tom Elliott (politician)"},{"pageid":27329380,"ns":0,"title":"Michael
+        Ellis (British politician)"},{"pageid":27262177,"ns":0,"title":"Jane Ellison"},{"pageid":420138,"ns":0,"title":"Louise
+        Ellman"},{"pageid":1871869,"ns":0,"title":"Tobias Ellwood"},{"pageid":27262909,"ns":0,"title":"Charlie
+        Elphicke"},{"pageid":1847597,"ns":0,"title":"Natascha Engel"},{"pageid":27354747,"ns":0,"title":"Bill
+        Esterson"},{"pageid":27274243,"ns":0,"title":"George Eustice"},{"pageid":27296191,"ns":0,"title":"Chris
+        Evans (British politician)"},{"pageid":27291443,"ns":0,"title":"Graham Evans"},{"pageid":420144,"ns":0,"title":"Nigel
+        Evans"},{"pageid":1872579,"ns":0,"title":"David Evennett"},{"pageid":421572,"ns":0,"title":"Michael
+        Fabricant"},{"pageid":421577,"ns":0,"title":"Michael Fallon"},{"pageid":421588,"ns":0,"title":"Paul
+        Farrelly"},{"pageid":1866749,"ns":0,"title":"Tim Farron"},{"pageid":46645845,"ns":0,"title":"Marion
+        Fellows"},{"pageid":46646833,"ns":0,"title":"Suella Fernandes"},{"pageid":46642390,"ns":0,"title":"Margaret
+        Ferrier"},{"pageid":413976,"ns":0,"title":"Frank Field (British politician)"},{"pageid":421594,"ns":0,"title":"Mark
+        Field"},{"pageid":1165960,"ns":0,"title":"Jim Fitzpatrick (politician)"},{"pageid":1873629,"ns":0,"title":"Robert
+        Flello"},{"pageid":46643848,"ns":0,"title":"Colleen Fletcher"},{"pageid":420234,"ns":0,"title":"Caroline
+        Flint"},{"pageid":6158791,"ns":0,"title":"Paul Flynn (politician)"},{"pageid":46648437,"ns":0,"title":"Kevin
+        Foster (politician)"},{"pageid":27283740,"ns":0,"title":"Yvonne Fovargue"},{"pageid":357375,"ns":0,"title":"Liam
+        Fox"},{"pageid":46643844,"ns":0,"title":"Vicky Foxcroft"},{"pageid":421641,"ns":0,"title":"Mark
+        Francois"},{"pageid":46646353,"ns":0,"title":"Lucy Frazer"},{"pageid":27286027,"ns":0,"title":"George
+        Freeman (politician)"},{"pageid":17750010,"ns":0,"title":"Mike Freer"},{"pageid":27266070,"ns":0,"title":"Richard
+        Fuller (Bedford MP)"},{"pageid":46642403,"ns":0,"title":"Marcus Fysh"},{"pageid":426644,"ns":0,"title":"Roger
+        Gale"},{"pageid":416906,"ns":0,"title":"Barry Gardiner"},{"pageid":426650,"ns":0,"title":"Edward
+        Garnier"},{"pageid":27294797,"ns":0,"title":"Mark Garnier"},{"pageid":1873602,"ns":0,"title":"David
+        Gauke"},{"pageid":46647144,"ns":0,"title":"Stephen Gethins"},{"pageid":46642575,"ns":0,"title":"Nus
+        Ghani"},{"pageid":426677,"ns":0,"title":"Nick Gibb"},{"pageid":46646352,"ns":0,"title":"Patricia
+        Gibson"},{"pageid":426679,"ns":0,"title":"Cheryl Gillan"},{"pageid":27332025,"ns":0,"title":"Pat
+        Glass"},{"pageid":27918146,"ns":0,"title":"John Glen (politician)"},{"pageid":4673412,"ns":0,"title":"Mary
+        Glindon"},{"pageid":426685,"ns":0,"title":"Roger Godsiff"},{"pageid":3665467,"ns":0,"title":"Zac
+        Goldsmith"},{"pageid":1872601,"ns":0,"title":"Helen Goodman"},{"pageid":1855115,"ns":0,"title":"Robert
+        Goodwill"},{"pageid":1281068,"ns":0,"title":"Michael Gove"},{"pageid":46642087,"ns":0,"title":"Patrick
+        Grady"},{"pageid":27278836,"ns":0,"title":"Richard Graham (politician)"},{"pageid":26363008,"ns":0,"title":"Helen
+        Grant (politician)"},{"pageid":46641683,"ns":0,"title":"Peter Grant (politician)"},{"pageid":427335,"ns":0,"title":"James
+        Gray (British politician)"},{"pageid":46641832,"ns":0,"title":"Neil Gray"},{"pageid":427337,"ns":0,"title":"Chris
+        Grayling"},{"pageid":46646472,"ns":0,"title":"Chris Green (politician)"},{"pageid":416909,"ns":0,"title":"Damian
+        Green"},{"pageid":27272442,"ns":0,"title":"Kate Green"},{"pageid":1847104,"ns":0,"title":"Justine
+        Greening"},{"pageid":27273581,"ns":0,"title":"Lilian Greenwood"},{"pageid":43824791,"ns":0,"title":"Margaret
+        Greenwood"},{"pageid":427339,"ns":0,"title":"Dominic Grieve"},{"pageid":1872829,"ns":0,"title":"Nia
+        Griffith"},{"pageid":27292040,"ns":0,"title":"Andrew Griffiths (politician)"},{"pageid":12814384,"ns":0,"title":"Ben
+        Gummer"},{"pageid":1871091,"ns":0,"title":"Andrew Gwynne"},{"pageid":27270232,"ns":0,"title":"Sam
+        Gyimah"},{"pageid":46646293,"ns":0,"title":"Louise Haigh"},{"pageid":27306515,"ns":0,"title":"Robert
+        Halfon"},{"pageid":46650716,"ns":0,"title":"Luke Hall (politician)"},{"pageid":434604,"ns":0,"title":"Fabian
+        Hamilton"},{"pageid":434606,"ns":0,"title":"Philip Hammond"},{"pageid":1847495,"ns":0,"title":"Stephen
+        Hammond"},{"pageid":7134310,"ns":0,"title":"Matthew Hancock"},{"pageid":1082964,"ns":0,"title":"Greg
+        Hands"},{"pageid":1368464,"ns":0,"title":"David Hanson (politician)"},{"pageid":354361,"ns":0,"title":"Harriet
+        Harman"},{"pageid":1872049,"ns":0,"title":"Mark Harper"},{"pageid":46647200,"ns":0,"title":"Harry
+        Harpham"},{"pageid":22453270,"ns":0,"title":"Richard Harrington (politician)"},{"pageid":46646817,"ns":0,"title":"Carolyn
+        Harris (politician)"},{"pageid":27262471,"ns":0,"title":"Rebecca Harris"},{"pageid":27281194,"ns":0,"title":"Simon
+        Hart"},{"pageid":414007,"ns":0,"title":"Alan Haselhurst"},{"pageid":46646779,"ns":0,"title":"Helen
+        Hayes (politician)"},{"pageid":434620,"ns":0,"title":"John Hayes (British
+        politician)"},{"pageid":46644884,"ns":0,"title":"Sue Hayman"},{"pageid":434622,"ns":0,"title":"Oliver
+        Heald"},{"pageid":434625,"ns":0,"title":"John Healey (politician)"},{"pageid":46644993,"ns":0,"title":"James
+        Heappey"},{"pageid":12250098,"ns":0,"title":"Peter Heaton-Jones"},{"pageid":723838,"ns":0,"title":"Chris
+        Heaton-Harris"},{"pageid":27748899,"ns":0,"title":"Gordon Henderson (politician)"},{"pageid":434634,"ns":0,"title":"Mark
+        Hendrick"},{"pageid":36140989,"ns":0,"title":"Drew Hendry"},{"pageid":434636,"ns":0,"title":"Stephen
+        Hepburn"},{"pageid":1872551,"ns":0,"title":"Nick Herbert"},{"pageid":417506,"ns":0,"title":"Sylvia
+        Hermon"},{"pageid":469168,"ns":0,"title":"Meg Hillier"},{"pageid":9690656,"ns":0,"title":"Damian
+        Hinds"},{"pageid":46645877,"ns":0,"title":"Simon Hoare"},{"pageid":417484,"ns":0,"title":"Margaret
+        Hodge"},{"pageid":1872707,"ns":0,"title":"Sharon Hodgson"},{"pageid":416913,"ns":0,"title":"Kate
+        Hoey"},{"pageid":46400342,"ns":0,"title":"Kate Hollern"},{"pageid":27285207,"ns":0,"title":"George
+        Hollingbery"},{"pageid":46646217,"ns":0,"title":"Kevin Hollinrake"},{"pageid":1872804,"ns":0,"title":"Philip
+        Hollobone"},{"pageid":1872729,"ns":0,"title":"Adam Holloway"},{"pageid":415143,"ns":0,"title":"Kelvin
+        Hopkins"},{"pageid":27265799,"ns":0,"title":"Kris Hopkins"},{"pageid":1770047,"ns":0,"title":"Stewart
+        Hosie"},{"pageid":434656,"ns":0,"title":"George Howarth"},{"pageid":434662,"ns":0,"title":"Gerald
+        Howarth"},{"pageid":18152335,"ns":0,"title":"John Howell (politician)"},{"pageid":46642754,"ns":0,"title":"Ben
+        Howlett (politician)"},{"pageid":434663,"ns":0,"title":"Lindsay Hoyle"},{"pageid":41318527,"ns":0,"title":"Nigel
+        Huddleston"},{"pageid":1873613,"ns":0,"title":"Jeremy Hunt"},{"pageid":215113,"ns":0,"title":"Tristram
+        Hunt"},{"pageid":37796971,"ns":0,"title":"Rupa Huq"},{"pageid":1589837,"ns":0,"title":"Nick
+        Hurd"},{"pageid":46646541,"ns":0,"title":"Imran Hussain (British politician)"},{"pageid":416961,"ns":0,"title":"Huw
+        Irranca-Davies"},{"pageid":1862762,"ns":0,"title":"Stewart Jackson"},{"pageid":1299635,"ns":0,"title":"Margot
+        James"},{"pageid":30960897,"ns":0,"title":"Dan Jarvis"},{"pageid":27286521,"ns":0,"title":"Sajid
+        Javid"},{"pageid":46643872,"ns":0,"title":"Ranil Jayawardena"},{"pageid":427366,"ns":0,"title":"Bernard
+        Jenkin"},{"pageid":46643310,"ns":0,"title":"Andrea Jenkyns"},{"pageid":42627633,"ns":0,"title":"Robert
+        Jenrick"},{"pageid":420600,"ns":0,"title":"Alan Johnson"},{"pageid":19065069,"ns":0,"title":"Boris
+        Johnson"},{"pageid":469189,"ns":0,"title":"Diana Johnson"},{"pageid":27307194,"ns":0,"title":"Gareth
+        Johnson"},{"pageid":24421634,"ns":0,"title":"Jo Johnson"},{"pageid":27284618,"ns":0,"title":"Andrew
+        Jones (British politician)"},{"pageid":1872663,"ns":0,"title":"David Jones
+        (Clwyd West MP)"},{"pageid":46646901,"ns":0,"title":"Gerald Jones"},{"pageid":25958960,"ns":0,"title":"Graham
+        Jones (politician)"},{"pageid":427375,"ns":0,"title":"Helen Jones"},{"pageid":427376,"ns":0,"title":"Kevan
+        Jones"},{"pageid":27263823,"ns":0,"title":"Marcus Jones (British politician)"},{"pageid":27281663,"ns":0,"title":"Susan
+        Jones"},{"pageid":41937950,"ns":0,"title":"Mike Kane"},{"pageid":41052136,"ns":0,"title":"Gerald
+        Kaufman"},{"pageid":1850095,"ns":0,"title":"Daniel Kawczynski"},{"pageid":1873695,"ns":0,"title":"Barbara
+        Keeley"},{"pageid":27331911,"ns":0,"title":"Liz Kendall"},{"pageid":46646961,"ns":0,"title":"Seema
+        Kennedy"},{"pageid":26484783,"ns":0,"title":"George Kerevan"},{"pageid":46645396,"ns":0,"title":"Calum
+        Kerr"},{"pageid":1847198,"ns":0,"title":"Sadiq Khan"},{"pageid":23030172,"ns":0,"title":"Danny
+        Kinahan"},{"pageid":15253270,"ns":0,"title":"Stephen Kinnock"},{"pageid":13183548,"ns":0,"title":"Simon
+        Kirby"},{"pageid":414511,"ns":0,"title":"Greg Knight"},{"pageid":46652793,"ns":0,"title":"Julian
+        Knight (politician)"},{"pageid":27303943,"ns":0,"title":"Kwasi Kwarteng"},{"pageid":46645836,"ns":0,"title":"Peter
+        Kyle (politician)"},{"pageid":428585,"ns":0,"title":"Eleanor Laing"},{"pageid":428586,"ns":0,"title":"Norman
+        Lamb"},{"pageid":428588,"ns":0,"title":"David Lammy"},{"pageid":1873034,"ns":0,"title":"Mark
+        Lancaster"},{"pageid":27290591,"ns":0,"title":"Pauline Latham"},{"pageid":24421613,"ns":0,"title":"Ian
+        Lavery"},{"pageid":46641694,"ns":0,"title":"Chris Law (politician)"},{"pageid":27362282,"ns":0,"title":"Andrea
+        Leadsom"},{"pageid":27219595,"ns":0,"title":"Phillip Lee (politician)"},{"pageid":6817209,"ns":0,"title":"Jeremy
+        Lefroy"},{"pageid":428603,"ns":0,"title":"Edward Leigh"},{"pageid":27268571,"ns":0,"title":"Charlotte
+        Leslie"},{"pageid":428608,"ns":0,"title":"Chris Leslie (politician)"},{"pageid":331975,"ns":0,"title":"Oliver
+        Letwin"},{"pageid":39122415,"ns":0,"title":"Emma Lewell-Buck"},{"pageid":4783763,"ns":0,"title":"Brandon
+        Lewis"},{"pageid":46651792,"ns":0,"title":"Clive Lewis (politician)"},{"pageid":428627,"ns":0,"title":"Ivan
+        Lewis"},{"pageid":428630,"ns":0,"title":"Julian Lewis (politician)"},{"pageid":428635,"ns":0,"title":"Ian
+        Liddell-Grainger"},{"pageid":428640,"ns":0,"title":"David Lidington"},{"pageid":293344,"ns":0,"title":"Peter
+        Lilley"},{"pageid":46647219,"ns":0,"title":"Rebecca Long-Bailey"},{"pageid":27291991,"ns":0,"title":"Jack
+        Lopresti"},{"pageid":23681392,"ns":0,"title":"Jonathan Lord"},{"pageid":428657,"ns":0,"title":"Tim
+        Loughton"},{"pageid":415702,"ns":0,"title":"Caroline Lucas"},{"pageid":428662,"ns":0,"title":"Ian
+        Lucas"},{"pageid":27351148,"ns":0,"title":"Karen Lumley"},{"pageid":46646389,"ns":0,"title":"Holly
+        Walker-Lynch"},{"pageid":22970692,"ns":0,"title":"Craig Mackinlay"},{"pageid":46647446,"ns":0,"title":"David
+        Mackintosh (politician)"},{"pageid":1872887,"ns":0,"title":"Angus MacNeil"},{"pageid":420566,"ns":0,"title":"Fiona
+        Mactaggart"},{"pageid":46646263,"ns":0,"title":"Justin Madders"},{"pageid":434736,"ns":0,"title":"Khalid
+        Mahmood (British politician)"},{"pageid":27266407,"ns":0,"title":"Shabana
+        Mahmood"},{"pageid":1873621,"ns":0,"title":"Anne Main"},{"pageid":46645781,"ns":0,"title":"Alan
+        Mak (politician)"},{"pageid":34070960,"ns":0,"title":"Seema Malhotra"},{"pageid":1481090,"ns":0,"title":"Kit
+        Malthouse"},{"pageid":434743,"ns":0,"title":"John Mann (British politician)"},{"pageid":45286895,"ns":0,"title":"Scott
+        Mann (politician)"},{"pageid":434908,"ns":0,"title":"Rob Marris"},{"pageid":434909,"ns":0,"title":"Gordon
+        Marsden"},{"pageid":46644924,"ns":0,"title":"Rachael Maskell"},{"pageid":9944636,"ns":0,"title":"Paul
+        Maskey"},{"pageid":46648305,"ns":0,"title":"Chris Matheson (British politician)"},{"pageid":46642506,"ns":0,"title":"Tania
+        Mathias"},{"pageid":351873,"ns":0,"title":"Theresa May"},{"pageid":27283593,"ns":0,"title":"Paul
+        Maynard"},{"pageid":1980076,"ns":0,"title":"Steve McCabe (politician)"},{"pageid":36151846,"ns":0,"title":"Callum
+        McCaig"},{"pageid":1857648,"ns":0,"title":"Kerry McCarthy"},{"pageid":27265384,"ns":0,"title":"Jason
+        McCartney (politician)"},{"pageid":27263887,"ns":0,"title":"Karl McCartney"},{"pageid":434707,"ns":0,"title":"Siobhain
+        McDonagh"},{"pageid":37788803,"ns":0,"title":"Andy McDonald (politician)"},{"pageid":46642138,"ns":0,"title":"Stewart
+        McDonald (politician)"},{"pageid":46646455,"ns":0,"title":"Stuart McDonald
+        (Scottish politician)"},{"pageid":1854262,"ns":0,"title":"Alasdair McDonnell"},{"pageid":415133,"ns":0,"title":"John
+        McDonnell (politician)"},{"pageid":1873684,"ns":0,"title":"Pat McFadden (British
+        politician)"},{"pageid":41567961,"ns":0,"title":"Natalie McGarry"},{"pageid":2853551,"ns":0,"title":"Conor
+        McGinn"},{"pageid":27275520,"ns":0,"title":"Alison McGovern"},{"pageid":44070260,"ns":0,"title":"Liz
+        McInnes"},{"pageid":27273652,"ns":0,"title":"Catherine McKinnell"},{"pageid":21436944,"ns":0,"title":"Anne
+        McLaughlin"},{"pageid":434727,"ns":0,"title":"Patrick McLoughlin"},{"pageid":43068256,"ns":0,"title":"Jim
+        McMahon (politician)"},{"pageid":46641313,"ns":0,"title":"John McNally (politician)"},{"pageid":27274618,"ns":0,"title":"Stephen
+        McPartland"},{"pageid":359553,"ns":0,"title":"Michael Meacher"},{"pageid":434919,"ns":0,"title":"Alan
+        Meale"},{"pageid":27318945,"ns":0,"title":"Ian Mearns"},{"pageid":27319806,"ns":0,"title":"Mark
+        Menzies"},{"pageid":46648734,"ns":0,"title":"Johnny Mercer (politician)"},{"pageid":46645061,"ns":0,"title":"Huw
+        Merriman"},{"pageid":27262613,"ns":0,"title":"Stephen Metcalfe (politician)"},{"pageid":1290018,"ns":0,"title":"Ed
+        Miliband"},{"pageid":1872569,"ns":0,"title":"Maria Miller"},{"pageid":46644584,"ns":0,"title":"Amanda
+        Milling"},{"pageid":27268625,"ns":0,"title":"Nigel Mills (politician)"},{"pageid":1872744,"ns":0,"title":"Anne
+        Milton"},{"pageid":435638,"ns":0,"title":"Andrew Mitchell"},{"pageid":8971026,"ns":0,"title":"Francie
+        Molloy"},{"pageid":46642117,"ns":0,"title":"Carol Monaghan"},{"pageid":46645714,"ns":0,"title":"Paul
+        Monaghan"},{"pageid":1872632,"ns":0,"title":"Madeleine Moon"},{"pageid":7121294,"ns":0,"title":"Penny
+        Mordaunt"},{"pageid":1872895,"ns":0,"title":"Jessica Morden"},{"pageid":27274143,"ns":0,"title":"Nicky
+        Morgan (politician)"},{"pageid":27273546,"ns":0,"title":"Anne Marie Morris"},{"pageid":27268695,"ns":0,"title":"David
+        Morris (Conservative politician)"},{"pageid":27279901,"ns":0,"title":"Grahame
+        Morris"},{"pageid":27581500,"ns":0,"title":"James Morris (British politician)"},{"pageid":46642547,"ns":0,"title":"Wendy
+        Morton"},{"pageid":27265206,"ns":0,"title":"David Mowat"},{"pageid":1848077,"ns":0,"title":"Greg
+        Mulholland"},{"pageid":46642194,"ns":0,"title":"Roger Mullin"},{"pageid":1872687,"ns":0,"title":"David
+        Mundell"},{"pageid":27283452,"ns":0,"title":"Ian Murray (British politician)"},{"pageid":27271162,"ns":0,"title":"Sheryll
+        Murray"},{"pageid":435637,"ns":0,"title":"Andrew Murrison"},{"pageid":27266258,"ns":0,"title":"Lisa
+        Nandy"},{"pageid":469238,"ns":0,"title":"Bob Neill"},{"pageid":46642355,"ns":0,"title":"Gavin
+        Newlands"},{"pageid":27280049,"ns":0,"title":"Sarah Newton"},{"pageid":18488726,"ns":0,"title":"John
+        Nicolson (politician)"},{"pageid":27265015,"ns":0,"title":"Caroline Nokes"},{"pageid":5770475,"ns":0,"title":"Jesse
+        Norman"},{"pageid":27292071,"ns":0,"title":"David Nuttall"},{"pageid":27266387,"ns":0,"title":"Matthew
+        Offord"},{"pageid":46642598,"ns":0,"title":"Brendan O''Hara"},{"pageid":46646280,"ns":0,"title":"Melanie
+        Onn"},{"pageid":27291778,"ns":0,"title":"Chi Onwurah"},{"pageid":27296698,"ns":0,"title":"Guy
+        Opperman"},{"pageid":46646629,"ns":0,"title":"Kate Osamor"},{"pageid":422814,"ns":0,"title":"George
+        Osborne"},{"pageid":46642360,"ns":0,"title":"Kirsten Oswald"},{"pageid":422823,"ns":0,"title":"Albert
+        Owen"},{"pageid":214880,"ns":0,"title":"Ian Paisley, Jr."},{"pageid":723989,"ns":0,"title":"Neil
+        Parish"},{"pageid":5603691,"ns":0,"title":"Priti Patel"},{"pageid":433779,"ns":0,"title":"Owen
+        Paterson"},{"pageid":46646188,"ns":0,"title":"Steven Paterson"},{"pageid":27342161,"ns":0,"title":"Mark
+        Pawsey"},{"pageid":27311324,"ns":0,"title":"Teresa Pearce"},{"pageid":1867366,"ns":0,"title":"Mike
+        Penning"},{"pageid":46646074,"ns":0,"title":"Matthew Pennycook"},{"pageid":1872216,"ns":0,"title":"John
+        Penrose"},{"pageid":27272220,"ns":0,"title":"Andrew Percy"},{"pageid":12596431,"ns":0,"title":"Toby
+        Perkins"},{"pageid":26898700,"ns":0,"title":"Claire Perry"},{"pageid":46646379,"ns":0,"title":"Jess
+        Phillips (politician)"},{"pageid":27294043,"ns":0,"title":"Stephen Phillips
+        (politician)"},{"pageid":27260678,"ns":0,"title":"Bridget Phillipson"},{"pageid":1906583,"ns":0,"title":"Chris
+        Philp"},{"pageid":421730,"ns":0,"title":"Eric Pickles"},{"pageid":27353528,"ns":0,"title":"Christopher
+        Pincher"},{"pageid":27280171,"ns":0,"title":"Daniel Poulter"},{"pageid":421677,"ns":0,"title":"Stephen
+        Pound"},{"pageid":46647164,"ns":0,"title":"Rebecca Pow"},{"pageid":35542972,"ns":0,"title":"Lucy
+        Powell"},{"pageid":46399592,"ns":0,"title":"Victoria Prentis"},{"pageid":433863,"ns":0,"title":"Mark
+        Prisk"},{"pageid":1873707,"ns":0,"title":"Mark Pritchard (politician)"},{"pageid":433886,"ns":0,"title":"John
+        Pugh"},{"pageid":46650639,"ns":0,"title":"Tom Pursglove"},{"pageid":46654157,"ns":0,"title":"Jeremy
+        Quin"},{"pageid":46642622,"ns":0,"title":"Will Quince"}]}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:23 GMT
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&cmcontinue=page%7C515552455348492c205941534d494e0a5941534d494e2051555245534849%7C27266653&cmlimit=500&cmtitle=Category%3AUK+MPs+2015%E2%80%9320&format=json&list=categorymembers
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '2325'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 1373232425, 4161325802, 2591883588
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1054 pass+chfp(0), cp3007 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"categorymembers":[{"pageid":27266653,"ns":0,"title":"Yasmin
+        Qureshi"},{"pageid":27269553,"ns":0,"title":"Dominic Raab"},{"pageid":43824971,"ns":0,"title":"Angela
+        Rayner"},{"pageid":163684,"ns":0,"title":"John Redwood"},{"pageid":1850796,"ns":0,"title":"Jamie
+        Reed"},{"pageid":27464304,"ns":0,"title":"Steve Reed (politician)"},{"pageid":46646944,"ns":0,"title":"Christina
+        Rees (politician)"},{"pageid":6617581,"ns":0,"title":"Jacob Rees-Mogg"},{"pageid":24303079,"ns":0,"title":"Rachel
+        Reeves"},{"pageid":27294634,"ns":0,"title":"Emma Reynolds"},{"pageid":27354938,"ns":0,"title":"Jonathan
+        Reynolds"},{"pageid":46645820,"ns":0,"title":"Marie Rimmer"},{"pageid":9169995,"ns":0,"title":"Margaret
+        Ritchie (politician)"},{"pageid":434896,"ns":0,"title":"Angus Robertson"},{"pageid":449388,"ns":0,"title":"Laurence
+        Robertson"},{"pageid":36007212,"ns":0,"title":"Gavin Robinson"},{"pageid":419626,"ns":0,"title":"Geoffrey
+        Robinson"},{"pageid":46648738,"ns":0,"title":"Mary Robinson (British politician)"},{"pageid":352741,"ns":0,"title":"Andrew
+        Rosindell"},{"pageid":27040510,"ns":0,"title":"Steve Rotheram"},{"pageid":26787240,"ns":0,"title":"Amber
+        Rudd"},{"pageid":27290733,"ns":0,"title":"David Rutley"},{"pageid":449469,"ns":0,"title":"Joan
+        Ryan"},{"pageid":21234593,"ns":0,"title":"Alex Salmond"},{"pageid":31704180,"ns":0,"title":"Antoinette
+        Sandbach"},{"pageid":46646648,"ns":0,"title":"Liz Saville-Roberts"},{"pageid":46652738,"ns":0,"title":"Paul
+        Scully"},{"pageid":450363,"ns":0,"title":"Andrew Selous"},{"pageid":46644039,"ns":0,"title":"Naz
+        Shah"},{"pageid":9041992,"ns":0,"title":"Jim Shannon"},{"pageid":1872058,"ns":0,"title":"Grant
+        Shapps"},{"pageid":27265339,"ns":0,"title":"Alok Sharma"},{"pageid":10448055,"ns":0,"title":"Virendra
+        Sharma"},{"pageid":450368,"ns":0,"title":"Barry Sheerman"},{"pageid":27280710,"ns":0,"title":"Alec
+        Shelbrooke"},{"pageid":46646985,"ns":0,"title":"Tommy Sheppard"},{"pageid":46650682,"ns":0,"title":"Paula
+        Sherriff"},{"pageid":27264194,"ns":0,"title":"Gavin Shuker"},{"pageid":33131881,"ns":0,"title":"Tulip
+        Siddiq"},{"pageid":1649025,"ns":0,"title":"David Simpson (British politician)"},{"pageid":450390,"ns":0,"title":"Keith
+        Simpson (politician)"},{"pageid":27261798,"ns":0,"title":"Chris Skidmore"},{"pageid":367560,"ns":0,"title":"Dennis
+        Skinner"},{"pageid":1243465,"ns":0,"title":"Andy Slaughter"},{"pageid":45568232,"ns":0,"title":"Ruth
+        Smeeth"},{"pageid":410153,"ns":0,"title":"Andrew Smith (politician)"},{"pageid":1849086,"ns":0,"title":"Angela
+        C. Smith"},{"pageid":46643393,"ns":0,"title":"Cat Smith"},{"pageid":23619322,"ns":0,"title":"Chloe
+        Smith"},{"pageid":25600906,"ns":0,"title":"Henry Smith (British politician)"},{"pageid":5276205,"ns":0,"title":"Jeff
+        Smith (British politician)"},{"pageid":27271687,"ns":0,"title":"Julian Smith
+        (politician)"},{"pageid":27276873,"ns":0,"title":"Nick Smith (British politician)"},{"pageid":27281458,"ns":0,"title":"Owen
+        Smith (politician)"},{"pageid":46639094,"ns":0,"title":"Royston Smith (politician)"},{"pageid":46642660,"ns":0,"title":"Karin
+        Smyth"},{"pageid":416044,"ns":0,"title":"Nicholas Soames"},{"pageid":46643939,"ns":0,"title":"Amanda
+        Solloway"},{"pageid":10850875,"ns":0,"title":"Anna Soubry"},{"pageid":450461,"ns":0,"title":"John
+        Spellar"},{"pageid":429874,"ns":0,"title":"Caroline Spelman"},{"pageid":27368350,"ns":0,"title":"Mark
+        Spencer (politician)"},{"pageid":18681491,"ns":0,"title":"Keir Starmer"},{"pageid":45260091,"ns":0,"title":"Chris
+        Stephens (politician)"},{"pageid":27279085,"ns":0,"title":"Andrew Stephenson"},{"pageid":46646158,"ns":0,"title":"Jo
+        Stevens"},{"pageid":27292483,"ns":0,"title":"John Stevenson (British politician)"},{"pageid":23898624,"ns":0,"title":"Bob
+        Stewart (British Army officer)"},{"pageid":27317054,"ns":0,"title":"Iain Stewart
+        (politician)"},{"pageid":2656347,"ns":0,"title":"Rory Stewart"},{"pageid":450501,"ns":0,"title":"Gary
+        Streeter"},{"pageid":17169295,"ns":0,"title":"Wes Streeting"},{"pageid":27293792,"ns":0,"title":"Mel
+        Stride"},{"pageid":450506,"ns":0,"title":"Graham Stringer"},{"pageid":415020,"ns":0,"title":"Gisela
+        Stuart"},{"pageid":1863450,"ns":0,"title":"Graham Stuart (politician)"},{"pageid":27271794,"ns":0,"title":"Julian
+        Sturdy"},{"pageid":46622934,"ns":0,"title":"Rishi Sunak"},{"pageid":450516,"ns":0,"title":"Desmond
+        Swayne"},{"pageid":450517,"ns":0,"title":"Hugo Swire"},{"pageid":450520,"ns":0,"title":"Robert
+        Syms"},{"pageid":435652,"ns":0,"title":"Mark Tami"},{"pageid":46642057,"ns":0,"title":"Alison
+        Thewliss"},{"pageid":46646675,"ns":0,"title":"Derek Thomas (politician)"},{"pageid":450270,"ns":0,"title":"Gareth
+        Thomas (English politician)"},{"pageid":46646317,"ns":0,"title":"Nick Thomas-Symonds"},{"pageid":46645744,"ns":0,"title":"Owen
+        Thompson"},{"pageid":46647171,"ns":0,"title":"Michelle Thomson"},{"pageid":1794676,"ns":0,"title":"Emily
+        Thornberry"},{"pageid":46646710,"ns":0,"title":"Maggie Throup"},{"pageid":450273,"ns":0,"title":"Stephen
+        Timms"},{"pageid":17279286,"ns":0,"title":"Edward Timpson"},{"pageid":46643495,"ns":0,"title":"Kelly
+        Tolhurst"},{"pageid":27331990,"ns":0,"title":"Justin Tomlinson"},{"pageid":46644953,"ns":0,"title":"Michael
+        Tomlinson"},{"pageid":46214034,"ns":0,"title":"Craig Tracey"},{"pageid":420324,"ns":0,"title":"David
+        Tredinnick (politician)"},{"pageid":46645665,"ns":0,"title":"Anne-Marie Trevelyan"},{"pageid":450288,"ns":0,"title":"Jon
+        Trickett"},{"pageid":27270934,"ns":0,"title":"Elizabeth Truss"},{"pageid":46646029,"ns":0,"title":"Thomas
+        Tugendhat"},{"pageid":46645975,"ns":0,"title":"Anna Turley"},{"pageid":450314,"ns":0,"title":"Andrew
+        Turner (politician)"},{"pageid":27267782,"ns":0,"title":"Karl Turner (politician)"},{"pageid":450326,"ns":0,"title":"Derek
+        Twigg"},{"pageid":413358,"ns":0,"title":"Stephen Twigg"},{"pageid":450334,"ns":0,"title":"Andrew
+        Tyrie"},{"pageid":13939912,"ns":0,"title":"Chuka Umunna"},{"pageid":1281601,"ns":0,"title":"Ed
+        Vaizey"},{"pageid":1873069,"ns":0,"title":"Shailesh Vara"},{"pageid":354040,"ns":0,"title":"Keith
+        Vaz"},{"pageid":27282341,"ns":0,"title":"Valerie Vaz"},{"pageid":27267137,"ns":0,"title":"Martin
+        Vickers"},{"pageid":723901,"ns":0,"title":"Theresa Villiers"},{"pageid":1923728,"ns":0,"title":"Charles
+        Walker (British politician)"},{"pageid":6304425,"ns":0,"title":"Robin Walker"},{"pageid":1870449,"ns":0,"title":"Ben
+        Wallace (politician)"},{"pageid":46642827,"ns":0,"title":"David Warburton"},{"pageid":46646043,"ns":0,"title":"Matt
+        Warman"},{"pageid":434965,"ns":0,"title":"Angela Watkinson"},{"pageid":434967,"ns":0,"title":"Tom
+        Watson (Labour politician)"},{"pageid":434899,"ns":0,"title":"Mike Weir (politician)"},{"pageid":46642779,"ns":0,"title":"Catherine
+        West"},{"pageid":27302490,"ns":0,"title":"James Wharton"},{"pageid":46638621,"ns":0,"title":"Helen
+        Whately"},{"pageid":27270199,"ns":0,"title":"Heather Wheeler"},{"pageid":27353327,"ns":0,"title":"Chris
+        White (politician)"},{"pageid":27264864,"ns":0,"title":"Eilidh Whiteford"},{"pageid":434973,"ns":0,"title":"Alan
+        Whitehead"},{"pageid":46641814,"ns":0,"title":"Philippa Whitford"},{"pageid":27292088,"ns":0,"title":"Craig
+        Whittaker"},{"pageid":429871,"ns":0,"title":"John Whittingdale"},{"pageid":429879,"ns":0,"title":"Bill
+        Wiggin"},{"pageid":46647002,"ns":0,"title":"Craig Williams (politician)"},{"pageid":417661,"ns":0,"title":"Hywel
+        Williams"},{"pageid":1859042,"ns":0,"title":"Mark Williams (politician)"},{"pageid":27362227,"ns":0,"title":"Gavin
+        Williamson"},{"pageid":46642381,"ns":0,"title":"Corri Wilson"},{"pageid":12116716,"ns":0,"title":"Phil
+        Wilson (British politician)"},{"pageid":1848639,"ns":0,"title":"Rob Wilson"},{"pageid":1855074,"ns":0,"title":"Sammy
+        Wilson"},{"pageid":434987,"ns":0,"title":"David Winnick"},{"pageid":419124,"ns":0,"title":"Rosie
+        Winterton"},{"pageid":434904,"ns":0,"title":"Pete Wishart"},{"pageid":23864436,"ns":0,"title":"Sarah
+        Wollaston"},{"pageid":46646750,"ns":0,"title":"Mike Wood (Conservative politician)"},{"pageid":27283462,"ns":0,"title":"John
+        Woodcock (politician)"},{"pageid":46646008,"ns":0,"title":"William Wragg"},{"pageid":883609,"ns":0,"title":"Iain
+        Wright"},{"pageid":1849949,"ns":0,"title":"Jeremy Wright"},{"pageid":27284572,"ns":0,"title":"Nadhim
+        Zahawi"},{"pageid":46642521,"ns":0,"title":"Daniel Zeichner"},{"pageid":46649080,"ns":14,"title":"Category:Lists
+        of UK MPs 2015\u201320"},{"pageid":46732074,"ns":14,"title":"Category:UK MPs
+        2015\u201320 stubs"}]}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:24 GMT
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&pageids=79409%7C100456%7C159548%7C163684%7C214880%7C215113%7C219787%7C221182%7C224819%7C227341%7C235641%7C293344%7C311079%7C331975%7C351873%7C352474%7C352741%7C354040%7C354361%7C356898%7C357375%7C359553%7C360028%7C367560%7C407867%7C410153%7C410506%7C413358%7C413890%7C413956%7C413976%7C414007%7C414426%7C414428%7C414450%7C414457%7C414463%7C414511%7C414602%7C414618%7C414632%7C414638%7C414659%7C414683%7C414686%7C414689%7C414777%7C414804%7C414818%7C414821&ppprop=wikibase_item&prop=pageprops&redirects=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:24 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1285'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 2006465611, 182087227, 2591885440
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1068 pass+chfp(0), cp3006 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"pages":{"79409":{"pageid":79409,"ns":0,"title":"Diane
+        Abbott","pageprops":{"wikibase_item":"Q153454"}},"100456":{"pageid":100456,"ns":0,"title":"Kenneth
+        Clarke","pageprops":{"wikibase_item":"Q271889"}},"159548":{"pageid":159548,"ns":0,"title":"Iain
+        Duncan Smith","pageprops":{"wikibase_item":"Q302486"}},"163684":{"pageid":163684,"ns":0,"title":"John
+        Redwood","pageprops":{"wikibase_item":"Q333846"}},"214880":{"pageid":214880,"ns":0,"title":"Ian
+        Paisley, Jr.","pageprops":{"wikibase_item":"Q575881"}},"215113":{"pageid":215113,"ns":0,"title":"Tristram
+        Hunt","pageprops":{"wikibase_item":"Q691064"}},"219787":{"pageid":219787,"ns":0,"title":"Crispin
+        Blunt","pageprops":{"wikibase_item":"Q264305"}},"221182":{"pageid":221182,"ns":0,"title":"Ben
+        Bradshaw","pageprops":{"wikibase_item":"Q264618"}},"224819":{"pageid":224819,"ns":0,"title":"Margaret
+        Beckett","pageprops":{"wikibase_item":"Q232639"}},"227341":{"pageid":227341,"ns":0,"title":"Graham
+        Allen (politician)","pageprops":{"wikibase_item":"Q259601"}},"235641":{"pageid":235641,"ns":0,"title":"Chris
+        Bryant","pageprops":{"wikibase_item":"Q266146"}},"293344":{"pageid":293344,"ns":0,"title":"Peter
+        Lilley","pageprops":{"wikibase_item":"Q19831"}},"311079":{"pageid":311079,"ns":0,"title":"Hilary
+        Benn","pageprops":{"wikibase_item":"Q262742"}},"331975":{"pageid":331975,"ns":0,"title":"Oliver
+        Letwin","pageprops":{"wikibase_item":"Q333480"}},"351873":{"pageid":351873,"ns":0,"title":"Theresa
+        May","pageprops":{"wikibase_item":"Q264766"}},"352474":{"pageid":352474,"ns":0,"title":"David
+        Davis (British politician)","pageprops":{"wikibase_item":"Q300023"}},"352741":{"pageid":352741,"ns":0,"title":"Andrew
+        Rosindell","pageprops":{"wikibase_item":"Q480092"}},"354040":{"pageid":354040,"ns":0,"title":"Keith
+        Vaz","pageprops":{"wikibase_item":"Q267105"}},"354361":{"pageid":354361,"ns":0,"title":"Harriet
+        Harman","pageprops":{"wikibase_item":"Q234182"}},"356898":{"pageid":356898,"ns":0,"title":"Nick
+        Brown","pageprops":{"wikibase_item":"Q265935"}},"357375":{"pageid":357375,"ns":0,"title":"Liam
+        Fox","pageprops":{"wikibase_item":"Q332374"}},"359553":{"pageid":359553,"ns":0,"title":"Michael
+        Meacher","pageprops":{"wikibase_item":"Q583993"}},"360028":{"pageid":360028,"ns":0,"title":"Bill
+        Cash","pageprops":{"wikibase_item":"Q269449"}},"367560":{"pageid":367560,"ns":0,"title":"Dennis
+        Skinner","pageprops":{"wikibase_item":"Q391437"}},"407867":{"pageid":407867,"ns":0,"title":"Jeffrey
+        Donaldson","pageprops":{"wikibase_item":"Q300292"}},"410153":{"pageid":410153,"ns":0,"title":"Andrew
+        Smith (politician)","pageprops":{"wikibase_item":"Q334296"}},"410506":{"pageid":410506,"ns":0,"title":"Mark
+        Durkan","pageprops":{"wikibase_item":"Q302620"}},"413358":{"pageid":413358,"ns":0,"title":"Stephen
+        Twigg","pageprops":{"wikibase_item":"Q272041"}},"413890":{"pageid":413890,"ns":0,"title":"Ann
+        Clwyd","pageprops":{"wikibase_item":"Q285249"}},"413956":{"pageid":413956,"ns":0,"title":"David
+        Amess","pageprops":{"wikibase_item":"Q259646"}},"413976":{"pageid":413976,"ns":0,"title":"Frank
+        Field (British politician)","pageprops":{"wikibase_item":"Q304388"}},"414007":{"pageid":414007,"ns":0,"title":"Alan
+        Haselhurst","pageprops":{"wikibase_item":"Q478442"}},"414426":{"pageid":414426,"ns":0,"title":"Richard
+        Bacon (politician)","pageprops":{"wikibase_item":"Q3409441"}},"414428":{"pageid":414428,"ns":0,"title":"Adrian
+        Bailey","pageprops":{"wikibase_item":"Q260013"}},"414450":{"pageid":414450,"ns":0,"title":"John
+        Baron (politician)","pageprops":{"wikibase_item":"Q337720"}},"414457":{"pageid":414457,"ns":0,"title":"Peter
+        Bottomley","pageprops":{"wikibase_item":"Q264477"}},"414463":{"pageid":414463,"ns":0,"title":"Alan
+        Duncan","pageprops":{"wikibase_item":"Q302417"}},"414511":{"pageid":414511,"ns":0,"title":"Greg
+        Knight","pageprops":{"wikibase_item":"Q750219"}},"414602":{"pageid":414602,"ns":0,"title":"Kevin
+        Barron","pageprops":{"wikibase_item":"Q260631"}},"414618":{"pageid":414618,"ns":0,"title":"Henry
+        Bellingham (Norfolk MP)","pageprops":{"wikibase_item":"Q262616"}},"414632":{"pageid":414632,"ns":0,"title":"John
+        Bercow","pageprops":{"wikibase_item":"Q263147"}},"414638":{"pageid":414638,"ns":0,"title":"Paul
+        Beresford","pageprops":{"wikibase_item":"Q263243"}},"414659":{"pageid":414659,"ns":0,"title":"Clive
+        Betts","pageprops":{"wikibase_item":"Q263508"}},"414683":{"pageid":414683,"ns":0,"title":"Graham
+        Brady","pageprops":{"wikibase_item":"Q264662"}},"414686":{"pageid":414686,"ns":0,"title":"Tom
+        Brake","pageprops":{"wikibase_item":"Q264720"}},"414689":{"pageid":414689,"ns":0,"title":"Julian
+        Brazier","pageprops":{"wikibase_item":"Q264827"}},"414777":{"pageid":414777,"ns":0,"title":"Karen
+        Buck","pageprops":{"wikibase_item":"Q266238"}},"414804":{"pageid":414804,"ns":0,"title":"Richard
+        Burden","pageprops":{"wikibase_item":"Q269868"}},"414818":{"pageid":414818,"ns":0,"title":"Andy
+        Burnham","pageprops":{"wikibase_item":"Q269909"}},"414821":{"pageid":414821,"ns":0,"title":"Simon
+        Burns","pageprops":{"wikibase_item":"Q269940"}}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:24 GMT
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&pageids=414830%7C415020%7C415035%7C415036%7C415133%7C415143%7C415166%7C415655%7C415702%7C416044%7C416770%7C416906%7C416909%7C416913%7C416961%7C417484%7C417506%7C417661%7C419124%7C419138%7C419342%7C419348%7C419353%7C419388%7C419409%7C419412%7C419516%7C419520%7C419626%7C420127%7C420134%7C420136%7C420138%7C420144%7C420169%7C420173%7C420191%7C420234%7C420324%7C420566%7C420600%7C421572%7C421577%7C421588%7C421594%7C421641%7C421677%7C421730%7C422814%7C422823&ppprop=wikibase_item&prop=pageprops&redirects=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1263'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 1097777417, 3786602046, 2591887126
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1052 pass+chfp(0), cp3009 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"pages":{"414830":{"pageid":414830,"ns":0,"title":"Alistair
+        Burt","pageprops":{"wikibase_item":"Q270009"}},"415020":{"pageid":415020,"ns":0,"title":"Gisela
+        Stuart","pageprops":{"wikibase_item":"Q328682"}},"415035":{"pageid":415035,"ns":0,"title":"Yvette
+        Cooper","pageprops":{"wikibase_item":"Q291057"}},"415036":{"pageid":415036,"ns":0,"title":"Jeremy
+        Corbyn","pageprops":{"wikibase_item":"Q291169"}},"415133":{"pageid":415133,"ns":0,"title":"John
+        McDonnell (politician)","pageprops":{"wikibase_item":"Q694695"}},"415143":{"pageid":415143,"ns":0,"title":"Kelvin
+        Hopkins","pageprops":{"wikibase_item":"Q689421"}},"415166":{"pageid":415166,"ns":0,"title":"John
+        Cryer","pageprops":{"wikibase_item":"Q291615"}},"415655":{"pageid":415655,"ns":0,"title":"Pat
+        Doherty","pageprops":{"wikibase_item":"Q300269"}},"415702":{"pageid":415702,"ns":0,"title":"Caroline
+        Lucas","pageprops":{"wikibase_item":"Q9670"}},"416044":{"pageid":416044,"ns":0,"title":"Nicholas
+        Soames","pageprops":{"wikibase_item":"Q390192"}},"416770":{"pageid":416770,"ns":0,"title":"Nigel
+        Dodds","pageprops":{"wikibase_item":"Q300243"}},"416906":{"pageid":416906,"ns":0,"title":"Barry
+        Gardiner","pageprops":{"wikibase_item":"Q391169"}},"416909":{"pageid":416909,"ns":0,"title":"Damian
+        Green","pageprops":{"wikibase_item":"Q391960"}},"416913":{"pageid":416913,"ns":0,"title":"Kate
+        Hoey","pageprops":{"wikibase_item":"Q689166"}},"416961":{"pageid":416961,"ns":0,"title":"Huw
+        Irranca-Davies","pageprops":{"wikibase_item":"Q691388"}},"417484":{"pageid":417484,"ns":0,"title":"Margaret
+        Hodge","pageprops":{"wikibase_item":"Q688913"}},"417506":{"pageid":417506,"ns":0,"title":"Sylvia
+        Hermon","pageprops":{"wikibase_item":"Q676383"}},"417661":{"pageid":417661,"ns":0,"title":"Hywel
+        Williams","pageprops":{"wikibase_item":"Q266189"}},"419124":{"pageid":419124,"ns":0,"title":"Rosie
+        Winterton","pageprops":{"wikibase_item":"Q261773"}},"419138":{"pageid":419138,"ns":0,"title":"Geoffrey
+        Clifton-Brown (born 1953)","pageprops":{"wikibase_item":"Q285183"}},"419342":{"pageid":419342,"ns":0,"title":"David
+        Cameron","pageprops":{"wikibase_item":"Q192"}},"419348":{"pageid":419348,"ns":0,"title":"Alan
+        Campbell (politician)","pageprops":{"wikibase_item":"Q268196"}},"419353":{"pageid":419353,"ns":0,"title":"Ronnie
+        Campbell","pageprops":{"wikibase_item":"Q269005"}},"419388":{"pageid":419388,"ns":0,"title":"Christopher
+        Chope","pageprops":{"wikibase_item":"Q271715"}},"419409":{"pageid":419409,"ns":0,"title":"Vernon
+        Coaker","pageprops":{"wikibase_item":"Q285975"}},"419412":{"pageid":419412,"ns":0,"title":"Ann
+        Coffey","pageprops":{"wikibase_item":"Q286043"}},"419516":{"pageid":419516,"ns":0,"title":"David
+        Crausby","pageprops":{"wikibase_item":"Q291441"}},"419520":{"pageid":419520,"ns":0,"title":"Jim
+        Cunningham (British politician)","pageprops":{"wikibase_item":"Q291683"}},"419626":{"pageid":419626,"ns":0,"title":"Geoffrey
+        Robinson","pageprops":{"wikibase_item":"Q480132"}},"420127":{"pageid":420127,"ns":0,"title":"Angela
+        Eagle","pageprops":{"wikibase_item":"Q302763"}},"420134":{"pageid":420134,"ns":0,"title":"Maria
+        Eagle","pageprops":{"wikibase_item":"Q302815"}},"420136":{"pageid":420136,"ns":0,"title":"Clive
+        Efford","pageprops":{"wikibase_item":"Q302939"}},"420138":{"pageid":420138,"ns":0,"title":"Louise
+        Ellman","pageprops":{"wikibase_item":"Q303253"}},"420144":{"pageid":420144,"ns":0,"title":"Nigel
+        Evans","pageprops":{"wikibase_item":"Q303814"}},"420169":{"pageid":420169,"ns":0,"title":"Wayne
+        David","pageprops":{"wikibase_item":"Q296716"}},"420173":{"pageid":420173,"ns":0,"title":"Geraint
+        Davies (Labour politician)","pageprops":{"wikibase_item":"Q296866"}},"420191":{"pageid":420191,"ns":0,"title":"Jonathan
+        Djanogly","pageprops":{"wikibase_item":"Q300142"}},"420234":{"pageid":420234,"ns":0,"title":"Caroline
+        Flint","pageprops":{"wikibase_item":"Q251095"}},"420324":{"pageid":420324,"ns":0,"title":"David
+        Tredinnick (politician)","pageprops":{"wikibase_item":"Q272259"}},"420566":{"pageid":420566,"ns":0,"title":"Fiona
+        Mactaggart","pageprops":{"wikibase_item":"Q695047"}},"420600":{"pageid":420600,"ns":0,"title":"Alan
+        Johnson","pageprops":{"wikibase_item":"Q332336"}},"421572":{"pageid":421572,"ns":0,"title":"Michael
+        Fabricant","pageprops":{"wikibase_item":"Q304027"}},"421577":{"pageid":421577,"ns":0,"title":"Michael
+        Fallon","pageprops":{"wikibase_item":"Q304095"}},"421588":{"pageid":421588,"ns":0,"title":"Paul
+        Farrelly","pageprops":{"wikibase_item":"Q304172"}},"421594":{"pageid":421594,"ns":0,"title":"Mark
+        Field","pageprops":{"wikibase_item":"Q304450"}},"421641":{"pageid":421641,"ns":0,"title":"Mark
+        Francois","pageprops":{"wikibase_item":"Q390869"}},"421677":{"pageid":421677,"ns":0,"title":"Stephen
+        Pound","pageprops":{"wikibase_item":"Q3412180"}},"421730":{"pageid":421730,"ns":0,"title":"Eric
+        Pickles","pageprops":{"wikibase_item":"Q333493"}},"422814":{"pageid":422814,"ns":0,"title":"George
+        Osborne","pageprops":{"wikibase_item":"Q332493"}},"422823":{"pageid":422823,"ns":0,"title":"Albert
+        Owen","pageprops":{"wikibase_item":"Q576121"}}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:25 GMT
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&pageids=426644%7C426650%7C426677%7C426679%7C426685%7C427335%7C427337%7C427339%7C427366%7C427375%7C427376%7C428585%7C428586%7C428588%7C428603%7C428608%7C428627%7C428630%7C428635%7C428640%7C428657%7C428662%7C429871%7C429874%7C429879%7C433779%7C433863%7C433886%7C434604%7C434606%7C434620%7C434622%7C434625%7C434634%7C434636%7C434656%7C434662%7C434663%7C434707%7C434727%7C434736%7C434743%7C434894%7C434896%7C434899%7C434904%7C434908%7C434909%7C434919%7C434965&ppprop=wikibase_item&prop=pageprops&redirects=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:25 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1208'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 2785540900, 171225384, 2591889704
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1053 pass+chfp(0), cp3012 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"pages":{"426644":{"pageid":426644,"ns":0,"title":"Roger
+        Gale","pageprops":{"wikibase_item":"Q391094"}},"426650":{"pageid":426650,"ns":0,"title":"Edward
+        Garnier","pageprops":{"wikibase_item":"Q334339"}},"426677":{"pageid":426677,"ns":0,"title":"Nick
+        Gibb","pageprops":{"wikibase_item":"Q391300"}},"426679":{"pageid":426679,"ns":0,"title":"Cheryl
+        Gillan","pageprops":{"wikibase_item":"Q333852"}},"426685":{"pageid":426685,"ns":0,"title":"Roger
+        Godsiff","pageprops":{"wikibase_item":"Q391520"}},"427335":{"pageid":427335,"ns":0,"title":"James
+        Gray (British politician)","pageprops":{"wikibase_item":"Q391839"}},"427337":{"pageid":427337,"ns":0,"title":"Chris
+        Grayling","pageprops":{"wikibase_item":"Q337453"}},"427339":{"pageid":427339,"ns":0,"title":"Dominic
+        Grieve","pageprops":{"wikibase_item":"Q332994"}},"427366":{"pageid":427366,"ns":0,"title":"Bernard
+        Jenkin","pageprops":{"wikibase_item":"Q727852"}},"427375":{"pageid":427375,"ns":0,"title":"Helen
+        Jones","pageprops":{"wikibase_item":"Q750421"}},"427376":{"pageid":427376,"ns":0,"title":"Kevan
+        Jones","pageprops":{"wikibase_item":"Q750411"}},"428585":{"pageid":428585,"ns":0,"title":"Eleanor
+        Laing","pageprops":{"wikibase_item":"Q750188"}},"428586":{"pageid":428586,"ns":0,"title":"Norman
+        Lamb","pageprops":{"wikibase_item":"Q750179"}},"428588":{"pageid":428588,"ns":0,"title":"David
+        Lammy","pageprops":{"wikibase_item":"Q534727"}},"428603":{"pageid":428603,"ns":0,"title":"Edward
+        Leigh","pageprops":{"wikibase_item":"Q749980"}},"428608":{"pageid":428608,"ns":0,"title":"Chris
+        Leslie (politician)","pageprops":{"wikibase_item":"Q749759"}},"428627":{"pageid":428627,"ns":0,"title":"Ivan
+        Lewis","pageprops":{"wikibase_item":"Q749659"}},"428630":{"pageid":428630,"ns":0,"title":"Julian
+        Lewis (politician)","pageprops":{"wikibase_item":"Q749612"}},"428635":{"pageid":428635,"ns":0,"title":"Ian
+        Liddell-Grainger","pageprops":{"wikibase_item":"Q748955"}},"428640":{"pageid":428640,"ns":0,"title":"David
+        Lidington","pageprops":{"wikibase_item":"Q748837"}},"428657":{"pageid":428657,"ns":0,"title":"Tim
+        Loughton","pageprops":{"wikibase_item":"Q695228"}},"428662":{"pageid":428662,"ns":0,"title":"Ian
+        Lucas","pageprops":{"wikibase_item":"Q695197"}},"429871":{"pageid":429871,"ns":0,"title":"John
+        Whittingdale","pageprops":{"wikibase_item":"Q264684"}},"429874":{"pageid":429874,"ns":0,"title":"Caroline
+        Spelman","pageprops":{"wikibase_item":"Q332954"}},"429879":{"pageid":429879,"ns":0,"title":"Bill
+        Wiggin","pageprops":{"wikibase_item":"Q265900"}},"433779":{"pageid":433779,"ns":0,"title":"Owen
+        Paterson","pageprops":{"wikibase_item":"Q197894"}},"433863":{"pageid":433863,"ns":0,"title":"Mark
+        Prisk","pageprops":{"wikibase_item":"Q575205"}},"433886":{"pageid":433886,"ns":0,"title":"John
+        Pugh","pageprops":{"wikibase_item":"Q272829"}},"434604":{"pageid":434604,"ns":0,"title":"Fabian
+        Hamilton","pageprops":{"wikibase_item":"Q337812"}},"434606":{"pageid":434606,"ns":0,"title":"Philip
+        Hammond","pageprops":{"wikibase_item":"Q332987"}},"434620":{"pageid":434620,"ns":0,"title":"John
+        Hayes (British politician)","pageprops":{"wikibase_item":"Q478686"}},"434622":{"pageid":434622,"ns":0,"title":"Oliver
+        Heald","pageprops":{"wikibase_item":"Q478711"}},"434625":{"pageid":434625,"ns":0,"title":"John
+        Healey (politician)","pageprops":{"wikibase_item":"Q615077"}},"434634":{"pageid":434634,"ns":0,"title":"Mark
+        Hendrick","pageprops":{"wikibase_item":"Q673628"}},"434636":{"pageid":434636,"ns":0,"title":"Stephen
+        Hepburn","pageprops":{"wikibase_item":"Q673854"}},"434656":{"pageid":434656,"ns":0,"title":"George
+        Howarth","pageprops":{"wikibase_item":"Q689546"}},"434662":{"pageid":434662,"ns":0,"title":"Gerald
+        Howarth","pageprops":{"wikibase_item":"Q689589"}},"434663":{"pageid":434663,"ns":0,"title":"Lindsay
+        Hoyle","pageprops":{"wikibase_item":"Q689660"}},"434707":{"pageid":434707,"ns":0,"title":"Siobhain
+        McDonagh","pageprops":{"wikibase_item":"Q694759"}},"434727":{"pageid":434727,"ns":0,"title":"Patrick
+        McLoughlin","pageprops":{"wikibase_item":"Q333267"}},"434736":{"pageid":434736,"ns":0,"title":"Khalid
+        Mahmood (British politician)","pageprops":{"wikibase_item":"Q695028"}},"434743":{"pageid":434743,"ns":0,"title":"John
+        Mann (British politician)","pageprops":{"wikibase_item":"Q694967"}},"434894":{"pageid":434894,"ns":0,"title":"Alistair
+        Carmichael","pageprops":{"wikibase_item":"Q269124"}},"434896":{"pageid":434896,"ns":0,"title":"Angus
+        Robertson","pageprops":{"wikibase_item":"Q480184"}},"434899":{"pageid":434899,"ns":0,"title":"Mike
+        Weir (politician)","pageprops":{"wikibase_item":"Q264220"}},"434904":{"pageid":434904,"ns":0,"title":"Pete
+        Wishart","pageprops":{"wikibase_item":"Q261675"}},"434908":{"pageid":434908,"ns":0,"title":"Rob
+        Marris","pageprops":{"wikibase_item":"Q7340341"}},"434909":{"pageid":434909,"ns":0,"title":"Gordon
+        Marsden","pageprops":{"wikibase_item":"Q333670"}},"434919":{"pageid":434919,"ns":0,"title":"Alan
+        Meale","pageprops":{"wikibase_item":"Q583946"}},"434965":{"pageid":434965,"ns":0,"title":"Angela
+        Watkinson","pageprops":{"wikibase_item":"Q263653"}}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:25 GMT
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&pageids=434967%7C434973%7C434987%7C435637%7C435638%7C435652%7C449388%7C449469%7C450270%7C450273%7C450288%7C450314%7C450326%7C450334%7C450363%7C450368%7C450390%7C450461%7C450501%7C450506%7C450516%7C450517%7C450520%7C469168%7C469189%7C469238%7C665207%7C723216%7C723838%7C723901%7C723989%7C728093%7C765249%7C883609%7C1082964%7C1165960%7C1243465%7C1281068%7C1281601%7C1290018%7C1299635%7C1368464%7C1481090%7C1589837%7C1627728%7C1649025%7C1695730%7C1770047%7C1794635%7C1794676&ppprop=wikibase_item&prop=pageprops&redirects=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:26 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1262'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 2785541898, 2985123686, 2591890877
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1053 pass+chfp(0), cp3005 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"pages":{"434967":{"pageid":434967,"ns":0,"title":"Tom
+        Watson (Labour politician)","pageprops":{"wikibase_item":"Q263802"}},"434973":{"pageid":434973,"ns":0,"title":"Alan
+        Whitehead","pageprops":{"wikibase_item":"Q264585"}},"434987":{"pageid":434987,"ns":0,"title":"David
+        Winnick","pageprops":{"wikibase_item":"Q261900"}},"435637":{"pageid":435637,"ns":0,"title":"Andrew
+        Murrison","pageprops":{"wikibase_item":"Q578234"}},"435638":{"pageid":435638,"ns":0,"title":"Andrew
+        Mitchell","pageprops":{"wikibase_item":"Q333261"}},"435652":{"pageid":435652,"ns":0,"title":"Mark
+        Tami","pageprops":{"wikibase_item":"Q272569"}},"449388":{"pageid":449388,"ns":0,"title":"Laurence
+        Robertson","pageprops":{"wikibase_item":"Q480148"}},"449469":{"pageid":449469,"ns":0,"title":"Joan
+        Ryan","pageprops":{"wikibase_item":"Q6205412"}},"450270":{"pageid":450270,"ns":0,"title":"Gareth
+        Thomas (English politician)","pageprops":{"wikibase_item":"Q272452"}},"450273":{"pageid":450273,"ns":0,"title":"Stephen
+        Timms","pageprops":{"wikibase_item":"Q272346"}},"450288":{"pageid":450288,"ns":0,"title":"Jon
+        Trickett","pageprops":{"wikibase_item":"Q272234"}},"450314":{"pageid":450314,"ns":0,"title":"Andrew
+        Turner (politician)","pageprops":{"wikibase_item":"Q272155"}},"450326":{"pageid":450326,"ns":0,"title":"Derek
+        Twigg","pageprops":{"wikibase_item":"Q272098"}},"450334":{"pageid":450334,"ns":0,"title":"Andrew
+        Tyrie","pageprops":{"wikibase_item":"Q272008"}},"450363":{"pageid":450363,"ns":0,"title":"Andrew
+        Selous","pageprops":{"wikibase_item":"Q478714"}},"450368":{"pageid":450368,"ns":0,"title":"Barry
+        Sheerman","pageprops":{"wikibase_item":"Q477464"}},"450390":{"pageid":450390,"ns":0,"title":"Keith
+        Simpson (politician)","pageprops":{"wikibase_item":"Q391652"}},"450461":{"pageid":450461,"ns":0,"title":"John
+        Spellar","pageprops":{"wikibase_item":"Q389677"}},"450501":{"pageid":450501,"ns":0,"title":"Gary
+        Streeter","pageprops":{"wikibase_item":"Q328791"}},"450506":{"pageid":450506,"ns":0,"title":"Graham
+        Stringer","pageprops":{"wikibase_item":"Q328737"}},"450516":{"pageid":450516,"ns":0,"title":"Desmond
+        Swayne","pageprops":{"wikibase_item":"Q327823"}},"450517":{"pageid":450517,"ns":0,"title":"Hugo
+        Swire","pageprops":{"wikibase_item":"Q327716"}},"450520":{"pageid":450520,"ns":0,"title":"Robert
+        Syms","pageprops":{"wikibase_item":"Q306250"}},"469168":{"pageid":469168,"ns":0,"title":"Meg
+        Hillier","pageprops":{"wikibase_item":"Q676658"}},"469189":{"pageid":469189,"ns":0,"title":"Diana
+        Johnson","pageprops":{"wikibase_item":"Q727933"}},"469238":{"pageid":469238,"ns":0,"title":"Bob
+        Neill","pageprops":{"wikibase_item":"Q577771"}},"665207":{"pageid":665207,"ns":0,"title":"David
+        Davies (Welsh politician)","pageprops":{"wikibase_item":"Q296797"}},"723216":{"pageid":723216,"ns":0,"title":"Bob
+        Blackman (politician)","pageprops":{"wikibase_item":"Q263875"}},"723838":{"pageid":723838,"ns":0,"title":"Chris
+        Heaton-Harris","pageprops":{"wikibase_item":"Q673322"}},"723901":{"pageid":723901,"ns":0,"title":"Theresa
+        Villiers","pageprops":{"wikibase_item":"Q266793"}},"723989":{"pageid":723989,"ns":0,"title":"Neil
+        Parish","pageprops":{"wikibase_item":"Q333714"}},"728093":{"pageid":728093,"ns":0,"title":"Nick
+        Clegg","pageprops":{"wikibase_item":"Q189947"}},"765249":{"pageid":765249,"ns":0,"title":"Liam
+        Byrne","pageprops":{"wikibase_item":"Q269697"}},"883609":{"pageid":883609,"ns":0,"title":"Iain
+        Wright","pageprops":{"wikibase_item":"Q260618"}},"1082964":{"pageid":1082964,"ns":0,"title":"Greg
+        Hands","pageprops":{"wikibase_item":"Q478227"}},"1165960":{"pageid":1165960,"ns":0,"title":"Jim
+        Fitzpatrick (politician)","pageprops":{"wikibase_item":"Q306169"}},"1243465":{"pageid":1243465,"ns":0,"title":"Andy
+        Slaughter","pageprops":{"wikibase_item":"Q391341"}},"1281068":{"pageid":1281068,"ns":0,"title":"Michael
+        Gove","pageprops":{"wikibase_item":"Q333937"}},"1281601":{"pageid":1281601,"ns":0,"title":"Ed
+        Vaizey","pageprops":{"wikibase_item":"Q267485"}},"1290018":{"pageid":1290018,"ns":0,"title":"Ed
+        Miliband","pageprops":{"wikibase_item":"Q216594"}},"1299635":{"pageid":1299635,"ns":0,"title":"Margot
+        James","pageprops":{"wikibase_item":"Q727347"}},"1368464":{"pageid":1368464,"ns":0,"title":"David
+        Hanson (politician)","pageprops":{"wikibase_item":"Q478248"}},"1481090":{"pageid":1481090,"ns":0,"title":"Kit
+        Malthouse","pageprops":{"wikibase_item":"Q6417459"}},"1589837":{"pageid":1589837,"ns":0,"title":"Nick
+        Hurd","pageprops":{"wikibase_item":"Q691299"}},"1627728":{"pageid":1627728,"ns":0,"title":"Nick
+        Boles","pageprops":{"wikibase_item":"Q264365"}},"1649025":{"pageid":1649025,"ns":0,"title":"David
+        Simpson (British politician)","pageprops":{"wikibase_item":"Q392000"}},"1695730":{"pageid":1695730,"ns":0,"title":"Dawn
+        Butler","pageprops":{"wikibase_item":"Q5242429"}},"1770047":{"pageid":1770047,"ns":0,"title":"Stewart
+        Hosie","pageprops":{"wikibase_item":"Q689514"}},"1794635":{"pageid":1794635,"ns":0,"title":"Jim
+        Dowd (politician)","pageprops":{"wikibase_item":"Q300368"}},"1794676":{"pageid":1794676,"ns":0,"title":"Emily
+        Thornberry","pageprops":{"wikibase_item":"Q272408"}}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:26 GMT
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&pageids=1847104%7C1847198%7C1847495%7C1847558%7C1847597%7C1848077%7C1848639%7C1849086%7C1849949%7C1850095%7C1850796%7C1850820%7C1853133%7C1854262%7C1854607%7C1854850%7C1855074%7C1855115%7C1857648%7C1859042%7C1859778%7C1860750%7C1862762%7C1863450%7C1866749%7C1867366%7C1870449%7C1871091%7C1871869%7C1872014%7C1872049%7C1872058%7C1872216%7C1872551%7C1872569%7C1872579%7C1872601%7C1872613%7C1872632%7C1872663%7C1872687%7C1872707%7C1872729%7C1872744%7C1872760%7C1872804%7C1872829%7C1872846%7C1872870%7C1872887&ppprop=wikibase_item&prop=pageprops&redirects=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:26 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1294'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 1373242774, 171228668, 2591893614
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1054 pass+chfp(0), cp3012 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"pages":{"1847104":{"pageid":1847104,"ns":0,"title":"Justine
+        Greening","pageprops":{"wikibase_item":"Q333012"}},"1847198":{"pageid":1847198,"ns":0,"title":"Sadiq
+        Khan","pageprops":{"wikibase_item":"Q334155"}},"1847495":{"pageid":1847495,"ns":0,"title":"Stephen
+        Hammond","pageprops":{"wikibase_item":"Q332979"}},"1847558":{"pageid":1847558,"ns":0,"title":"Richard
+        Benyon","pageprops":{"wikibase_item":"Q262931"}},"1847597":{"pageid":1847597,"ns":0,"title":"Natascha
+        Engel","pageprops":{"wikibase_item":"Q303411"}},"1848077":{"pageid":1848077,"ns":0,"title":"Greg
+        Mulholland","pageprops":{"wikibase_item":"Q337568"}},"1848639":{"pageid":1848639,"ns":0,"title":"Rob
+        Wilson","pageprops":{"wikibase_item":"Q262108"}},"1849086":{"pageid":1849086,"ns":0,"title":"Angela
+        C. Smith","pageprops":{"wikibase_item":"Q390949"}},"1849949":{"pageid":1849949,"ns":0,"title":"Jeremy
+        Wright","pageprops":{"wikibase_item":"Q260489"}},"1850095":{"pageid":1850095,"ns":0,"title":"Daniel
+        Kawczynski","pageprops":{"wikibase_item":"Q692315"}},"1850796":{"pageid":1850796,"ns":0,"title":"Jamie
+        Reed","pageprops":{"wikibase_item":"Q574991"}},"1850820":{"pageid":1850820,"ns":0,"title":"Geoffrey
+        Cox (British politician)","pageprops":{"wikibase_item":"Q291303"}},"1853133":{"pageid":1853133,"ns":0,"title":"Lyn
+        Brown (politician)","pageprops":{"wikibase_item":"Q265870"}},"1854262":{"pageid":1854262,"ns":0,"title":"Alasdair
+        McDonnell","pageprops":{"wikibase_item":"Q583571"}},"1854607":{"pageid":1854607,"ns":0,"title":"Roberta
+        Blackman-Woods","pageprops":{"wikibase_item":"Q263923"}},"1854850":{"pageid":1854850,"ns":0,"title":"James
+        Brokenshire","pageprops":{"wikibase_item":"Q265140"}},"1855074":{"pageid":1855074,"ns":0,"title":"Sammy
+        Wilson","pageprops":{"wikibase_item":"Q262040"}},"1855115":{"pageid":1855115,"ns":0,"title":"Robert
+        Goodwill","pageprops":{"wikibase_item":"Q391644"}},"1857648":{"pageid":1857648,"ns":0,"title":"Kerry
+        McCarthy","pageprops":{"wikibase_item":"Q581095"}},"1859042":{"pageid":1859042,"ns":0,"title":"Mark
+        Williams (politician)","pageprops":{"wikibase_item":"Q266357"}},"1859778":{"pageid":1859778,"ns":0,"title":"Philip
+        Davies","pageprops":{"wikibase_item":"Q300004"}},"1860750":{"pageid":1860750,"ns":0,"title":"Mary
+        Creagh","pageprops":{"wikibase_item":"Q291470"}},"1862762":{"pageid":1862762,"ns":0,"title":"Stewart
+        Jackson","pageprops":{"wikibase_item":"Q727276"}},"1863450":{"pageid":1863450,"ns":0,"title":"Graham
+        Stuart (politician)","pageprops":{"wikibase_item":"Q328641"}},"1866749":{"pageid":1866749,"ns":0,"title":"Tim
+        Farron","pageprops":{"wikibase_item":"Q304251"}},"1867366":{"pageid":1867366,"ns":0,"title":"Mike
+        Penning","pageprops":{"wikibase_item":"Q575593"}},"1870449":{"pageid":1870449,"ns":0,"title":"Ben
+        Wallace (politician)","pageprops":{"wikibase_item":"Q263166"}},"1871091":{"pageid":1871091,"ns":0,"title":"Andrew
+        Gwynne","pageprops":{"wikibase_item":"Q392216"}},"1871869":{"pageid":1871869,"ns":0,"title":"Tobias
+        Ellwood","pageprops":{"wikibase_item":"Q303299"}},"1872014":{"pageid":1872014,"ns":0,"title":"David
+        Burrowes","pageprops":{"wikibase_item":"Q269957"}},"1872049":{"pageid":1872049,"ns":0,"title":"Mark
+        Harper","pageprops":{"wikibase_item":"Q478276"}},"1872058":{"pageid":1872058,"ns":0,"title":"Grant
+        Shapps","pageprops":{"wikibase_item":"Q478596"}},"1872216":{"pageid":1872216,"ns":0,"title":"John
+        Penrose","pageprops":{"wikibase_item":"Q575513"}},"1872551":{"pageid":1872551,"ns":0,"title":"Nick
+        Herbert","pageprops":{"wikibase_item":"Q333283"}},"1872569":{"pageid":1872569,"ns":0,"title":"Maria
+        Miller","pageprops":{"wikibase_item":"Q334261"}},"1872579":{"pageid":1872579,"ns":0,"title":"David
+        Evennett","pageprops":{"wikibase_item":"Q303883"}},"1872601":{"pageid":1872601,"ns":0,"title":"Helen
+        Goodman","pageprops":{"wikibase_item":"Q391605"}},"1872613":{"pageid":1872613,"ns":0,"title":"David
+        Anderson (British politician)","pageprops":{"wikibase_item":"Q3409354"}},"1872632":{"pageid":1872632,"ns":0,"title":"Madeleine
+        Moon","pageprops":{"wikibase_item":"Q290474"}},"1872663":{"pageid":1872663,"ns":0,"title":"David
+        Jones (Clwyd West MP)","pageprops":{"wikibase_item":"Q728167"}},"1872687":{"pageid":1872687,"ns":0,"title":"David
+        Mundell","pageprops":{"wikibase_item":"Q333520"}},"1872707":{"pageid":1872707,"ns":0,"title":"Sharon
+        Hodgson","pageprops":{"wikibase_item":"Q689041"}},"1872729":{"pageid":1872729,"ns":0,"title":"Adam
+        Holloway","pageprops":{"wikibase_item":"Q689348"}},"1872744":{"pageid":1872744,"ns":0,"title":"Anne
+        Milton","pageprops":{"wikibase_item":"Q580784"}},"1872760":{"pageid":1872760,"ns":0,"title":"Douglas
+        Carswell","pageprops":{"wikibase_item":"Q269322"}},"1872804":{"pageid":1872804,"ns":0,"title":"Philip
+        Hollobone","pageprops":{"wikibase_item":"Q689287"}},"1872829":{"pageid":1872829,"ns":0,"title":"Nia
+        Griffith","pageprops":{"wikibase_item":"Q392101"}},"1872846":{"pageid":1872846,"ns":0,"title":"Philip
+        Dunne (Ludlow MP)","pageprops":{"wikibase_item":"Q302546"}},"1872870":{"pageid":1872870,"ns":0,"title":"Nadine
+        Dorries","pageprops":{"wikibase_item":"Q258586"}},"1872887":{"pageid":1872887,"ns":0,"title":"Angus
+        MacNeil","pageprops":{"wikibase_item":"Q695092"}}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:26 GMT
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&pageids=1872895%7C1873034%7C1873069%7C1873585%7C1873595%7C1873602%7C1873613%7C1873621%7C1873629%7C1873658%7C1873667%7C1873684%7C1873695%7C1873707%7C1876802%7C1906583%7C1923728%7C1980076%7C1996199%7C2656347%7C2853551%7C2948826%7C2955799%7C3532417%7C3665467%7C4673412%7C4783763%7C5276205%7C5603691%7C5770475%7C6158791%7C6304425%7C6617581%7C6817209%7C7121294%7C7134310%7C8971026%7C9041992%7C9169995%7C9341317%7C9690656%7C9939550%7C9944636%7C10078053%7C10078436%7C10448055%7C10850875%7C11200839%7C12116716%7C12250098&ppprop=wikibase_item&prop=pageprops&redirects=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:27 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1370'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 3846281854, 3324265196, 2591896062
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1067 pass+chfp(0), cp3030 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"pages":{"1872895":{"pageid":1872895,"ns":0,"title":"Jessica
+        Morden","pageprops":{"wikibase_item":"Q580431"}},"1873034":{"pageid":1873034,"ns":0,"title":"Mark
+        Lancaster","pageprops":{"wikibase_item":"Q750161"}},"1873069":{"pageid":1873069,"ns":0,"title":"Shailesh
+        Vara","pageprops":{"wikibase_item":"Q267234"}},"1873585":{"pageid":1873585,"ns":0,"title":"Stephen
+        Crabb","pageprops":{"wikibase_item":"Q291393"}},"1873595":{"pageid":1873595,"ns":0,"title":"James
+        Duddridge","pageprops":{"wikibase_item":"Q302309"}},"1873602":{"pageid":1873602,"ns":0,"title":"David
+        Gauke","pageprops":{"wikibase_item":"Q391256"}},"1873613":{"pageid":1873613,"ns":0,"title":"Jeremy
+        Hunt","pageprops":{"wikibase_item":"Q333533"}},"1873621":{"pageid":1873621,"ns":0,"title":"Anne
+        Main","pageprops":{"wikibase_item":"Q694996"}},"1873629":{"pageid":1873629,"ns":0,"title":"Robert
+        Flello","pageprops":{"wikibase_item":"Q390549"}},"1873658":{"pageid":1873658,"ns":0,"title":"Peter
+        Bone","pageprops":{"wikibase_item":"Q264426"}},"1873667":{"pageid":1873667,"ns":0,"title":"Adam
+        Afriyie","pageprops":{"wikibase_item":"Q258473"}},"1873684":{"pageid":1873684,"ns":0,"title":"Pat
+        McFadden (British politician)","pageprops":{"wikibase_item":"Q694676"}},"1873695":{"pageid":1873695,"ns":0,"title":"Barbara
+        Keeley","pageprops":{"wikibase_item":"Q750293"}},"1873707":{"pageid":1873707,"ns":0,"title":"Mark
+        Pritchard (politician)","pageprops":{"wikibase_item":"Q575183"}},"1876802":{"pageid":1876802,"ns":0,"title":"Rosie
+        Cooper","pageprops":{"wikibase_item":"Q290855"}},"1906583":{"pageid":1906583,"ns":0,"title":"Chris
+        Philp","pageprops":{"wikibase_item":"Q16972528"}},"1923728":{"pageid":1923728,"ns":0,"title":"Charles
+        Walker (British politician)","pageprops":{"wikibase_item":"Q262539"}},"1980076":{"pageid":1980076,"ns":0,"title":"Steve
+        McCabe (politician)","pageprops":{"wikibase_item":"Q694869"}},"1996199":{"pageid":1996199,"ns":0,"title":"Ian
+        Austin (politician)","pageprops":{"wikibase_item":"Q259935"}},"2656347":{"pageid":2656347,"ns":0,"title":"Rory
+        Stewart","pageprops":{"wikibase_item":"Q328892"}},"2853551":{"pageid":2853551,"ns":0,"title":"Conor
+        McGinn","pageprops":{"wikibase_item":"Q5162256"}},"2948826":{"pageid":2948826,"ns":0,"title":"Kevin
+        Brennan (politician)","pageprops":{"wikibase_item":"Q264964"}},"2955799":{"pageid":2955799,"ns":0,"title":"Jack
+        Dromey","pageprops":{"wikibase_item":"Q302244"}},"3532417":{"pageid":3532417,"ns":0,"title":"Tom
+        Elliott (politician)","pageprops":{"wikibase_item":"Q7815715"}},"3665467":{"pageid":3665467,"ns":0,"title":"Zac
+        Goldsmith","pageprops":{"wikibase_item":"Q391562"}},"4673412":{"pageid":4673412,"ns":0,"title":"Mary
+        Glindon","pageprops":{"wikibase_item":"Q391483"}},"4783763":{"pageid":4783763,"ns":0,"title":"Brandon
+        Lewis","pageprops":{"wikibase_item":"Q749687"}},"5276205":{"pageid":5276205,"ns":0,"title":"Jeff
+        Smith (British politician)","pageprops":{"wikibase_item":"Q20648365"}},"5603691":{"pageid":5603691,"ns":0,"title":"Priti
+        Patel","pageprops":{"wikibase_item":"Q575733"}},"5770475":{"pageid":5770475,"ns":0,"title":"Jesse
+        Norman","pageprops":{"wikibase_item":"Q577024"}},"6158791":{"pageid":6158791,"ns":0,"title":"Paul
+        Flynn (politician)","pageprops":{"wikibase_item":"Q390611"}},"6304425":{"pageid":6304425,"ns":0,"title":"Robin
+        Walker","pageprops":{"wikibase_item":"Q263076"}},"6617581":{"pageid":6617581,"ns":0,"title":"Jacob
+        Rees-Mogg","pageprops":{"wikibase_item":"Q574980"}},"6817209":{"pageid":6817209,"ns":0,"title":"Jeremy
+        Lefroy","pageprops":{"wikibase_item":"Q750018"}},"7121294":{"pageid":7121294,"ns":0,"title":"Penny
+        Mordaunt","pageprops":{"wikibase_item":"Q580464"}},"7134310":{"pageid":7134310,"ns":0,"title":"Matthew
+        Hancock","pageprops":{"wikibase_item":"Q478161"}},"8971026":{"pageid":8971026,"ns":0,"title":"Francie
+        Molloy","pageprops":{"wikibase_item":"Q5479812"}},"9041992":{"pageid":9041992,"ns":0,"title":"Jim
+        Shannon","pageprops":{"wikibase_item":"Q478702"}},"9169995":{"pageid":9169995,"ns":0,"title":"Margaret
+        Ritchie (politician)","pageprops":{"wikibase_item":"Q501860"}},"9341317":{"pageid":9341317,"ns":0,"title":"Neil
+        Carmichael (Conservative politician)","pageprops":{"wikibase_item":"Q269260"}},"9690656":{"pageid":9690656,"ns":0,"title":"Damian
+        Hinds","pageprops":{"wikibase_item":"Q676947"}},"9939550":{"pageid":9939550,"ns":0,"title":"Mickey
+        Brady","pageprops":{"wikibase_item":"Q6838584"}},"9944636":{"pageid":9944636,"ns":0,"title":"Paul
+        Maskey","pageprops":{"wikibase_item":"Q694929"}},"10078053":{"pageid":10078053,"ns":0,"title":"Glyn
+        Davies (British politician)","pageprops":{"wikibase_item":"Q296920"}},"10078436":{"pageid":10078436,"ns":0,"title":"Alun
+        Cairns","pageprops":{"wikibase_item":"Q268030"}},"10448055":{"pageid":10448055,"ns":0,"title":"Virendra
+        Sharma","pageprops":{"wikibase_item":"Q478387"}},"10850875":{"pageid":10850875,"ns":0,"title":"Anna
+        Soubry","pageprops":{"wikibase_item":"Q389855"}},"11200839":{"pageid":11200839,"ns":0,"title":"Gloria
+        De Piero","pageprops":{"wikibase_item":"Q300049"}},"12116716":{"pageid":12116716,"ns":0,"title":"Phil
+        Wilson (British politician)","pageprops":{"wikibase_item":"Q262201"}},"12250098":{"pageid":12250098,"ns":0,"title":"Peter
+        Heaton-Jones","pageprops":{"wikibase_item":"Q7174603"}}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:27 GMT
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&pageids=12596431%7C12814384%7C13183548%7C13939912%7C15253270%7C17169295%7C17279286%7C17311614%7C17750010%7C18152335%7C18488726%7C18681491%7C19065069%7C19133811%7C19248714%7C19288600%7C19360784%7C21234593%7C21436944%7C22453270%7C22970692%7C23030172%7C23619322%7C23681392%7C23864436%7C23898624%7C24303079%7C24421613%7C24421634%7C25600906%7C25958960%7C26051384%7C26119658%7C26363008%7C26471684%7C26484783%7C26657615%7C26787240%7C26822115%7C26898700%7C27040510%7C27219595%7C27260678%7C27261001%7C27261798%7C27262177%7C27262471%7C27262613%7C27262909%7C27263823&ppprop=wikibase_item&prop=pageprops&redirects=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1393'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 2785549796, 370542838, 2591898418
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1053 pass+chfp(0), cp3004 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"pages":{"12596431":{"pageid":12596431,"ns":0,"title":"Toby
+        Perkins","pageprops":{"wikibase_item":"Q575462"}},"12814384":{"pageid":12814384,"ns":0,"title":"Ben
+        Gummer","pageprops":{"wikibase_item":"Q392174"}},"13183548":{"pageid":13183548,"ns":0,"title":"Simon
+        Kirby","pageprops":{"wikibase_item":"Q750228"}},"13939912":{"pageid":13939912,"ns":0,"title":"Chuka
+        Umunna","pageprops":{"wikibase_item":"Q267648"}},"15253270":{"pageid":15253270,"ns":0,"title":"Stephen
+        Kinnock","pageprops":{"wikibase_item":"Q3377178"}},"17169295":{"pageid":17169295,"ns":0,"title":"Wes
+        Streeting","pageprops":{"wikibase_item":"Q7983764"}},"17279286":{"pageid":17279286,"ns":0,"title":"Edward
+        Timpson","pageprops":{"wikibase_item":"Q272318"}},"17311614":{"pageid":17311614,"ns":0,"title":"James
+        Cleverly","pageprops":{"wikibase_item":"Q6131460"}},"17750010":{"pageid":17750010,"ns":0,"title":"Mike
+        Freer","pageprops":{"wikibase_item":"Q391008"}},"18152335":{"pageid":18152335,"ns":0,"title":"John
+        Howell (politician)","pageprops":{"wikibase_item":"Q689627"}},"18488726":{"pageid":18488726,"ns":0,"title":"John
+        Nicolson (politician)","pageprops":{"wikibase_item":"Q14948811"}},"18681491":{"pageid":18681491,"ns":0,"title":"Keir
+        Starmer","pageprops":{"wikibase_item":"Q6383803"}},"19065069":{"pageid":19065069,"ns":0,"title":"Boris
+        Johnson","pageprops":{"wikibase_item":"Q180589"}},"19133811":{"pageid":19133811,"ns":0,"title":"Paul
+        Blomfield","pageprops":{"wikibase_item":"Q264132"}},"19248714":{"pageid":19248714,"ns":0,"title":"Gavin
+        Barwell","pageprops":{"wikibase_item":"Q260651"}},"19288600":{"pageid":19288600,"ns":0,"title":"Jon
+        Cruddas","pageprops":{"wikibase_item":"Q291591"}},"19360784":{"pageid":19360784,"ns":0,"title":"Rushanara
+        Ali","pageprops":{"wikibase_item":"Q259423"}},"21234593":{"pageid":21234593,"ns":0,"title":"Alex
+        Salmond","pageprops":{"wikibase_item":"Q10652"}},"21436944":{"pageid":21436944,"ns":0,"title":"Anne
+        McLaughlin","pageprops":{"wikibase_item":"Q373047"}},"22453270":{"pageid":22453270,"ns":0,"title":"Richard
+        Harrington (politician)","pageprops":{"wikibase_item":"Q478291"}},"22970692":{"pageid":22970692,"ns":0,"title":"Craig
+        Mackinlay","pageprops":{"wikibase_item":"Q5181182"}},"23030172":{"pageid":23030172,"ns":0,"title":"Danny
+        Kinahan","pageprops":{"wikibase_item":"Q5220520"}},"23619322":{"pageid":23619322,"ns":0,"title":"Chloe
+        Smith","pageprops":{"wikibase_item":"Q333680"}},"23681392":{"pageid":23681392,"ns":0,"title":"Jonathan
+        Lord","pageprops":{"wikibase_item":"Q695241"}},"23864436":{"pageid":23864436,"ns":0,"title":"Sarah
+        Wollaston","pageprops":{"wikibase_item":"Q261553"}},"23898624":{"pageid":23898624,"ns":0,"title":"Bob
+        Stewart (British Army officer)","pageprops":{"wikibase_item":"Q341511"}},"24303079":{"pageid":24303079,"ns":0,"title":"Rachel
+        Reeves","pageprops":{"wikibase_item":"Q574896"}},"24421613":{"pageid":24421613,"ns":0,"title":"Ian
+        Lavery","pageprops":{"wikibase_item":"Q750129"}},"24421634":{"pageid":24421634,"ns":0,"title":"Jo
+        Johnson","pageprops":{"wikibase_item":"Q728063"}},"25600906":{"pageid":25600906,"ns":0,"title":"Henry
+        Smith (British politician)","pageprops":{"wikibase_item":"Q390849"}},"25958960":{"pageid":25958960,"ns":0,"title":"Graham
+        Jones (politician)","pageprops":{"wikibase_item":"Q728202"}},"26051384":{"pageid":26051384,"ns":0,"title":"Luciana
+        Berger","pageprops":{"wikibase_item":"Q263299"}},"26119658":{"pageid":26119658,"ns":0,"title":"Therese
+        Coffey","pageprops":{"wikibase_item":"Q290554"}},"26363008":{"pageid":26363008,"ns":0,"title":"Helen
+        Grant (politician)","pageprops":{"wikibase_item":"Q391792"}},"26471684":{"pageid":26471684,"ns":0,"title":"Oliver
+        Colvile","pageprops":{"wikibase_item":"Q290733"}},"26484783":{"pageid":26484783,"ns":0,"title":"George
+        Kerevan","pageprops":{"wikibase_item":"Q5541308"}},"26657615":{"pageid":26657615,"ns":0,"title":"Peter
+        Aldous","pageprops":{"wikibase_item":"Q258963"}},"26787240":{"pageid":26787240,"ns":0,"title":"Amber
+        Rudd","pageprops":{"wikibase_item":"Q479171"}},"26822115":{"pageid":26822115,"ns":0,"title":"Harriett
+        Baldwin","pageprops":{"wikibase_item":"Q260429"}},"26898700":{"pageid":26898700,"ns":0,"title":"Claire
+        Perry","pageprops":{"wikibase_item":"Q575452"}},"27040510":{"pageid":27040510,"ns":0,"title":"Steve
+        Rotheram","pageprops":{"wikibase_item":"Q480068"}},"27219595":{"pageid":27219595,"ns":0,"title":"Phillip
+        Lee (politician)","pageprops":{"wikibase_item":"Q750061"}},"27260678":{"pageid":27260678,"ns":0,"title":"Bridget
+        Phillipson","pageprops":{"wikibase_item":"Q575337"}},"27261001":{"pageid":27261001,"ns":0,"title":"Julie
+        Elliott","pageprops":{"wikibase_item":"Q303011"}},"27261798":{"pageid":27261798,"ns":0,"title":"Chris
+        Skidmore","pageprops":{"wikibase_item":"Q391526"}},"27262177":{"pageid":27262177,"ns":0,"title":"Jane
+        Ellison","pageprops":{"wikibase_item":"Q303157"}},"27262471":{"pageid":27262471,"ns":0,"title":"Rebecca
+        Harris","pageprops":{"wikibase_item":"Q478305"}},"27262613":{"pageid":27262613,"ns":0,"title":"Stephen
+        Metcalfe (politician)","pageprops":{"wikibase_item":"Q272643"}},"27262909":{"pageid":27262909,"ns":0,"title":"Charlie
+        Elphicke","pageprops":{"wikibase_item":"Q303351"}},"27263823":{"pageid":27263823,"ns":0,"title":"Marcus
+        Jones (British politician)","pageprops":{"wikibase_item":"Q750398"}}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:28 GMT
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&pageids=27263887%7C27264194%7C27264341%7C27264640%7C27264864%7C27265015%7C27265206%7C27265339%7C27265384%7C27265799%7C27266070%7C27266258%7C27266387%7C27266407%7C27266653%7C27266895%7C27267137%7C27267341%7C27267782%7C27268507%7C27268571%7C27268625%7C27268695%7C27269553%7C27270199%7C27270232%7C27270934%7C27271162%7C27271687%7C27271794%7C27272079%7C27272220%7C27272442%7C27273546%7C27273581%7C27273652%7C27273818%7C27274107%7C27274143%7C27274243%7C27274466%7C27274618%7C27275520%7C27276873%7C27278540%7C27278836%7C27279085%7C27279901%7C27280049%7C27280171&ppprop=wikibase_item&prop=pageprops&redirects=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:28 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1286'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 1608860273, 3003428484, 2591899862
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1055 pass+chfp(0), cp3040 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"pages":{"27263887":{"pageid":27263887,"ns":0,"title":"Karl
+        McCartney","pageprops":{"wikibase_item":"Q694811"}},"27264194":{"pageid":27264194,"ns":0,"title":"Gavin
+        Shuker","pageprops":{"wikibase_item":"Q392367"}},"27264341":{"pageid":27264341,"ns":0,"title":"Nicola
+        Blackwood","pageprops":{"wikibase_item":"Q263969"}},"27264640":{"pageid":27264640,"ns":0,"title":"Stuart
+        Andrew","pageprops":{"wikibase_item":"Q259707"}},"27264864":{"pageid":27264864,"ns":0,"title":"Eilidh
+        Whiteford","pageprops":{"wikibase_item":"Q264510"}},"27265015":{"pageid":27265015,"ns":0,"title":"Caroline
+        Nokes","pageprops":{"wikibase_item":"Q577227"}},"27265206":{"pageid":27265206,"ns":0,"title":"David
+        Mowat","pageprops":{"wikibase_item":"Q579661"}},"27265339":{"pageid":27265339,"ns":0,"title":"Alok
+        Sharma","pageprops":{"wikibase_item":"Q478531"}},"27265384":{"pageid":27265384,"ns":0,"title":"Jason
+        McCartney (politician)","pageprops":{"wikibase_item":"Q694825"}},"27265799":{"pageid":27265799,"ns":0,"title":"Kris
+        Hopkins","pageprops":{"wikibase_item":"Q689452"}},"27266070":{"pageid":27266070,"ns":0,"title":"Richard
+        Fuller (Bedford MP)","pageprops":{"wikibase_item":"Q391073"}},"27266258":{"pageid":27266258,"ns":0,"title":"Lisa
+        Nandy","pageprops":{"wikibase_item":"Q578037"}},"27266387":{"pageid":27266387,"ns":0,"title":"Matthew
+        Offord","pageprops":{"wikibase_item":"Q576537"}},"27266407":{"pageid":27266407,"ns":0,"title":"Shabana
+        Mahmood","pageprops":{"wikibase_item":"Q695007"}},"27266653":{"pageid":27266653,"ns":0,"title":"Yasmin
+        Qureshi","pageprops":{"wikibase_item":"Q267930"}},"27266895":{"pageid":27266895,"ns":0,"title":"Nigel
+        Adams","pageprops":{"wikibase_item":"Q258292"}},"27267137":{"pageid":27267137,"ns":0,"title":"Martin
+        Vickers","pageprops":{"wikibase_item":"Q266905"}},"27267341":{"pageid":27267341,"ns":0,"title":"Simon
+        Danczuk","pageprops":{"wikibase_item":"Q291818"}},"27267782":{"pageid":27267782,"ns":0,"title":"Karl
+        Turner (politician)","pageprops":{"wikibase_item":"Q272123"}},"27268507":{"pageid":27268507,"ns":0,"title":"Guto
+        Bebb","pageprops":{"wikibase_item":"Q260772"}},"27268571":{"pageid":27268571,"ns":0,"title":"Charlotte
+        Leslie","pageprops":{"wikibase_item":"Q749793"}},"27268625":{"pageid":27268625,"ns":0,"title":"Nigel
+        Mills (politician)","pageprops":{"wikibase_item":"Q580847"}},"27268695":{"pageid":27268695,"ns":0,"title":"David
+        Morris (Conservative politician)","pageprops":{"wikibase_item":"Q580247"}},"27269553":{"pageid":27269553,"ns":0,"title":"Dominic
+        Raab","pageprops":{"wikibase_item":"Q268584"}},"27270199":{"pageid":27270199,"ns":0,"title":"Heather
+        Wheeler","pageprops":{"wikibase_item":"Q264374"}},"27270232":{"pageid":27270232,"ns":0,"title":"Sam
+        Gyimah","pageprops":{"wikibase_item":"Q392241"}},"27270934":{"pageid":27270934,"ns":0,"title":"Elizabeth
+        Truss","pageprops":{"wikibase_item":"Q272201"}},"27271162":{"pageid":27271162,"ns":0,"title":"Sheryll
+        Murray","pageprops":{"wikibase_item":"Q578272"}},"27271687":{"pageid":27271687,"ns":0,"title":"Julian
+        Smith (politician)","pageprops":{"wikibase_item":"Q390794"}},"27271794":{"pageid":27271794,"ns":0,"title":"Julian
+        Sturdy","pageprops":{"wikibase_item":"Q328608"}},"27272079":{"pageid":27272079,"ns":0,"title":"Steve
+        Brine","pageprops":{"wikibase_item":"Q265088"}},"27272220":{"pageid":27272220,"ns":0,"title":"Andrew
+        Percy","pageprops":{"wikibase_item":"Q575493"}},"27272442":{"pageid":27272442,"ns":0,"title":"Kate
+        Green","pageprops":{"wikibase_item":"Q391986"}},"27273546":{"pageid":27273546,"ns":0,"title":"Anne
+        Marie Morris","pageprops":{"wikibase_item":"Q580321"}},"27273581":{"pageid":27273581,"ns":0,"title":"Lilian
+        Greenwood","pageprops":{"wikibase_item":"Q392064"}},"27273652":{"pageid":27273652,"ns":0,"title":"Catherine
+        McKinnell","pageprops":{"wikibase_item":"Q3411409"}},"27273818":{"pageid":27273818,"ns":0,"title":"Stella
+        Creasy","pageprops":{"wikibase_item":"Q291502"}},"27274107":{"pageid":27274107,"ns":0,"title":"Tom
+        Blenkinsop","pageprops":{"wikibase_item":"Q264072"}},"27274143":{"pageid":27274143,"ns":0,"title":"Nicky
+        Morgan (politician)","pageprops":{"wikibase_item":"Q580375"}},"27274243":{"pageid":27274243,"ns":0,"title":"George
+        Eustice","pageprops":{"wikibase_item":"Q303510"}},"27274466":{"pageid":27274466,"ns":0,"title":"Michael
+        Dugher","pageprops":{"wikibase_item":"Q302363"}},"27274618":{"pageid":27274618,"ns":0,"title":"Stephen
+        McPartland","pageprops":{"wikibase_item":"Q584156"}},"27275520":{"pageid":27275520,"ns":0,"title":"Alison
+        McGovern","pageprops":{"wikibase_item":"Q694639"}},"27276873":{"pageid":27276873,"ns":0,"title":"Nick
+        Smith (British politician)","pageprops":{"wikibase_item":"Q390760"}},"27278540":{"pageid":27278540,"ns":0,"title":"Stephen
+        Barclay","pageprops":{"wikibase_item":"Q260546"}},"27278836":{"pageid":27278836,"ns":0,"title":"Richard
+        Graham (politician)","pageprops":{"wikibase_item":"Q391756"}},"27279085":{"pageid":27279085,"ns":0,"title":"Andrew
+        Stephenson","pageprops":{"wikibase_item":"Q341570"}},"27279901":{"pageid":27279901,"ns":0,"title":"Grahame
+        Morris","pageprops":{"wikibase_item":"Q580215"}},"27280049":{"pageid":27280049,"ns":0,"title":"Sarah
+        Newton","pageprops":{"wikibase_item":"Q577362"}},"27280171":{"pageid":27280171,"ns":0,"title":"Daniel
+        Poulter","pageprops":{"wikibase_item":"Q575239"}}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:28 GMT
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&pageids=27280710%7C27281000%7C27281194%7C27281458%7C27281663%7C27282040%7C27282217%7C27282341%7C27282843%7C27283452%7C27283462%7C27283593%7C27283740%7C27284572%7C27284618%7C27285207%7C27286027%7C27286521%7C27286927%7C27290591%7C27290733%7C27291024%7C27291443%7C27291778%7C27291991%7C27292040%7C27292071%7C27292088%7C27292483%7C27293792%7C27294043%7C27294272%7C27294634%7C27294797%7C27295985%7C27296191%7C27296698%7C27302490%7C27303943%7C27305991%7C27306515%7C27306797%7C27306911%7C27306991%7C27307194%7C27309266%7C27311324%7C27316155%7C27317054%7C27318945&ppprop=wikibase_item&prop=pageprops&redirects=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:29 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1300'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 2149221436, 3786615626, 2591902932
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1066 pass+chfp(0), cp3009 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"pages":{"27280710":{"pageid":27280710,"ns":0,"title":"Alec
+        Shelbrooke","pageprops":{"wikibase_item":"Q393751"}},"27281000":{"pageid":27281000,"ns":0,"title":"Nic
+        Dakin","pageprops":{"wikibase_item":"Q291785"}},"27281194":{"pageid":27281194,"ns":0,"title":"Simon
+        Hart","pageprops":{"wikibase_item":"Q478345"}},"27281458":{"pageid":27281458,"ns":0,"title":"Owen
+        Smith (politician)","pageprops":{"wikibase_item":"Q390690"}},"27281663":{"pageid":27281663,"ns":0,"title":"Susan
+        Jones","pageprops":{"wikibase_item":"Q750381"}},"27282040":{"pageid":27282040,"ns":0,"title":"Jonathan
+        Edwards (politician)","pageprops":{"wikibase_item":"Q302892"}},"27282217":{"pageid":27282217,"ns":0,"title":"Jackie
+        Doyle-Price","pageprops":{"wikibase_item":"Q302036"}},"27282341":{"pageid":27282341,"ns":0,"title":"Valerie
+        Vaz","pageprops":{"wikibase_item":"Q266978"}},"27282843":{"pageid":27282843,"ns":0,"title":"Andrew
+        Bridgen","pageprops":{"wikibase_item":"Q265028"}},"27283452":{"pageid":27283452,"ns":0,"title":"Ian
+        Murray (British politician)","pageprops":{"wikibase_item":"Q578432"}},"27283462":{"pageid":27283462,"ns":0,"title":"John
+        Woodcock (politician)","pageprops":{"wikibase_item":"Q261214"}},"27283593":{"pageid":27283593,"ns":0,"title":"Paul
+        Maynard","pageprops":{"wikibase_item":"Q694881"}},"27283740":{"pageid":27283740,"ns":0,"title":"Yvonne
+        Fovargue","pageprops":{"wikibase_item":"Q390756"}},"27284572":{"pageid":27284572,"ns":0,"title":"Nadhim
+        Zahawi","pageprops":{"wikibase_item":"Q259361"}},"27284618":{"pageid":27284618,"ns":0,"title":"Andrew
+        Jones (British politician)","pageprops":{"wikibase_item":"Q728119"}},"27285207":{"pageid":27285207,"ns":0,"title":"George
+        Hollingbery","pageprops":{"wikibase_item":"Q689239"}},"27286027":{"pageid":27286027,"ns":0,"title":"George
+        Freeman (politician)","pageprops":{"wikibase_item":"Q390983"}},"27286521":{"pageid":27286521,"ns":0,"title":"Sajid
+        Javid","pageprops":{"wikibase_item":"Q727798"}},"27286927":{"pageid":27286927,"ns":0,"title":"Conor
+        Burns","pageprops":{"wikibase_item":"Q269925"}},"27290591":{"pageid":27290591,"ns":0,"title":"Pauline
+        Latham","pageprops":{"wikibase_item":"Q750135"}},"27290733":{"pageid":27290733,"ns":0,"title":"David
+        Rutley","pageprops":{"wikibase_item":"Q479064"}},"27291024":{"pageid":27291024,"ns":0,"title":"Richard
+        Drax","pageprops":{"wikibase_item":"Q302187"}},"27291443":{"pageid":27291443,"ns":0,"title":"Graham
+        Evans","pageprops":{"wikibase_item":"Q303639"}},"27291778":{"pageid":27291778,"ns":0,"title":"Chi
+        Onwurah","pageprops":{"wikibase_item":"Q576208"}},"27291991":{"pageid":27291991,"ns":0,"title":"Jack
+        Lopresti","pageprops":{"wikibase_item":"Q695257"}},"27292040":{"pageid":27292040,"ns":0,"title":"Andrew
+        Griffiths (politician)","pageprops":{"wikibase_item":"Q392149"}},"27292071":{"pageid":27292071,"ns":0,"title":"David
+        Nuttall","pageprops":{"wikibase_item":"Q576890"}},"27292088":{"pageid":27292088,"ns":0,"title":"Craig
+        Whittaker","pageprops":{"wikibase_item":"Q264636"}},"27292483":{"pageid":27292483,"ns":0,"title":"John
+        Stevenson (British politician)","pageprops":{"wikibase_item":"Q341538"}},"27293792":{"pageid":27293792,"ns":0,"title":"Mel
+        Stride","pageprops":{"wikibase_item":"Q328769"}},"27294043":{"pageid":27294043,"ns":0,"title":"Stephen
+        Phillips (politician)","pageprops":{"wikibase_item":"Q575441"}},"27294272":{"pageid":27294272,"ns":0,"title":"Damian
+        Collins","pageprops":{"wikibase_item":"Q290646"}},"27294634":{"pageid":27294634,"ns":0,"title":"Emma
+        Reynolds","pageprops":{"wikibase_item":"Q501942"}},"27294797":{"pageid":27294797,"ns":0,"title":"Mark
+        Garnier","pageprops":{"wikibase_item":"Q391222"}},"27295985":{"pageid":27295985,"ns":0,"title":"Fiona
+        Bruce (politician)","pageprops":{"wikibase_item":"Q266078"}},"27296191":{"pageid":27296191,"ns":0,"title":"Chris
+        Evans (British politician)","pageprops":{"wikibase_item":"Q303577"}},"27296698":{"pageid":27296698,"ns":0,"title":"Guy
+        Opperman","pageprops":{"wikibase_item":"Q576195"}},"27302490":{"pageid":27302490,"ns":0,"title":"James
+        Wharton","pageprops":{"wikibase_item":"Q264337"}},"27303943":{"pageid":27303943,"ns":0,"title":"Kwasi
+        Kwarteng","pageprops":{"wikibase_item":"Q750204"}},"27305991":{"pageid":27305991,"ns":0,"title":"Steve
+        Baker (politician)","pageprops":{"wikibase_item":"Q260111"}},"27306515":{"pageid":27306515,"ns":0,"title":"Robert
+        Halfon","pageprops":{"wikibase_item":"Q392375"}},"27306797":{"pageid":27306797,"ns":0,"title":"Heidi
+        Alexander","pageprops":{"wikibase_item":"Q259359"}},"27306911":{"pageid":27306911,"ns":0,"title":"Tracey
+        Crouch","pageprops":{"wikibase_item":"Q291557"}},"27306991":{"pageid":27306991,"ns":0,"title":"Jenny
+        Chapman","pageprops":{"wikibase_item":"Q269638"}},"27307194":{"pageid":27307194,"ns":0,"title":"Gareth
+        Johnson","pageprops":{"wikibase_item":"Q727981"}},"27309266":{"pageid":27309266,"ns":0,"title":"Jake
+        Berry","pageprops":{"wikibase_item":"Q263350"}},"27311324":{"pageid":27311324,"ns":0,"title":"Teresa
+        Pearce","pageprops":{"wikibase_item":"Q575669"}},"27316155":{"pageid":27316155,"ns":0,"title":"Rehman
+        Chishti","pageprops":{"wikibase_item":"Q271683"}},"27317054":{"pageid":27317054,"ns":0,"title":"Iain
+        Stewart (politician)","pageprops":{"wikibase_item":"Q328953"}},"27318945":{"pageid":27318945,"ns":0,"title":"Ian
+        Mearns","pageprops":{"wikibase_item":"Q583906"}}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:29 GMT
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&pageids=27319806%7C27320488%7C27327541%7C27329380%7C27331911%7C27331990%7C27332025%7C27342161%7C27351148%7C27353327%7C27353528%7C27354747%7C27354781%7C27354938%7C27358422%7C27362090%7C27362227%7C27362282%7C27368350%7C27464304%7C27581500%7C27748899%7C27918146%7C30464103%7C30876369%7C30960897%7C31697595%7C31704180%7C31704434%7C33131881%7C34070960%7C35542972%7C36007212%7C36140989%7C36151846%7C37656698%7C37742380%7C37788803%7C37796971%7C38624156%7C39122415%7C40616772%7C41052136%7C41318527%7C41567961%7C41937950%7C42592035%7C42627633%7C43068256%7C43824791&ppprop=wikibase_item&prop=pageprops&redirects=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:29 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1412'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 2785556168, 4161343677, 2591904423
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1053 pass+chfp(0), cp3007 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"pages":{"27319806":{"pageid":27319806,"ns":0,"title":"Mark
+        Menzies","pageprops":{"wikibase_item":"Q583750"}},"27320488":{"pageid":27320488,"ns":0,"title":"Caroline
+        Dinenage","pageprops":{"wikibase_item":"Q300107"}},"27327541":{"pageid":27327541,"ns":0,"title":"Andrew
+        Bingham","pageprops":{"wikibase_item":"Q263729"}},"27329380":{"pageid":27329380,"ns":0,"title":"Michael
+        Ellis (British politician)","pageprops":{"wikibase_item":"Q303085"}},"27331911":{"pageid":27331911,"ns":0,"title":"Liz
+        Kendall","pageprops":{"wikibase_item":"Q750260"}},"27331990":{"pageid":27331990,"ns":0,"title":"Justin
+        Tomlinson","pageprops":{"wikibase_item":"Q272288"}},"27332025":{"pageid":27332025,"ns":0,"title":"Pat
+        Glass","pageprops":{"wikibase_item":"Q391442"}},"27342161":{"pageid":27342161,"ns":0,"title":"Mark
+        Pawsey","pageprops":{"wikibase_item":"Q575693"}},"27351148":{"pageid":27351148,"ns":0,"title":"Karen
+        Lumley","pageprops":{"wikibase_item":"Q695147"}},"27353327":{"pageid":27353327,"ns":0,"title":"Chris
+        White (politician)","pageprops":{"wikibase_item":"Q264420"}},"27353528":{"pageid":27353528,"ns":0,"title":"Christopher
+        Pincher","pageprops":{"wikibase_item":"Q575266"}},"27354747":{"pageid":27354747,"ns":0,"title":"Bill
+        Esterson","pageprops":{"wikibase_item":"Q303465"}},"27354781":{"pageid":27354781,"ns":0,"title":"Alex
+        Cunningham","pageprops":{"wikibase_item":"Q291649"}},"27354938":{"pageid":27354938,"ns":0,"title":"Jonathan
+        Reynolds","pageprops":{"wikibase_item":"Q501926"}},"27358422":{"pageid":27358422,"ns":0,"title":"Karen
+        Bradley","pageprops":{"wikibase_item":"Q264560"}},"27362090":{"pageid":27362090,"ns":0,"title":"Robert
+        Buckland","pageprops":{"wikibase_item":"Q269853"}},"27362227":{"pageid":27362227,"ns":0,"title":"Gavin
+        Williamson","pageprops":{"wikibase_item":"Q262409"}},"27362282":{"pageid":27362282,"ns":0,"title":"Andrea
+        Leadsom","pageprops":{"wikibase_item":"Q750091"}},"27368350":{"pageid":27368350,"ns":0,"title":"Mark
+        Spencer (politician)","pageprops":{"wikibase_item":"Q389189"}},"27464304":{"pageid":27464304,"ns":0,"title":"Steve
+        Reed (politician)","pageprops":{"wikibase_item":"Q7613711"}},"27581500":{"pageid":27581500,"ns":0,"title":"James
+        Morris (British politician)","pageprops":{"wikibase_item":"Q580086"}},"27748899":{"pageid":27748899,"ns":0,"title":"Gordon
+        Henderson (politician)","pageprops":{"wikibase_item":"Q673525"}},"27918146":{"pageid":27918146,"ns":0,"title":"John
+        Glen (politician)","pageprops":{"wikibase_item":"Q391465"}},"30464103":{"pageid":30464103,"ns":0,"title":"Debbie
+        Abrahams","pageprops":{"wikibase_item":"Q258088"}},"30876369":{"pageid":30876369,"ns":0,"title":"Gregory
+        Campbell (politician)","pageprops":{"wikibase_item":"Q268465"}},"30960897":{"pageid":30960897,"ns":0,"title":"Dan
+        Jarvis","pageprops":{"wikibase_item":"Q727587"}},"31697595":{"pageid":31697595,"ns":0,"title":"Jon
+        Ashworth","pageprops":{"wikibase_item":"Q259895"}},"31704180":{"pageid":31704180,"ns":0,"title":"Antoinette
+        Sandbach","pageprops":{"wikibase_item":"Q4775602"}},"31704434":{"pageid":31704434,"ns":0,"title":"Byron
+        Davies","pageprops":{"wikibase_item":"Q5004338"}},"33131881":{"pageid":33131881,"ns":0,"title":"Tulip
+        Siddiq","pageprops":{"wikibase_item":"Q7852071"}},"34070960":{"pageid":34070960,"ns":0,"title":"Seema
+        Malhotra","pageprops":{"wikibase_item":"Q694984"}},"35542972":{"pageid":35542972,"ns":0,"title":"Lucy
+        Powell","pageprops":{"wikibase_item":"Q6698469"}},"36007212":{"pageid":36007212,"ns":0,"title":"Gavin
+        Robinson","pageprops":{"wikibase_item":"Q5528262"}},"36140989":{"pageid":36140989,"ns":0,"title":"Drew
+        Hendry","pageprops":{"wikibase_item":"Q5307191"}},"36151846":{"pageid":36151846,"ns":0,"title":"Callum
+        McCaig","pageprops":{"wikibase_item":"Q5022974"}},"37656698":{"pageid":37656698,"ns":0,"title":"Stephen
+        Doughty","pageprops":{"wikibase_item":"Q7609085"}},"37742380":{"pageid":37742380,"ns":0,"title":"Sarah
+        Champion (politician)","pageprops":{"wikibase_item":"Q7422176"}},"37788803":{"pageid":37788803,"ns":0,"title":"Andy
+        McDonald (politician)","pageprops":{"wikibase_item":"Q4761018"}},"37796971":{"pageid":37796971,"ns":0,"title":"Rupa
+        Huq","pageprops":{"wikibase_item":"Q7380182"}},"38624156":{"pageid":38624156,"ns":0,"title":"Lucy
+        Allan (politician)","pageprops":{"wikibase_item":"Q16150309"}},"39122415":{"pageid":39122415,"ns":0,"title":"Emma
+        Lewell-Buck","pageprops":{"wikibase_item":"Q16190712"}},"40616772":{"pageid":40616772,"ns":0,"title":"Victoria
+        Borwick","pageprops":{"wikibase_item":"Q7926595"}},"41052136":{"pageid":41052136,"ns":0,"title":"Gerald
+        Kaufman","pageprops":{"wikibase_item":"Q750345"}},"41318527":{"pageid":41318527,"ns":0,"title":"Nigel
+        Huddleston","pageprops":{"wikibase_item":"Q16211496"}},"41567961":{"pageid":41567961,"ns":0,"title":"Natalie
+        McGarry","pageprops":{"wikibase_item":"Q16732295"}},"41937950":{"pageid":41937950,"ns":0,"title":"Mike
+        Kane","pageprops":{"wikibase_item":"Q16190632"}},"42592035":{"pageid":42592035,"ns":0,"title":"Tasmina
+        Ahmed-Sheikh","pageprops":{"wikibase_item":"Q16934040"}},"42627633":{"pageid":42627633,"ns":0,"title":"Robert
+        Jenrick","pageprops":{"wikibase_item":"Q17180679"}},"43068256":{"pageid":43068256,"ns":0,"title":"Jim
+        McMahon (politician)","pageprops":{"wikibase_item":"Q17306267"}},"43824791":{"pageid":43824791,"ns":0,"title":"Margaret
+        Greenwood","pageprops":{"wikibase_item":"Q19957949"}}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:29 GMT
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&pageids=43824971%7C44070260%7C45157857%7C45260091%7C45286895%7C45568232%7C46214034%7C46399592%7C46400342%7C46437939%7C46622934%7C46638621%7C46639094%7C46639793%7C46641161%7C46641170%7C46641313%7C46641532%7C46641683%7C46641694%7C46641756%7C46641760%7C46641814%7C46641820%7C46641832%7C46641857%7C46641921%7C46642007%7C46642057%7C46642087%7C46642117%7C46642138%7C46642194%7C46642212%7C46642289%7C46642355%7C46642360%7C46642381%7C46642390%7C46642403%7C46642506%7C46642521%7C46642547%7C46642575%7C46642592%7C46642598%7C46642622%7C46642660%7C46642705%7C46642746&ppprop=wikibase_item&prop=pageprops&redirects=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:30 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1344'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 2149224287, 305711223, 2591905549
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1066 pass+chfp(0), cp3013 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"pages":{"43824971":{"pageid":43824971,"ns":0,"title":"Angela
+        Rayner","pageprops":{"wikibase_item":"Q18164278"}},"44070260":{"pageid":44070260,"ns":0,"title":"Liz
+        McInnes","pageprops":{"wikibase_item":"Q18211142"}},"45157857":{"pageid":45157857,"ns":0,"title":"Ian
+        Blackford","pageprops":{"wikibase_item":"Q18921442"}},"45260091":{"pageid":45260091,"ns":0,"title":"Chris
+        Stephens (politician)","pageprops":{"wikibase_item":"Q19059345"}},"45286895":{"pageid":45286895,"ns":0,"title":"Scott
+        Mann (politician)","pageprops":{"wikibase_item":"Q20647692"}},"45568232":{"pageid":45568232,"ns":0,"title":"Ruth
+        Smeeth","pageprops":{"wikibase_item":"Q19586268"}},"46214034":{"pageid":46214034,"ns":0,"title":"Craig
+        Tracey","pageprops":{"wikibase_item":"Q20195470"}},"46399592":{"pageid":46399592,"ns":0,"title":"Victoria
+        Prentis","pageprops":{"wikibase_item":"Q20054083"}},"46400342":{"pageid":46400342,"ns":0,"title":"Kate
+        Hollern","pageprops":{"wikibase_item":"Q19874280"}},"46437939":{"pageid":46437939,"ns":0,"title":"Greg
+        Clark","pageprops":{"wikibase_item":"Q271800"}},"46622934":{"pageid":46622934,"ns":0,"title":"Rishi
+        Sunak","pageprops":{"wikibase_item":"Q20055561"}},"46638621":{"pageid":46638621,"ns":0,"title":"Helen
+        Whately","pageprops":{"wikibase_item":"Q20747098"}},"46639094":{"pageid":46639094,"ns":0,"title":"Royston
+        Smith (politician)","pageprops":{"wikibase_item":"Q20648372"}},"46639793":{"pageid":46639793,"ns":0,"title":"List
+        of MPs elected in the United Kingdom general election, 2015","pageprops":{"wikibase_item":"Q16959464"}},"46641161":{"pageid":46641161,"ns":0,"title":"Mhairi
+        Black","pageprops":{"wikibase_item":"Q19863151"}},"46641170":{"pageid":46641170,"ns":0,"title":"Alan
+        Brown (Scottish politician)","pageprops":{"wikibase_item":"Q19883288"}},"46641313":{"pageid":46641313,"ns":0,"title":"John
+        McNally (politician)","pageprops":{"wikibase_item":"Q19882661"}},"46641532":{"pageid":46641532,"ns":0,"title":"Ronnie
+        Cowan (politician)","pageprops":{"wikibase_item":"Q19883025"}},"46641683":{"pageid":46641683,"ns":0,"title":"Peter
+        Grant (politician)","pageprops":{"wikibase_item":"Q19882721"}},"46641694":{"pageid":46641694,"ns":0,"title":"Chris
+        Law (politician)","pageprops":{"wikibase_item":"Q19875413"}},"46641756":{"pageid":46641756,"ns":0,"title":"Lisa
+        Cameron","pageprops":{"wikibase_item":"Q19871819"}},"46641760":{"pageid":46641760,"ns":0,"title":"James
+        Berry (politician)","pageprops":{"wikibase_item":"Q19865337"}},"46641814":{"pageid":46641814,"ns":0,"title":"Philippa
+        Whitford","pageprops":{"wikibase_item":"Q19874405"}},"46641820":{"pageid":46641820,"ns":0,"title":"Douglas
+        Chapman (Scottish politician)","pageprops":{"wikibase_item":"Q19882922"}},"46641832":{"pageid":46641832,"ns":0,"title":"Neil
+        Gray","pageprops":{"wikibase_item":"Q19882694"}},"46641857":{"pageid":46641857,"ns":0,"title":"Kirsty
+        Blackman","pageprops":{"wikibase_item":"Q19868554"}},"46641921":{"pageid":46641921,"ns":0,"title":"Phil
+        Boswell","pageprops":{"wikibase_item":"Q19882792"}},"46642007":{"pageid":46642007,"ns":0,"title":"Martin
+        Docherty","pageprops":{"wikibase_item":"Q19883117"}},"46642057":{"pageid":46642057,"ns":0,"title":"Alison
+        Thewliss","pageprops":{"wikibase_item":"Q19882771"}},"46642087":{"pageid":46642087,"ns":0,"title":"Patrick
+        Grady","pageprops":{"wikibase_item":"Q19883135"}},"46642117":{"pageid":46642117,"ns":0,"title":"Carol
+        Monaghan","pageprops":{"wikibase_item":"Q19875589"}},"46642138":{"pageid":46642138,"ns":0,"title":"Stewart
+        McDonald (politician)","pageprops":{"wikibase_item":"Q20011564"}},"46642194":{"pageid":46642194,"ns":0,"title":"Roger
+        Mullin","pageprops":{"wikibase_item":"Q19882759"}},"46642212":{"pageid":46642212,"ns":0,"title":"Angela
+        Crawley","pageprops":{"wikibase_item":"Q19883053"}},"46642289":{"pageid":46642289,"ns":0,"title":"Michelle
+        Donelan","pageprops":{"wikibase_item":"Q19872694"}},"46642355":{"pageid":46642355,"ns":0,"title":"Gavin
+        Newlands","pageprops":{"wikibase_item":"Q19883145"}},"46642360":{"pageid":46642360,"ns":0,"title":"Kirsten
+        Oswald","pageprops":{"wikibase_item":"Q19874839"}},"46642381":{"pageid":46642381,"ns":0,"title":"Corri
+        Wilson","pageprops":{"wikibase_item":"Q19883283"}},"46642390":{"pageid":46642390,"ns":0,"title":"Margaret
+        Ferrier","pageprops":{"wikibase_item":"Q19883129"}},"46642403":{"pageid":46642403,"ns":0,"title":"Marcus
+        Fysh","pageprops":{"wikibase_item":"Q19873418"}},"46642506":{"pageid":46642506,"ns":0,"title":"Tania
+        Mathias","pageprops":{"wikibase_item":"Q20647740"}},"46642521":{"pageid":46642521,"ns":0,"title":"Daniel
+        Zeichner","pageprops":{"wikibase_item":"Q20128211"}},"46642547":{"pageid":46642547,"ns":0,"title":"Wendy
+        Morton","pageprops":{"wikibase_item":"Q19917814"}},"46642575":{"pageid":46642575,"ns":0,"title":"Nus
+        Ghani","pageprops":{"wikibase_item":"Q19957887"}},"46642592":{"pageid":46642592,"ns":0,"title":"Edward
+        Argar","pageprops":{"wikibase_item":"Q19938322"}},"46642598":{"pageid":46642598,"ns":0,"title":"Brendan
+        O''Hara","pageprops":{"wikibase_item":"Q19878984"}},"46642622":{"pageid":46642622,"ns":0,"title":"Will
+        Quince","pageprops":{"wikibase_item":"Q16751766"}},"46642660":{"pageid":46642660,"ns":0,"title":"Karin
+        Smyth","pageprops":{"wikibase_item":"Q17057181"}},"46642705":{"pageid":46642705,"ns":0,"title":"Thangam
+        Debbonaire","pageprops":{"wikibase_item":"Q19882875"}},"46642746":{"pageid":46642746,"ns":0,"title":"Neil
+        Coyle","pageprops":{"wikibase_item":"Q19957144"}}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:30 GMT
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&pageids=46642754%7C46642779%7C46642795%7C46642827%7C46643310%7C46643393%7C46643495%7C46643722%7C46643790%7C46643844%7C46643848%7C46643872%7C46643939%7C46644039%7C46644326%7C46644584%7C46644838%7C46644858%7C46644884%7C46644924%7C46644953%7C46644993%7C46645061%7C46645189%7C46645396%7C46645665%7C46645714%7C46645744%7C46645781%7C46645796%7C46645804%7C46645820%7C46645822%7C46645836%7C46645845%7C46645877%7C46645960%7C46645975%7C46645977%7C46645990%7C46646008%7C46646029%7C46646040%7C46646043%7C46646074%7C46646158%7C46646159%7C46646188%7C46646217%7C46646263&ppprop=wikibase_item&prop=pageprops&redirects=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:30 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1252'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 2149226880, 3880000214, 2591908000
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1066 pass+chfp(0), cp3003 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"pages":{"46642754":{"pageid":46642754,"ns":0,"title":"Ben
+        Howlett (politician)","pageprops":{"wikibase_item":"Q19874398"}},"46642779":{"pageid":46642779,"ns":0,"title":"Catherine
+        West","pageprops":{"wikibase_item":"Q19871931"}},"46642795":{"pageid":46642795,"ns":0,"title":"Maria
+        Caulfield","pageprops":{"wikibase_item":"Q19956815"}},"46642827":{"pageid":46642827,"ns":0,"title":"David
+        Warburton","pageprops":{"wikibase_item":"Q5240825"}},"46643310":{"pageid":46643310,"ns":0,"title":"Andrea
+        Jenkyns","pageprops":{"wikibase_item":"Q19874642"}},"46643393":{"pageid":46643393,"ns":0,"title":"Cat
+        Smith","pageprops":{"wikibase_item":"Q19930597"}},"46643495":{"pageid":46643495,"ns":0,"title":"Kelly
+        Tolhurst","pageprops":{"wikibase_item":"Q20055581"}},"46643722":{"pageid":46643722,"ns":0,"title":"Alex
+        Chalk","pageprops":{"wikibase_item":"Q19956858"}},"46643790":{"pageid":46643790,"ns":0,"title":"Peter
+        Dowd","pageprops":{"wikibase_item":"Q19957586"}},"46643844":{"pageid":46643844,"ns":0,"title":"Vicky
+        Foxcroft","pageprops":{"wikibase_item":"Q19957802"}},"46643848":{"pageid":46643848,"ns":0,"title":"Colleen
+        Fletcher","pageprops":{"wikibase_item":"Q19957790"}},"46643872":{"pageid":46643872,"ns":0,"title":"Ranil
+        Jayawardena","pageprops":{"wikibase_item":"Q19870873"}},"46643939":{"pageid":46643939,"ns":0,"title":"Amanda
+        Solloway","pageprops":{"wikibase_item":"Q20648487"}},"46644039":{"pageid":46644039,"ns":0,"title":"Naz
+        Shah","pageprops":{"wikibase_item":"Q19882845"}},"46644326":{"pageid":46644326,"ns":0,"title":"Jo
+        Churchill","pageprops":{"wikibase_item":"Q19872133"}},"46644584":{"pageid":46644584,"ns":0,"title":"Amanda
+        Milling","pageprops":{"wikibase_item":"Q20648982"}},"46644838":{"pageid":46644838,"ns":0,"title":"Richard
+        Burgon","pageprops":{"wikibase_item":"Q19871710"}},"46644858":{"pageid":46644858,"ns":0,"title":"Jo
+        Cox","pageprops":{"wikibase_item":"Q19872361"}},"46644884":{"pageid":46644884,"ns":0,"title":"Sue
+        Hayman","pageprops":{"wikibase_item":"Q19874021"}},"46644924":{"pageid":46644924,"ns":0,"title":"Rachael
+        Maskell","pageprops":{"wikibase_item":"Q20127923"}},"46644953":{"pageid":46644953,"ns":0,"title":"Michael
+        Tomlinson","pageprops":{"wikibase_item":"Q20647896"}},"46644993":{"pageid":46644993,"ns":0,"title":"James
+        Heappey","pageprops":{"wikibase_item":"Q19958052"}},"46645061":{"pageid":46645061,"ns":0,"title":"Huw
+        Merriman","pageprops":{"wikibase_item":"Q20195263"}},"46645189":{"pageid":46645189,"ns":0,"title":"Julie
+        Cooper (politician)","pageprops":{"wikibase_item":"Q19872266"}},"46645396":{"pageid":46645396,"ns":0,"title":"Calum
+        Kerr","pageprops":{"wikibase_item":"Q19881592"}},"46645665":{"pageid":46645665,"ns":0,"title":"Anne-Marie
+        Trevelyan","pageprops":{"wikibase_item":"Q20648244"}},"46645714":{"pageid":46645714,"ns":0,"title":"Paul
+        Monaghan","pageprops":{"wikibase_item":"Q19059607"}},"46645744":{"pageid":46645744,"ns":0,"title":"Owen
+        Thompson","pageprops":{"wikibase_item":"Q19883152"}},"46645781":{"pageid":46645781,"ns":0,"title":"Alan
+        Mak (politician)","pageprops":{"wikibase_item":"Q19868483"}},"46645796":{"pageid":46645796,"ns":0,"title":"James
+        Cartlidge","pageprops":{"wikibase_item":"Q19956787"}},"46645804":{"pageid":46645804,"ns":0,"title":"Hannah
+        Bardell","pageprops":{"wikibase_item":"Q19882420"}},"46645820":{"pageid":46645820,"ns":0,"title":"Marie
+        Rimmer","pageprops":{"wikibase_item":"Q20648527"}},"46645822":{"pageid":46645822,"ns":0,"title":"Joanna
+        Cherry","pageprops":{"wikibase_item":"Q19882967"}},"46645836":{"pageid":46645836,"ns":0,"title":"Peter
+        Kyle (politician)","pageprops":{"wikibase_item":"Q20113749"}},"46645845":{"pageid":46645845,"ns":0,"title":"Marion
+        Fellows","pageprops":{"wikibase_item":"Q19881816"}},"46645877":{"pageid":46645877,"ns":0,"title":"Simon
+        Hoare","pageprops":{"wikibase_item":"Q19958093"}},"46645960":{"pageid":46645960,"ns":0,"title":"Victoria
+        Atkins","pageprops":{"wikibase_item":"Q19938362"}},"46645975":{"pageid":46645975,"ns":0,"title":"Anna
+        Turley","pageprops":{"wikibase_item":"Q20648420"}},"46645977":{"pageid":46645977,"ns":0,"title":"Caroline
+        Ansell","pageprops":{"wikibase_item":"Q19870758"}},"46645990":{"pageid":46645990,"ns":0,"title":"Judith
+        Cummins","pageprops":{"wikibase_item":"Q19957188"}},"46646008":{"pageid":46646008,"ns":0,"title":"William
+        Wragg","pageprops":{"wikibase_item":"Q20732037"}},"46646029":{"pageid":46646029,"ns":0,"title":"Thomas
+        Tugendhat","pageprops":{"wikibase_item":"Q20648385"}},"46646040":{"pageid":46646040,"ns":0,"title":"Deidre
+        Brock","pageprops":{"wikibase_item":"Q19871637"}},"46646043":{"pageid":46646043,"ns":0,"title":"Matt
+        Warman","pageprops":{"wikibase_item":"Q20648556"}},"46646074":{"pageid":46646074,"ns":0,"title":"Matthew
+        Pennycook","pageprops":{"wikibase_item":"Q20203414"}},"46646158":{"pageid":46646158,"ns":0,"title":"Jo
+        Stevens","pageprops":{"wikibase_item":"Q20128115"}},"46646159":{"pageid":46646159,"ns":0,"title":"Mims
+        Davies","pageprops":{"wikibase_item":"Q19957306"}},"46646188":{"pageid":46646188,"ns":0,"title":"Steven
+        Paterson","pageprops":{"wikibase_item":"Q19882494"}},"46646217":{"pageid":46646217,"ns":0,"title":"Kevin
+        Hollinrake","pageprops":{"wikibase_item":"Q19958100"}},"46646263":{"pageid":46646263,"ns":0,"title":"Justin
+        Madders","pageprops":{"wikibase_item":"Q20647673"}}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:30 GMT
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&pageids=46646280%7C46646293%7C46646315%7C46646317%7C46646352%7C46646353%7C46646379%7C46646389%7C46646455%7C46646472%7C46646539%7C46646541%7C46646560%7C46646629%7C46646644%7C46646648%7C46646675%7C46646710%7C46646725%7C46646750%7C46646779%7C46646817%7C46646833%7C46646901%7C46646918%7C46646944%7C46646961%7C46646985%7C46647002%7C46647123%7C46647144%7C46647164%7C46647171%7C46647200%7C46647219%7C46647356%7C46647446%7C46647572%7C46648167%7C46648305%7C46648437%7C46648734%7C46648738%7C46650639%7C46650682%7C46650716%7C46651792%7C46652738%7C46652764%7C46652793&ppprop=wikibase_item&prop=pageprops&redirects=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:31 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1306'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 1294134590, 182108582, 2591910376
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1065 pass+chfp(0), cp3006 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"pages":{"46646280":{"pageid":46646280,"ns":0,"title":"Melanie
+        Onn","pageprops":{"wikibase_item":"Q20054075"}},"46646293":{"pageid":46646293,"ns":0,"title":"Louise
+        Haigh","pageprops":{"wikibase_item":"Q19957992"}},"46646315":{"pageid":46646315,"ns":0,"title":"Richard
+        Arkless","pageprops":{"wikibase_item":"Q19882263"}},"46646317":{"pageid":46646317,"ns":0,"title":"Nick
+        Thomas-Symonds","pageprops":{"wikibase_item":"Q20648913"}},"46646352":{"pageid":46646352,"ns":0,"title":"Patricia
+        Gibson","pageprops":{"wikibase_item":"Q19883132"}},"46646353":{"pageid":46646353,"ns":0,"title":"Lucy
+        Frazer","pageprops":{"wikibase_item":"Q19957811"}},"46646379":{"pageid":46646379,"ns":0,"title":"Jess
+        Phillips (politician)","pageprops":{"wikibase_item":"Q19979409"}},"46646389":{"pageid":46646389,"ns":0,"title":"Holly
+        Walker-Lynch","pageprops":{"wikibase_item":"Q20127909"}},"46646455":{"pageid":46646455,"ns":0,"title":"Stuart
+        McDonald (Scottish politician)","pageprops":{"wikibase_item":"Q19883251"}},"46646472":{"pageid":46646472,"ns":0,"title":"Chris
+        Green (politician)","pageprops":{"wikibase_item":"Q19957945"}},"46646539":{"pageid":46646539,"ns":0,"title":"Alberto
+        Costa (British politician)","pageprops":{"wikibase_item":"Q19957124"}},"46646541":{"pageid":46646541,"ns":0,"title":"Imran
+        Hussain (British politician)","pageprops":{"wikibase_item":"Q19958134"}},"46646560":{"pageid":46646560,"ns":0,"title":"Ruth
+        Cadbury","pageprops":{"wikibase_item":"Q19871785"}},"46646629":{"pageid":46646629,"ns":0,"title":"Kate
+        Osamor","pageprops":{"wikibase_item":"Q20022488"}},"46646644":{"pageid":46646644,"ns":0,"title":"Christopher
+        Davies (Conservative politician)","pageprops":{"wikibase_item":"Q19957299"}},"46646648":{"pageid":46646648,"ns":0,"title":"Liz
+        Saville-Roberts","pageprops":{"wikibase_item":"Q19868633"}},"46646675":{"pageid":46646675,"ns":0,"title":"Derek
+        Thomas (politician)","pageprops":{"wikibase_item":"Q20177497"}},"46646710":{"pageid":46646710,"ns":0,"title":"Maggie
+        Throup","pageprops":{"wikibase_item":"Q20647819"}},"46646725":{"pageid":46646725,"ns":0,"title":"Heidi
+        Allen","pageprops":{"wikibase_item":"Q19870689"}},"46646750":{"pageid":46646750,"ns":0,"title":"Mike
+        Wood (Conservative politician)","pageprops":{"wikibase_item":"Q20648325"}},"46646779":{"pageid":46646779,"ns":0,"title":"Helen
+        Hayes (politician)","pageprops":{"wikibase_item":"Q19874017"}},"46646817":{"pageid":46646817,"ns":0,"title":"Carolyn
+        Harris (politician)","pageprops":{"wikibase_item":"Q19958026"}},"46646833":{"pageid":46646833,"ns":0,"title":"Suella
+        Fernandes","pageprops":{"wikibase_item":"Q19957769"}},"46646901":{"pageid":46646901,"ns":0,"title":"Gerald
+        Jones","pageprops":{"wikibase_item":"Q20647531"}},"46646918":{"pageid":46646918,"ns":0,"title":"Flick
+        Drummond","pageprops":{"wikibase_item":"Q19872756"}},"46646944":{"pageid":46646944,"ns":0,"title":"Christina
+        Rees (politician)","pageprops":{"wikibase_item":"Q20648332"}},"46646961":{"pageid":46646961,"ns":0,"title":"Seema
+        Kennedy","pageprops":{"wikibase_item":"Q20195397"}},"46646985":{"pageid":46646985,"ns":0,"title":"Tommy
+        Sheppard","pageprops":{"wikibase_item":"Q19880278"}},"46647002":{"pageid":46647002,"ns":0,"title":"Craig
+        Williams (politician)","pageprops":{"wikibase_item":"Q20647978"}},"46647123":{"pageid":46647123,"ns":0,"title":"Oliver
+        Dowden","pageprops":{"wikibase_item":"Q19957590"}},"46647144":{"pageid":46647144,"ns":0,"title":"Stephen
+        Gethins","pageprops":{"wikibase_item":"Q19882482"}},"46647164":{"pageid":46647164,"ns":0,"title":"Rebecca
+        Pow","pageprops":{"wikibase_item":"Q20647855"}},"46647171":{"pageid":46647171,"ns":0,"title":"Michelle
+        Thomson","pageprops":{"wikibase_item":"Q20027903"}},"46647200":{"pageid":46647200,"ns":0,"title":"Harry
+        Harpham","pageprops":{"wikibase_item":"Q19958023"}},"46647219":{"pageid":46647219,"ns":0,"title":"Rebecca
+        Long-Bailey","pageprops":{"wikibase_item":"Q19979355"}},"46647356":{"pageid":46647356,"ns":0,"title":"Stuart
+        Donaldson (Scottish politician)","pageprops":{"wikibase_item":"Q19883124"}},"46647446":{"pageid":46647446,"ns":0,"title":"David
+        Mackintosh (politician)","pageprops":{"wikibase_item":"Q20647672"}},"46647572":{"pageid":46647572,"ns":0,"title":"James
+        Davies (politician)","pageprops":{"wikibase_item":"Q19957303"}},"46648167":{"pageid":46648167,"ns":0,"title":"Martyn
+        Day (politician)","pageprops":{"wikibase_item":"Q19883087"}},"46648305":{"pageid":46648305,"ns":0,"title":"Chris
+        Matheson (British politician)","pageprops":{"wikibase_item":"Q20647738"}},"46648437":{"pageid":46648437,"ns":0,"title":"Kevin
+        Foster (politician)","pageprops":{"wikibase_item":"Q19873325"}},"46648734":{"pageid":46648734,"ns":0,"title":"Johnny
+        Mercer (politician)","pageprops":{"wikibase_item":"Q20127929"}},"46648738":{"pageid":46648738,"ns":0,"title":"Mary
+        Robinson (British politician)","pageprops":{"wikibase_item":"Q20648564"}},"46650639":{"pageid":46650639,"ns":0,"title":"Tom
+        Pursglove","pageprops":{"wikibase_item":"Q16232474"}},"46650682":{"pageid":46650682,"ns":0,"title":"Paula
+        Sherriff","pageprops":{"wikibase_item":"Q20647924"}},"46650716":{"pageid":46650716,"ns":0,"title":"Luke
+        Hall (politician)","pageprops":{"wikibase_item":"Q19957996"}},"46651792":{"pageid":46651792,"ns":0,"title":"Clive
+        Lewis (politician)","pageprops":{"wikibase_item":"Q20127903"}},"46652738":{"pageid":46652738,"ns":0,"title":"Paul
+        Scully","pageprops":{"wikibase_item":"Q20647800"}},"46652764":{"pageid":46652764,"ns":0,"title":"Steve
+        Double","pageprops":{"wikibase_item":"Q19957580"}},"46652793":{"pageid":46652793,"ns":0,"title":"Julian
+        Knight (politician)","pageprops":{"wikibase_item":"Q20647567"}}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:31 GMT
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&pageids=46654157%7C46782859&ppprop=wikibase_item&prop=pageprops&redirects=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:32 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '201'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 1294137635, 2985142137, 2591912184
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1065 pass+chfp(0), cp3005 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"pages":{"46654157":{"pageid":46654157,"ns":0,"title":"Jeremy
+        Quin","pageprops":{"wikibase_item":"Q19946187"}},"46782859":{"pageid":46782859,"ns":0,"title":"List
+        of United Kingdom MPs by seniority, 2015\u201320","pageprops":{"wikibase_item":"Q20312931"}}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:32 GMT
+recorded_with: VCR 3.0.0

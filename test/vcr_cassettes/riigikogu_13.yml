@@ -1,0 +1,448 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://et.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&cmlimit=500&cmtitle=Kategooria%3AXIII_Riigikogu_liikmed&format=json&list=categorymembers
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:33 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1883'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - DENY
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 1097809255, 3970558744, 2591917610
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1052 pass+chfp(0), cp3008 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Set-Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; Path=/; Domain=.wikipedia.org
+      - WMF-Last-Access=21-Jan-2016;Path=/;HttpOnly;Expires=Mon, 22 Feb 2016 12:00:00
+        GMT
+      X-Analytics:
+      - https=1;nocookies=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"categorymembers":[{"pageid":246507,"ns":0,"title":"Arto
+        Aas"},{"pageid":67385,"ns":0,"title":"Jaak Aaviksoo"},{"pageid":121275,"ns":0,"title":"J\u00fcri
+        Adams"},{"pageid":132401,"ns":0,"title":"Raivo Aeg"},{"pageid":370026,"ns":0,"title":"Yoko
+        Alender"},{"pageid":401617,"ns":0,"title":"Andres Ammas"},{"pageid":176976,"ns":0,"title":"Andres
+        Anvelt"},{"pageid":202723,"ns":0,"title":"Krista Aru"},{"pageid":141621,"ns":0,"title":"Maire
+        Aunaste"},{"pageid":222925,"ns":0,"title":"Deniss Borodit\u0161"},{"pageid":409749,"ns":0,"title":"Dmitri
+        Dmitrijev"},{"pageid":60133,"ns":0,"title":"Ivi Eenmaa"},{"pageid":71846,"ns":0,"title":"Enn
+        Eesmaa"},{"pageid":114043,"ns":0,"title":"Peeter Ernits"},{"pageid":109756,"ns":0,"title":"Igor
+        Gr\u00e4zin"},{"pageid":373297,"ns":0,"title":"Hannes Hanso"},{"pageid":393559,"ns":0,"title":"Monika
+        Haukan\u00f5mm"},{"pageid":99677,"ns":0,"title":"Mart Helme"},{"pageid":63280,"ns":0,"title":"Martin
+        Helme"},{"pageid":67929,"ns":0,"title":"Andres Herkel"},{"pageid":282564,"ns":0,"title":"Remo
+        Holsmer"},{"pageid":344818,"ns":0,"title":"Olga Ivanova"},{"pageid":74967,"ns":0,"title":"J\u00fcri
+        Jaanson"},{"pageid":365689,"ns":0,"title":"Etti Kagarov"},{"pageid":214661,"ns":0,"title":"Kalev
+        Kallo"},{"pageid":409717,"ns":0,"title":"Jaanus Karilaid"},{"pageid":401039,"ns":0,"title":"Uno
+        Kaskpeit"},{"pageid":409585,"ns":0,"title":"Liina Kersna"},{"pageid":116537,"ns":0,"title":"Johannes
+        Kert"},{"pageid":173016,"ns":0,"title":"Siim Valmar Kiisler"},{"pageid":268932,"ns":0,"title":"Toomas
+        Kivim\u00e4gi"},{"pageid":119707,"ns":0,"title":"Urmas Klaas"},{"pageid":268477,"ns":0,"title":"Aivar
+        Kokk"},{"pageid":290365,"ns":0,"title":"Mihhail Korb"},{"pageid":119613,"ns":0,"title":"Valeri
+        Korb"},{"pageid":87617,"ns":0,"title":"Siret Kotka"},{"pageid":125393,"ns":0,"title":"Kalev
+        Kotkas"},{"pageid":235200,"ns":0,"title":"Eerik-Niiles Kross"},{"pageid":94300,"ns":0,"title":"Urmas
+        Kruuse"},{"pageid":243484,"ns":0,"title":"Martin Kukk"},{"pageid":409725,"ns":0,"title":"Kristjan
+        K\u00f5ljalg"},{"pageid":256519,"ns":0,"title":"Mihhail K\u00f5lvart"},{"pageid":124977,"ns":0,"title":"Kalvi
+        K\u00f5va"},{"pageid":312194,"ns":0,"title":"K\u00fclliki K\u00fcbarsepp"},{"pageid":268741,"ns":0,"title":"Helmen
+        K\u00fctt"},{"pageid":57696,"ns":0,"title":"Ants Laaneots"},{"pageid":108042,"ns":0,"title":"Kalle
+        Laanet"},{"pageid":110149,"ns":0,"title":"Lauri Laasi"},{"pageid":189382,"ns":0,"title":"Viktoria
+        Lad\u00f5nskaja"},{"pageid":312815,"ns":0,"title":"Maris Lauri"},{"pageid":74989,"ns":0,"title":"Heimar
+        Lenk"},{"pageid":65649,"ns":0,"title":"J\u00fcrgen Ligi"},{"pageid":176974,"ns":0,"title":"Oudekki
+        Loone"},{"pageid":120264,"ns":0,"title":"Lauri Luik"},{"pageid":202744,"ns":0,"title":"Ain
+        Lutsepp"},{"pageid":392845,"ns":0,"title":"Jaak Madison"},{"pageid":109884,"ns":0,"title":"Jaanus
+        Marrandi"},{"pageid":409589,"ns":0,"title":"Andres Metsoja"},{"pageid":113166,"ns":0,"title":"Kristen
+        Michal"},{"pageid":121591,"ns":0,"title":"Marko Mihkelson"},{"pageid":126856,"ns":0,"title":"Marianne
+        Mikko"},{"pageid":105268,"ns":0,"title":"Sven Mikser"},{"pageid":221953,"ns":0,"title":"Madis
+        Milling"},{"pageid":30085,"ns":0,"title":"Aadu Must"},{"pageid":156769,"ns":0,"title":"Kalle
+        Muuli"},{"pageid":270837,"ns":0,"title":"Meelis M\u00e4lberg"},{"pageid":109966,"ns":0,"title":"Eiki
+        Nestor"},{"pageid":345681,"ns":0,"title":"Andrei Novikov"},{"pageid":121175,"ns":0,"title":"Mart
+        Nutt"},{"pageid":268945,"ns":0,"title":"Jevgeni Ossinovski"},{"pageid":420866,"ns":0,"title":"Anneli
+        Ott"},{"pageid":90528,"ns":0,"title":"Ivari Padar"},{"pageid":52337,"ns":0,"title":"Urmas
+        Paet"},{"pageid":112614,"ns":0,"title":"Kalle Palling"},{"pageid":99168,"ns":0,"title":"Urve
+        Palo"},{"pageid":578,"ns":0,"title":"Juhan Parts"},{"pageid":119605,"ns":0,"title":"Keit
+        Pentus-Rosimannus"},{"pageid":8256,"ns":0,"title":"Hanno Pevkur"},{"pageid":123094,"ns":0,"title":"Heljo
+        Pikhof"},{"pageid":121580,"ns":0,"title":"Marko Pomerants"},{"pageid":81112,"ns":0,"title":"Heidy
+        Purga"},{"pageid":409800,"ns":0,"title":"Raivo P\u00f5ldaru"},{"pageid":236150,"ns":0,"title":"Henn
+        P\u00f5lluaas"},{"pageid":110947,"ns":0,"title":"Mati Raidma"},{"pageid":22834,"ns":0,"title":"Laine
+        Randj\u00e4rv"},{"pageid":124852,"ns":0,"title":"Valdo Randpere"},{"pageid":60130,"ns":0,"title":"J\u00fcri
+        Ratas"},{"pageid":121047,"ns":0,"title":"Rein Ratas"},{"pageid":45419,"ns":0,"title":"Mihkel
+        Raud"},{"pageid":8943,"ns":0,"title":"Urmas Reinsalu"},{"pageid":409593,"ns":0,"title":"Martin
+        Repinski"},{"pageid":52009,"ns":0,"title":"Mailis Reps"},{"pageid":110162,"ns":0,"title":"Taavi
+        R\u00f5ivas"},{"pageid":123317,"ns":0,"title":"Indrek Saar"},{"pageid":154824,"ns":0,"title":"Kersti
+        Sarapuu"},{"pageid":14733,"ns":0,"title":"Edgar Savisaar"},{"pageid":399036,"ns":0,"title":"Erki
+        Savisaar"},{"pageid":63136,"ns":0,"title":"Vilja Toomast"},{"pageid":105303,"ns":0,"title":"Helir-Valdor
+        Seeder"},{"pageid":282175,"ns":0,"title":"Andre Sepp"},{"pageid":264711,"ns":0,"title":"Sven
+        Sester"},{"pageid":248901,"ns":0,"title":"Priit Sibul"},{"pageid":409773,"ns":0,"title":"Arno
+        Sild"},{"pageid":30428,"ns":0,"title":"Kadri Simson"},{"pageid":97771,"ns":0,"title":"Mark
+        Soosaar"},{"pageid":112455,"ns":0,"title":"Imre Soo\u00e4\u00e4r"},{"pageid":84764,"ns":0,"title":"Mihhail
+        Stalnuhhin"},{"pageid":365434,"ns":0,"title":"Anne Sulling"},{"pageid":168434,"ns":0,"title":"M\u00e4rt
+        Sults"},{"pageid":240779,"ns":0,"title":"Neeme Suur"},{"pageid":214043,"ns":0,"title":"Aivar
+        S\u00f5erd"},{"pageid":253922,"ns":0,"title":"Tanel Talve"},{"pageid":210055,"ns":0,"title":"Artur
+        Talvik"},{"pageid":243965,"ns":0,"title":"Tarmo Tamm (1953)"},{"pageid":51675,"ns":0,"title":"Urve
+        Tiidus"},{"pageid":270172,"ns":0,"title":"Priit Toobal"},{"pageid":222928,"ns":0,"title":"Yana
+        Toom"},{"pageid":260116,"ns":0,"title":"Terje Trei"},{"pageid":125464,"ns":0,"title":"Margus
+        Tsahkna"},{"pageid":120420,"ns":0,"title":"Marika Tuus-Laul"},{"pageid":108044,"ns":0,"title":"Ken-Marti
+        Vaher"},{"pageid":193830,"ns":0,"title":"Rainer Vakra"},{"pageid":243488,"ns":0,"title":"Einar
+        Vallbaum"},{"pageid":188050,"ns":0,"title":"Viktor Vassiljev"},{"pageid":120776,"ns":0,"title":"Vladimir
+        Velman"},{"pageid":185868,"ns":0,"title":"Toomas Vitsut"},{"pageid":31574,"ns":0,"title":"Hardi
+        Volmer"}]}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:33 GMT
+- request:
+    method: post
+    uri: https://et.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&pageids=578%7C8256%7C8943%7C14733%7C22834%7C30085%7C30428%7C31574%7C45419%7C51675%7C52009%7C52337%7C57696%7C60130%7C60133%7C63136%7C63280%7C65649%7C67385%7C67929%7C71846%7C74967%7C74989%7C81112%7C84764%7C87617%7C90528%7C94300%7C97771%7C99168%7C99677%7C105268%7C105303%7C108042%7C108044%7C109756%7C109884%7C109966%7C110149%7C110162%7C110947%7C112455%7C112614%7C113166%7C114043%7C116537%7C119605%7C119613%7C119707%7C120264&ppprop=wikibase_item&prop=pageprops&redirects=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1296'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - DENY
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 1294144864, 3361618599, 2591919157
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1065 pass+chfp(0), cp3041 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"pages":{"578":{"pageid":578,"ns":0,"title":"Juhan
+        Parts","pageprops":{"wikibase_item":"Q312894"}},"8256":{"pageid":8256,"ns":0,"title":"Hanno
+        Pevkur","pageprops":{"wikibase_item":"Q1399218"}},"8943":{"pageid":8943,"ns":0,"title":"Urmas
+        Reinsalu","pageprops":{"wikibase_item":"Q645970"}},"14733":{"pageid":14733,"ns":0,"title":"Edgar
+        Savisaar","pageprops":{"wikibase_item":"Q355241"}},"22834":{"pageid":22834,"ns":0,"title":"Laine
+        Randj\u00e4rv","pageprops":{"wikibase_item":"Q449939"}},"30085":{"pageid":30085,"ns":0,"title":"Aadu
+        Must","pageprops":{"wikibase_item":"Q12358062"}},"30428":{"pageid":30428,"ns":0,"title":"Kadri
+        Simson","pageprops":{"wikibase_item":"Q13570003"}},"31574":{"pageid":31574,"ns":0,"title":"Hardi
+        Volmer","pageprops":{"wikibase_item":"Q3740790"}},"45419":{"pageid":45419,"ns":0,"title":"Mihkel
+        Raud","pageprops":{"wikibase_item":"Q12370316"}},"51675":{"pageid":51675,"ns":0,"title":"Urve
+        Tiidus","pageprops":{"wikibase_item":"Q11032994"}},"52009":{"pageid":52009,"ns":0,"title":"Mailis
+        Reps","pageprops":{"wikibase_item":"Q449851"}},"52337":{"pageid":52337,"ns":0,"title":"Urmas
+        Paet","pageprops":{"wikibase_item":"Q58100"}},"57696":{"pageid":57696,"ns":0,"title":"Ants
+        Laaneots","pageprops":{"wikibase_item":"Q3736458"}},"60130":{"pageid":60130,"ns":0,"title":"J\u00fcri
+        Ratas","pageprops":{"wikibase_item":"Q2621730"}},"60133":{"pageid":60133,"ns":0,"title":"Ivi
+        Eenmaa","pageprops":{"wikibase_item":"Q11023034"}},"63136":{"pageid":63136,"ns":0,"title":"Vilja
+        Toomast","pageprops":{"wikibase_item":"Q460589"}},"63280":{"pageid":63280,"ns":0,"title":"Martin
+        Helme","pageprops":{"wikibase_item":"Q12369924"}},"65649":{"pageid":65649,"ns":0,"title":"J\u00fcrgen
+        Ligi","pageprops":{"wikibase_item":"Q983831"}},"67385":{"pageid":67385,"ns":0,"title":"Jaak
+        Aaviksoo","pageprops":{"wikibase_item":"Q253515"}},"67929":{"pageid":67929,"ns":0,"title":"Andres
+        Herkel","pageprops":{"wikibase_item":"Q4756115"}},"71846":{"pageid":71846,"ns":0,"title":"Enn
+        Eesmaa","pageprops":{"wikibase_item":"Q11857954"}},"74967":{"pageid":74967,"ns":0,"title":"J\u00fcri
+        Jaanson","pageprops":{"wikibase_item":"Q704436"}},"74989":{"pageid":74989,"ns":0,"title":"Heimar
+        Lenk","pageprops":{"wikibase_item":"Q12363563"}},"81112":{"pageid":81112,"ns":0,"title":"Heidy
+        Purga","pageprops":{"wikibase_item":"Q16404493"}},"84764":{"pageid":84764,"ns":0,"title":"Mihhail
+        Stalnuhhin","pageprops":{"wikibase_item":"Q3741812"}},"87617":{"pageid":87617,"ns":0,"title":"Siret
+        Kotka","pageprops":{"wikibase_item":"Q12375092"}},"90528":{"pageid":90528,"ns":0,"title":"Ivari
+        Padar","pageprops":{"wikibase_item":"Q1398025"}},"94300":{"pageid":94300,"ns":0,"title":"Urmas
+        Kruuse","pageprops":{"wikibase_item":"Q3741429"}},"97771":{"pageid":97771,"ns":0,"title":"Mark
+        Soosaar","pageprops":{"wikibase_item":"Q12369838"}},"99168":{"pageid":99168,"ns":0,"title":"Urve
+        Palo","pageprops":{"wikibase_item":"Q465437"}},"99677":{"pageid":99677,"ns":0,"title":"Mart
+        Helme","pageprops":{"wikibase_item":"Q1453245"}},"105268":{"pageid":105268,"ns":0,"title":"Sven
+        Mikser","pageprops":{"wikibase_item":"Q2097451"}},"105303":{"pageid":105303,"ns":0,"title":"Helir-Valdor
+        Seeder","pageprops":{"wikibase_item":"Q724437"}},"108042":{"pageid":108042,"ns":0,"title":"Kalle
+        Laanet","pageprops":{"wikibase_item":"Q978349"}},"108044":{"pageid":108044,"ns":0,"title":"Ken-Marti
+        Vaher","pageprops":{"wikibase_item":"Q1385792"}},"109756":{"pageid":109756,"ns":0,"title":"Igor
+        Gr\u00e4zin","pageprops":{"wikibase_item":"Q5993313"}},"109884":{"pageid":109884,"ns":0,"title":"Jaanus
+        Marrandi","pageprops":{"wikibase_item":"Q1410118"}},"109966":{"pageid":109966,"ns":0,"title":"Eiki
+        Nestor","pageprops":{"wikibase_item":"Q450523"}},"110149":{"pageid":110149,"ns":0,"title":"Lauri
+        Laasi","pageprops":{"wikibase_item":"Q13629005"}},"110162":{"pageid":110162,"ns":0,"title":"Taavi
+        R\u00f5ivas","pageprops":{"wikibase_item":"Q3785077"}},"110947":{"pageid":110947,"ns":0,"title":"Mati
+        Raidma","pageprops":{"wikibase_item":"Q12369996"}},"112455":{"pageid":112455,"ns":0,"title":"Imre
+        Soo\u00e4\u00e4r","pageprops":{"wikibase_item":"Q12364480"}},"112614":{"pageid":112614,"ns":0,"title":"Kalle
+        Palling","pageprops":{"wikibase_item":"Q11869429"}},"113166":{"pageid":113166,"ns":0,"title":"Kristen
+        Michal","pageprops":{"wikibase_item":"Q1789192"}},"114043":{"pageid":114043,"ns":0,"title":"Peeter
+        Ernits","pageprops":{"wikibase_item":"Q12372175"}},"116537":{"pageid":116537,"ns":0,"title":"Johannes
+        Kert","pageprops":{"wikibase_item":"Q16402978"}},"119605":{"pageid":119605,"ns":0,"title":"Keit
+        Pentus-Rosimannus","pageprops":{"wikibase_item":"Q458003"}},"119613":{"pageid":119613,"ns":0,"title":"Valeri
+        Korb","pageprops":{"wikibase_item":"Q4232659"}},"119707":{"pageid":119707,"ns":0,"title":"Urmas
+        Klaas","pageprops":{"wikibase_item":"Q13607430"}},"120264":{"pageid":120264,"ns":0,"title":"Lauri
+        Luik","pageprops":{"wikibase_item":"Q14191221"}}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:34 GMT
+- request:
+    method: post
+    uri: https://et.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&pageids=120420%7C120776%7C121047%7C121175%7C121275%7C121580%7C121591%7C123094%7C123317%7C124852%7C124977%7C125393%7C125464%7C126856%7C132401%7C141621%7C154824%7C156769%7C168434%7C173016%7C176974%7C176976%7C185868%7C188050%7C189382%7C193830%7C202723%7C202744%7C210055%7C214043%7C214661%7C221953%7C222925%7C222928%7C235200%7C236150%7C240779%7C243484%7C243488%7C243965%7C246507%7C248901%7C253922%7C256519%7C260116%7C264711%7C268477%7C268741%7C268932%7C268945&ppprop=wikibase_item&prop=pageprops&redirects=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:34 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '1319'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - DENY
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 2006506316, 182120068, 2591923808
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1068 pass+chfp(0), cp3006 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"pages":{"120420":{"pageid":120420,"ns":0,"title":"Marika
+        Tuus-Laul","pageprops":{"wikibase_item":"Q12369791"}},"120776":{"pageid":120776,"ns":0,"title":"Vladimir
+        Velman","pageprops":{"wikibase_item":"Q3741900"}},"121047":{"pageid":121047,"ns":0,"title":"Rein
+        Ratas","pageprops":{"wikibase_item":"Q12373774"}},"121175":{"pageid":121175,"ns":0,"title":"Mart
+        Nutt","pageprops":{"wikibase_item":"Q12369884"}},"121275":{"pageid":121275,"ns":0,"title":"J\u00fcri
+        Adams","pageprops":{"wikibase_item":"Q12365796"}},"121580":{"pageid":121580,"ns":0,"title":"Marko
+        Pomerants","pageprops":{"wikibase_item":"Q1399189"}},"121591":{"pageid":121591,"ns":0,"title":"Marko
+        Mihkelson","pageprops":{"wikibase_item":"Q1900847"}},"123094":{"pageid":123094,"ns":0,"title":"Heljo
+        Pikhof","pageprops":{"wikibase_item":"Q14483307"}},"123317":{"pageid":123317,"ns":0,"title":"Indrek
+        Saar","pageprops":{"wikibase_item":"Q16403371"}},"124852":{"pageid":124852,"ns":0,"title":"Valdo
+        Randpere","pageprops":{"wikibase_item":"Q7909441"}},"124977":{"pageid":124977,"ns":0,"title":"Kalvi
+        K\u00f5va","pageprops":{"wikibase_item":"Q12366267"}},"125393":{"pageid":125393,"ns":0,"title":"Kalev
+        Kotkas","pageprops":{"wikibase_item":"Q12366157"}},"125464":{"pageid":125464,"ns":0,"title":"Margus
+        Tsahkna","pageprops":{"wikibase_item":"Q11716283"}},"126856":{"pageid":126856,"ns":0,"title":"Marianne
+        Mikko","pageprops":{"wikibase_item":"Q535290"}},"132401":{"pageid":132401,"ns":0,"title":"Raivo
+        Aeg","pageprops":{"wikibase_item":"Q12373459"}},"141621":{"pageid":141621,"ns":0,"title":"Maire
+        Aunaste","pageprops":{"wikibase_item":"Q6736905"}},"154824":{"pageid":154824,"ns":0,"title":"Kersti
+        Sarapuu","pageprops":{"wikibase_item":"Q12366820"}},"156769":{"pageid":156769,"ns":0,"title":"Kalle
+        Muuli","pageprops":{"wikibase_item":"Q12366238"}},"168434":{"pageid":168434,"ns":0,"title":"M\u00e4rt
+        Sults","pageprops":{"wikibase_item":"Q16405538"}},"173016":{"pageid":173016,"ns":0,"title":"Siim
+        Valmar Kiisler","pageprops":{"wikibase_item":"Q743341"}},"176974":{"pageid":176974,"ns":0,"title":"Oudekki
+        Loone","pageprops":{"wikibase_item":"Q12371725"}},"176976":{"pageid":176976,"ns":0,"title":"Andres
+        Anvelt","pageprops":{"wikibase_item":"Q13234758"}},"185868":{"pageid":185868,"ns":0,"title":"Toomas
+        Vitsut","pageprops":{"wikibase_item":"Q7824120"}},"188050":{"pageid":188050,"ns":0,"title":"Viktor
+        Vassiljev","pageprops":{"wikibase_item":"Q12378637"}},"189382":{"pageid":189382,"ns":0,"title":"Viktoria
+        Lad\u00f5nskaja","pageprops":{"wikibase_item":"Q16405450"}},"193830":{"pageid":193830,"ns":0,"title":"Rainer
+        Vakra","pageprops":{"wikibase_item":"Q12373456"}},"202723":{"pageid":202723,"ns":0,"title":"Krista
+        Aru","pageprops":{"wikibase_item":"Q16404281"}},"202744":{"pageid":202744,"ns":0,"title":"Ain
+        Lutsepp","pageprops":{"wikibase_item":"Q12358429"}},"210055":{"pageid":210055,"ns":0,"title":"Artur
+        Talvik","pageprops":{"wikibase_item":"Q16406074"}},"214043":{"pageid":214043,"ns":0,"title":"Aivar
+        S\u00f5erd","pageprops":{"wikibase_item":"Q12358481"}},"214661":{"pageid":214661,"ns":0,"title":"Kalev
+        Kallo","pageprops":{"wikibase_item":"Q12366158"}},"221953":{"pageid":221953,"ns":0,"title":"Madis
+        Milling","pageprops":{"wikibase_item":"Q16403802"}},"222925":{"pageid":222925,"ns":0,"title":"Deniss
+        Borodit\u0161","pageprops":{"wikibase_item":"Q2000385"}},"222928":{"pageid":222928,"ns":0,"title":"Yana
+        Toom","pageprops":{"wikibase_item":"Q12379326"}},"235200":{"pageid":235200,"ns":0,"title":"Eerik-Niiles
+        Kross","pageprops":{"wikibase_item":"Q3735691"}},"236150":{"pageid":236150,"ns":0,"title":"Henn
+        P\u00f5lluaas","pageprops":{"wikibase_item":"Q16405090"}},"240779":{"pageid":240779,"ns":0,"title":"Neeme
+        Suur","pageprops":{"wikibase_item":"Q12370928"}},"243484":{"pageid":243484,"ns":0,"title":"Martin
+        Kukk","pageprops":{"wikibase_item":"Q12369932"}},"243488":{"pageid":243488,"ns":0,"title":"Einar
+        Vallbaum","pageprops":{"wikibase_item":"Q17447338"}},"243965":{"pageid":243965,"ns":0,"title":"Tarmo
+        Tamm (1953)","pageprops":{"wikibase_item":"Q12376376"}},"246507":{"pageid":246507,"ns":0,"title":"Arto
+        Aas","pageprops":{"wikibase_item":"Q616356"}},"248901":{"pageid":248901,"ns":0,"title":"Priit
+        Sibul","pageprops":{"wikibase_item":"Q12372782"}},"253922":{"pageid":253922,"ns":0,"title":"Tanel
+        Talve","pageprops":{"wikibase_item":"Q12376325"}},"256519":{"pageid":256519,"ns":0,"title":"Mihhail
+        K\u00f5lvart","pageprops":{"wikibase_item":"Q4250802"}},"260116":{"pageid":260116,"ns":0,"title":"Terje
+        Trei","pageprops":{"wikibase_item":"Q16407309"}},"264711":{"pageid":264711,"ns":0,"title":"Sven
+        Sester","pageprops":{"wikibase_item":"Q11158997"}},"268477":{"pageid":268477,"ns":0,"title":"Aivar
+        Kokk","pageprops":{"wikibase_item":"Q13608089"}},"268741":{"pageid":268741,"ns":0,"title":"Helmen
+        K\u00fctt","pageprops":{"wikibase_item":"Q13628736"}},"268932":{"pageid":268932,"ns":0,"title":"Toomas
+        Kivim\u00e4gi","pageprops":{"wikibase_item":"Q12377090"}},"268945":{"pageid":268945,"ns":0,"title":"Jevgeni
+        Ossinovski","pageprops":{"wikibase_item":"Q12365130"}}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:34 GMT
+- request:
+    method: post
+    uri: https://et.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&pageids=270172%7C270837%7C282175%7C282564%7C290365%7C312194%7C312815%7C344818%7C345681%7C365434%7C365689%7C370026%7C373297%7C392845%7C393559%7C399036%7C401039%7C401617%7C409585%7C409589%7C409593%7C409717%7C409725%7C409749%7C409773%7C409800%7C420866&ppprop=wikibase_item&prop=pageprops&redirects=1
+    headers:
+      User-Agent:
+      - Faraday v0.9.2
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Cookie:
+      - GeoIP=GB:::51.50:-0.13:v4; WMF-Last-Access=21-Jan-2016
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - '*/*'
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Server:
+      - nginx/1.9.4
+      Date:
+      - Thu, 21 Jan 2016 14:51:35 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '757'
+      Connection:
+      - keep-alive
+      X-Powered-By:
+      - HHVM/3.6.5
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      X-Frame-Options:
+      - DENY
+      Vary:
+      - Accept-Encoding,X-Forwarded-Proto,Cookie
+      X-Varnish:
+      - 1097817503, 3003450339, 2591925714
+      Via:
+      - 1.1 varnish, 1.1 varnish, 1.1 varnish
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp1052 pass+chfp(0), cp3040 pass+chfp(0), cp3013 frontend pass+chfp(0)
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      X-Analytics:
+      - WMF-Last-Access=21-Jan-2016;https=1
+      X-Client-Ip:
+      - 217.137.227.111
+    body:
+      encoding: UTF-8
+      string: '{"batchcomplete":"","query":{"pages":{"270172":{"pageid":270172,"ns":0,"title":"Priit
+        Toobal","pageprops":{"wikibase_item":"Q12372781"}},"270837":{"pageid":270837,"ns":0,"title":"Meelis
+        M\u00e4lberg","pageprops":{"wikibase_item":"Q12370075"}},"282175":{"pageid":282175,"ns":0,"title":"Andre
+        Sepp","pageprops":{"wikibase_item":"Q16404500"}},"282564":{"pageid":282564,"ns":0,"title":"Remo
+        Holsmer","pageprops":{"wikibase_item":"Q12373839"}},"290365":{"pageid":290365,"ns":0,"title":"Mihhail
+        Korb","pageprops":{"wikibase_item":"Q16404020"}},"312194":{"pageid":312194,"ns":0,"title":"K\u00fclliki
+        K\u00fcbarsepp","pageprops":{"wikibase_item":"Q16405217"}},"312815":{"pageid":312815,"ns":0,"title":"Maris
+        Lauri","pageprops":{"wikibase_item":"Q16405768"}},"344818":{"pageid":344818,"ns":0,"title":"Olga
+        Ivanova","pageprops":{"wikibase_item":"Q16406537"}},"345681":{"pageid":345681,"ns":0,"title":"Andrei
+        Novikov","pageprops":{"wikibase_item":"Q16405149"}},"365434":{"pageid":365434,"ns":0,"title":"Anne
+        Sulling","pageprops":{"wikibase_item":"Q15983657"}},"365689":{"pageid":365689,"ns":0,"title":"Etti
+        Kagarov","pageprops":{"wikibase_item":"Q16405534"}},"370026":{"pageid":370026,"ns":0,"title":"Yoko
+        Alender","pageprops":{"wikibase_item":"Q17446896"}},"373297":{"pageid":373297,"ns":0,"title":"Hannes
+        Hanso","pageprops":{"wikibase_item":"Q17446918"}},"392845":{"pageid":392845,"ns":0,"title":"Jaak
+        Madison","pageprops":{"wikibase_item":"Q19725706"}},"393559":{"pageid":393559,"ns":0,"title":"Monika
+        Haukan\u00f5mm","pageprops":{"wikibase_item":"Q20528676"}},"399036":{"pageid":399036,"ns":0,"title":"Erki
+        Savisaar","pageprops":{"wikibase_item":"Q20528493"}},"401039":{"pageid":401039,"ns":0,"title":"Uno
+        Kaskpeit","pageprops":{"wikibase_item":"Q20528341"}},"401617":{"pageid":401617,"ns":0,"title":"Andres
+        Ammas","pageprops":{"wikibase_item":"Q20528366"}},"409585":{"pageid":409585,"ns":0,"title":"Liina
+        Kersna","pageprops":{"wikibase_item":"Q20933509"}},"409589":{"pageid":409589,"ns":0,"title":"Andres
+        Metsoja","pageprops":{"wikibase_item":"Q20933540"}},"409593":{"pageid":409593,"ns":0,"title":"Martin
+        Repinski","pageprops":{"wikibase_item":"Q20933560"}},"409717":{"pageid":409717,"ns":0,"title":"Jaanus
+        Karilaid","pageprops":{"wikibase_item":"Q20933507"}},"409725":{"pageid":409725,"ns":0,"title":"Kristjan
+        K\u00f5ljalg","pageprops":{"wikibase_item":"Q20933524"}},"409749":{"pageid":409749,"ns":0,"title":"Dmitri
+        Dmitrijev","pageprops":{"wikibase_item":"Q20933467"}},"409773":{"pageid":409773,"ns":0,"title":"Arno
+        Sild","pageprops":{"wikibase_item":"Q20933454"}},"409800":{"pageid":409800,"ns":0,"title":"Raivo
+        P\u00f5ldaru","pageprops":{"wikibase_item":"Q20933554"}},"420866":{"pageid":420866,"ns":0,"title":"Anneli
+        Ott","pageprops":{"wikibase_item":"Q22041600"}}}}}'
+    http_version: 
+  recorded_at: Thu, 21 Jan 2016 14:51:35 GMT
+recorded_with: VCR 3.0.0
