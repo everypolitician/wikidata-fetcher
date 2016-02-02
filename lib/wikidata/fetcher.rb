@@ -12,6 +12,13 @@ module EveryPolitician
   module Wikidata
 
     require 'json'
+
+    def self.wdq(query)
+      url = 'https://wdq.wmflabs.org/api?q=%s' % query
+      json = JSON.parse(open(url).read, symbolize_names: true)
+      json[:items].map { |id| "Q#{id}" }
+    end
+
     require 'rest-client'
 
     def self.morph_wikinames(h)
@@ -52,7 +59,7 @@ module EveryPolitician
     def self.noko_for(url)
       Nokogiri::HTML(open(URI.escape(URI.unescape(url))).read) 
     end
-        
+
     #-------------------------------------------------------------------
 
     require 'scraperwiki'
@@ -61,6 +68,7 @@ module EveryPolitician
       langs = ((h[:lang] || h[:names].keys) + [:en]).flatten.uniq
       langpairs = h[:names].map { |lang, names| WikiData.ids_from_pages(lang.to_s, names) }
       combined  = langpairs.reduce({}) { |h, people| h.merge(people.invert) }
+      (h[:ids] ||= []).each { |id| combined[id] ||= nil }
 
       found = WikiData::Fetcher.find(combined.keys)
 
