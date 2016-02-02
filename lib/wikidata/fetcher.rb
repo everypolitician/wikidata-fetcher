@@ -11,11 +11,13 @@ module EveryPolitician
   
   module Wikidata
 
+    WDQ_URL = 'https://wdq.wmflabs.org/api'
+
     require 'json'
 
     def self.wdq(query)
-      url = 'https://wdq.wmflabs.org/api?q=%s' % query
-      json = JSON.parse(open(url).read, symbolize_names: true)
+      result = RestClient.get WDQ_URL, params: { q: query }
+      json = JSON.parse(result, symbolize_names: true)
       json[:items].map { |id| "Q#{id}" }
     end
 
@@ -65,7 +67,7 @@ module EveryPolitician
     require 'scraperwiki'
 
     def self.scrape_wikidata(h)
-      langs = ((h[:lang] || h[:names].keys) + [:en]).flatten.uniq
+      langs = ((h[:lang] || (h[:names] ||= {}).keys) + [:en]).flatten.uniq
       langpairs = h[:names].map { |lang, names| WikiData.ids_from_pages(lang.to_s, names) }
       combined  = langpairs.reduce({}) { |h, people| h.merge(people.invert) }
       (h[:ids] ||= []).each { |id| combined[id] ||= nil }
