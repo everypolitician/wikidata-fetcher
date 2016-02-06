@@ -116,3 +116,12 @@ describe 'partial date' do
   end
 end
 
+describe 'bracketed name' do
+  around { |test| VCR.use_cassette('Eriksson', &test) }
+  subject { WikiData::Fetcher.new(id: 'Q5715984') }
+
+  it 'should have no brackets in name' do
+    subject.data[:name__sv].must_equal 'Anders Eriksson'
+  end
+end
+

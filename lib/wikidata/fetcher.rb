@@ -421,7 +421,8 @@ class WikiData
       }
 
       @wd.labels.each do |k, v|
-        data["name__#{k.tr('-','_')}".to_sym] = v['value']
+        # remove any bracketed element at the end
+        data["name__#{k.tr('-','_')}".to_sym] = v['value'].sub(/ \(.*?\)$/,'')
       end
 
       data[:name] = [lang, 'en'].flatten.map { |l| data["name__#{l}".to_sym] }.compact.first
