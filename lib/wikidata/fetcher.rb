@@ -443,7 +443,7 @@ class WikiData
       end
 
       @wd.properties.reject { |c| @@skip[c] || @@want[c] }.each do |c|
-        puts "Unknown claim: https://www.wikidata.org/wiki/Property:#{c}".red
+        puts "Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{@wd.id}".red
       end
 
       @@want.each do |property, how|
