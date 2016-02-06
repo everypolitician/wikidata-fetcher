@@ -404,6 +404,7 @@ class WikiData
       'P2019' => 'identifier__allmovie', 
       'P2029' => 'identifier__DoUB', 
       'P2035' => 'linkedin', 
+      'P2163' => 'identifier__FAST', 
       'P2168' => 'identifier__SFDb', 
       'P2169' => 'identifier__publicwhip', 
       'P2170' => 'identifier__current_hansard', 
