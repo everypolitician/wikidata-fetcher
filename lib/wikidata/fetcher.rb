@@ -30,7 +30,7 @@ module EveryPolitician
         key: morph_api_key,
         query: "SELECT DISTINCT(#{h[:column]}) AS wikiname FROM data"
       }
-      JSON.parse(result, symbolize_names: true).map { |h| h[:wikiname] }.compact
+      JSON.parse(result, symbolize_names: true).map { |h| h[:wikiname] }.reject { |n| n.to_s.empty }
     end
 
     require 'pry'
