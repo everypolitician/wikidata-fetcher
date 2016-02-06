@@ -1,3 +1,6 @@
+O.10.0  2016-02-06
+  - Remove bracketed sections at end of names
+
 O.9.0  2016-02-02
   - Add WDQ lookup method
   - Fetch data by IDs as well as names
