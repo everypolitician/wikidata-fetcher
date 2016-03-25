@@ -247,6 +247,7 @@
     "P2435": "identifier__PORT",
     "P2604": "identifier__kinopoisk",
     "P2605": "identifier__CSFD",
-    "P2611": "identifier__TED"
+    "P2611": "identifier__TED",
+    "P2626": "identifier__DNF"
   }
 }
