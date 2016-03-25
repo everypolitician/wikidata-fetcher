@@ -97,7 +97,9 @@
     "P1971": "Number of children",
     "P2020": "worldfootball.net",
     "P2021": "Erdős number",
-    "P2042": "Artsy ID"
+    "P2042": "Artsy ID",
+    "P2091": "FISA ID",
+    "P2416": "sports discipline"
   },
   "want": {
     "P18": "image",
