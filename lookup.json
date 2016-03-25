@@ -136,6 +136,7 @@
   "want": {
     "P18": "image",
     "P21": "gender",
+    "P97": "noble_title",
     "P213": "identifier__ISNI",
     "P214": "identifier__VIAF",
     "P227": "identifier__GND",
@@ -158,6 +159,7 @@
     "P569": "birth_date",
     "P570": "death_date",
     "P599": "identifier__ITF",
+    "P640": "identifier__leonore",
     "P646": "identifier__freebase",
     "P648": "identifier__OLID",
     "P651": "identifier__BPN",
