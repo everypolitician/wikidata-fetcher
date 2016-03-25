@@ -119,7 +119,8 @@
     "P2447": "transfermarkt ID",
     "P2449": "Turkish Football Federation manager ID",
     "P2458": "Mackolik ID",
-    "P2574": "NFT ID"
+    "P2574": "NFT ID",
+    "P2632": "place of detention"
   },
   "want": {
     "P18": "image",
