@@ -71,17 +71,19 @@ module EveryPolitician
       combined  = langpairs.reduce({}) { |h, people| h.merge(people.invert) }
       (h[:ids] ||= []).each { |id| combined[id] ||= nil }
 
-      found = WikiData::Fetcher.find(combined.keys)
-
-      combined.each do |id, name|
-        data = found[id].data(langs) rescue nil
-        unless data
-          warn "No data for #{id}"
-          next
+      Hash[combined.to_a.shuffle].each_slice(h[:batch_size] || 10_000) do |slice|
+        sliced = Hash[slice]
+        found = WikiData::Fetcher.find(sliced.keys)
+        sliced.each do |id, name|
+          data = found[id].data(langs) rescue nil
+          unless data
+            warn "No data for #{id}"
+            next
+          end
+          data[:original_wikiname] = name
+          puts data if h[:output] == true
+          ScraperWiki.save_sqlite([:id], data)
         end
-        data[:original_wikiname] = name
-        puts data if h[:output] == true
-        ScraperWiki.save_sqlite([:id], data)
       end
     end
 
@@ -228,7 +230,7 @@ class WikiData
       # Short-circuit if this is not a human
       typeof =  @wd.P31s.map { |p| p.value.label('en') }
       unless typeof.include? 'human'
-        warn "#{data[:id]} is_instance_of #{typeof.join(' & ')}. Skipping".cyan
+        warn "‼ #{data[:id]} is_instance_of #{typeof.join(' & ')}. Skipping"
         return nil
       end
 
