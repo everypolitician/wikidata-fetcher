@@ -3,6 +3,7 @@ require "wikidata/fetcher/version"
 require 'colorize'
 require 'digest/sha1'
 require 'diskcached'
+require 'json'
 require 'mediawiki_api'
 require 'wikidata'
 require 'wikisnakker'
@@ -12,8 +13,6 @@ module EveryPolitician
   module Wikidata
 
     WDQ_URL = 'https://wdq.wmflabs.org/api'
-
-    require 'json'
 
     def self.wdq(query)
       result = RestClient.get WDQ_URL, params: { q: query }
@@ -195,224 +194,15 @@ class WikiData
       else
         raise "No id"
       end
+      load_lookup_data!
     end
 
-    @@skip = { 
-      'P7' => 'Brother',
-      'P9' => 'Sister',
-      'P10' => 'video',
-      'P19' => 'Place of Birth',
-      'P20' => 'Place of Death',
-      'P22' => 'Father',
-      'P25' => 'Mother',
-      'P26' => 'Spouse',
-      'P27' => 'Country of Citizenship',
-      'P31' => 'Instance of',
-      'P39' => 'Position Held',
-      'P40' => 'Child',
-      'P51' => 'audio',
-      'P53' => 'noble family', #?
-      'P54' => 'Member of sports team',
-      'P69' => 'Educated at',
-      'P91' => 'Sexual orientation',
-      'P94' => 'coat of arms image',
-      'P101' => 'Field of Work',
-      'P103' => 'Native language',
-      'P102' => 'Party',
-      'P106' => 'Occupation', 
-      'P108' => 'Employer', 
-      'P109' => 'Signature', 
-      'P119' => 'Place of burial',
-      'P135' => 'movement',
-      'P138' => 'named after',
-      'P140' => 'Religion',
-      'P155' => 'follows',  #?
-      'P156' => 'followed by',  #?
-      'P157' => 'killed by',  #?
-      'P166' => 'Award received', 
-      'P172' => 'Ethnic group',  # ?
-      'P184' => 'Doctoral advisor', 
-      'P241' => 'Military branch', 
-      'P361' => 'party of', 
-      'P373' => 'Commons category', 
-      'P410' => 'Military rank', 
-      'P413' => 'position on team',
-      'P425' => 'field of this profession',
-      'P428' => 'Botanist author', 
-      'P443' => 'Pronunciation audio', 
-      'P451' => 'Cohabitant', 
-      'P463' => 'Member of', 
-      'P488' => 'Chairperson',
-      'P495' => 'Country of origin', 
-      'P509' => 'Cause of death',
-      'P512' => 'Academic degree', 
-      'P535' => 'Find a Grave', 
-      'P551' => 'Residence', 
-      'P555' => 'Tennis doubles record',
-      'P564' => 'Tennis singles record',
-      'P598' => 'Commander of',
-      'P607' => 'Conflicts', 
-      'P641' => 'Sport', 
-      'P650' => 'RKDartists', 
-      'P741' => 'tennis playing hand', 
-      'P793' => 'significant event',
-      'P800' => 'Notable work',
-      'P812' => 'Academic major',
-      'P866' => 'Perlentaucher ID',
-      'P898' => 'IPA', #
-      'P900' => '<deleted>',
-      'P910' => 'Main category',
-      'P935' => 'Commons gallery', #
-      'P937' => 'Work location',
-      'P990' => 'voice recording',
-      'P1019' => 'feed URL',
-      'P1026' => 'doctoral thesis',
-      'P1038' => 'Relative',
-      'P1050' => 'Medical condition',
-      'P1066' => 'Student of',
-      'P1185' => 'Rodovid ID',
-      'P1196' => 'Manner of death',
-      'P1233' => 'Speculative fiction DB',
-      'P1303' => 'instrument played',
-      'P1321' => 'Place of Origin (Swiss)',
-      'P1343' => 'Described by source',
-      'P1344' => 'Participant in',
-      'P1399' => 'Convicted of', #
-      'P1412' => 'Languages',
-      'P1442' => 'Image of grave',
-      'P1447' => 'SportsReference ID',
-      'P1448' => 'Official name', # ?
-      'P1449' => 'nickname',  # TODO
-      'P1472' => 'Commons Creator page', 
-      'P1477' => 'birth_name',  # TODO
-      'P1559' => 'Name in native language', # ?
-      'P1563' => 'MacTutor id',
-      'P1576' => 'lifestyle',
-      'P1683' => 'quote', 
-      'P1728' => 'AllMusic ID',
-      'P1801' => 'commemorative plaque',
-      'P1819' => 'genealogics ID',
-      'P1971' => 'Number of children',
-      'P2020' => 'worldfootball.net',
-      'P2021' => 'Erdős number',
-    }
-
-    @@want = { 
-      'P18' =>  'image',
-      'P21' =>  'gender',
-      'P213' => 'identifier__ISNI',
-      'P214' => 'identifier__VIAF',
-      'P227' => 'identifier__GND',
-      'P244' => 'identifier__LCAuth',
-      'P245' => 'identifier__ULAN',
-      'P268' => 'identifier__BNF',
-      'P269' => 'identifier__SUDOC',
-      'P271' => 'identifier__CiNii',
-      'P345' => 'identifier__IMDB',
-      'P349' => 'identifier__NDL',
-      'P396' => 'identifier__SBN_it',
-      'P409' => 'identifier__NLA',
-      'P434' => 'identifier__MusicBrainz',
-      'P496' => 'identifier__ORCID',
-      'P511' => 'honorific_prefix',
-      'P536' => 'identifier__ATP',
-      'P549' => 'identifier__MGP',
-      'P553' => 'website',
-      'P569' => 'birth_date',
-      'P570' => 'death_date',
-      'P599' => 'identifier__ITF',
-      'P646' => 'identifier__freebase',
-      'P648' => 'identifier__OLID',
-      'P651' => 'identifier__BPN',
-      'P691' => 'identifier__NKC',
-      'P723' => 'identifier__DBNL',
-      'P734' => 'family_name',
-      'P735' => 'given_name',
-      'P742' => 'pseudonym',
-      'P768' => 'electoral_district',
-      'P856' => 'website',
-      'P865' => 'identifier__BMLO',
-      'P902' => 'identifier__HDS',
-      'P906' => 'identifier__SELIBR',
-      'P947' => 'identifier__RSL',
-      'P949' => 'identifier__NLI',
-      'P950' => 'identifier__BNE',
-      'P951' => 'identifier__NSZL',
-      'P968' => 'email',
-      'P998' => 'identifier__dmoz',
-      'P1005' => 'identifier__PTBNP',
-      'P1006' => 'identifier__NTA',
-      'P1015' => 'identifier__BIBSYS',
-      'P1025' => 'identifier__SUDOC',
-      'P1017' => 'identifier__BAV',
-      'P1035' => 'honorific_suffix',
-      'P1045' => 'identifier__sycomore',
-      'P1047' => 'identifier__catholic_hierarchy',
-      'P1146' => 'identifier__IIAF',
-      'P1157' => 'identifier__UScongress',
-      'P1186' => 'identifier__EuroparlMEP',
-      'P1207' => 'identifier__NUKAT',
-      'P1213' => 'identifier__NLC',
-      'P1214' => 'identifier__Riksdagen',
-      'P1229' => 'identifier__openpolis',
-      'P1258' => 'identifier__rotten_tomatoes',
-      'P1263' => 'identifier__NNDB',
-      'P1266' => 'identifier__AlloCine',
-      'P1273' => 'identifier__CANTIC',
-      'P1284' => 'identifier__Munzinger',
-      'P1285' => 'identifier__Munzinger',
-      'P1288' => 'identifier__Munzinger',
-      'P1291' => 'identifier__ADS',
-      'P1296' => 'identifier__GNC',
-      'P1307' => 'identifier__parlamentDOTch',
-      'P1309' => 'identifier__EGAXA',
-      'P1315' => 'identifier__NLAtrove',
-      'P1331' => 'identifier__PACE',
-      'P1341' => 'identifier__italian_cod',
-      'P1368' => 'identifier__LNB',
-      'P1375' => 'identifier__NSK', 
-      'P1415' => 'identifier__Oxforddnb', 
-      'P1417' => 'identifier__Britannica', 
-      'P1430' => 'identifier__OpenPlaques', 
-      'P1438' => 'identifier__JewishEnc', 
-      # 'P1449' => 'nickname', # multilingual value
-      'P1469' => 'identifier__FIFA', 
-      # 'P1477' => 'birth_name', # multilingual
-      'P513'  => 'birth_name',  # obsolete, but take it if it's there
-      'P1615' => 'identifier__CLARA', 
-      'P1650' => 'identifier__BBF', 
-      'P1695' => 'identifier__NLP', 
-      'P1710' => 'identifier__saebi', 
-      'P1711' => 'identifier__britishmuseum', 
-      'P1713' => 'identifier__bundestag', 
-      'P1714' => 'identifier__journalisted', 
-      'P1741' => 'identifier__GTAA', 
-      'P1749' => 'identifier__parlement', 
-      'P1808' => 'identifier__senatDOTfr', 
-      'P1816' => 'identifier__NPG', 
-      'P1839' => 'identifier__FEC', 
-      'P1883' => 'identifier__declarator', 
-      'P1890' => 'identifier__BNC', 
-      'P1946' => 'identifier__N6I', 
-      'P1996' => 'identifier__parliamentDOTuk', 
-      'P1953' => 'identifier__discogs', 
-      'P2002' => 'twitter', 
-      'P2003' => 'instagram', 
-      'P2005' => 'identifier__halensis', 
-      'P2013' => 'facebook', 
-      'P2015' => 'identifier__hansard', 
-      'P2019' => 'identifier__allmovie', 
-      'P2029' => 'identifier__DoUB', 
-      'P2035' => 'linkedin', 
-      'P2163' => 'identifier__FAST', 
-      'P2168' => 'identifier__SFDb', 
-      'P2169' => 'identifier__publicwhip', 
-      'P2170' => 'identifier__current_hansard', 
-      'P2180' => 'identifier__kansallisbiografia', 
-      'P2181' => 'identifier__eduskunta', 
-      'P2182' => 'identifier__valtioneuvostosta', 
-      'P2280' => 'identifier__parlaments_at', 
-    }
+    LOOKUP_FILE = 'https://raw.githubusercontent.com/everypolitician/wikidata-fetcher/master/lookup.json'
+    def load_lookup_data!
+      lookup = JSON.load(open(LOOKUP_FILE))
+      @@skip = lookup['skip']
+      @@want = lookup['want']
+    end
 
     def data(*lang)
       return unless @wd
@@ -443,7 +233,7 @@ class WikiData
       end
 
       @wd.properties.reject { |c| @@skip[c] || @@want[c] }.each do |c|
-        puts "Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{@wd.id}".red
+        puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{@wd.id}"
       end
 
       @@want.each do |property, how|
