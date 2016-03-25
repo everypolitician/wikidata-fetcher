@@ -214,6 +214,7 @@
     "P2190": "identifier__CSPAN",
     "P2280": "identifier__parlaments_at",
     "P2387": "identifier__elonet",
+    "P2435": "identifier__PORT",
     "P2611": "identifier__TED"
   }
 }
