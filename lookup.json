@@ -111,7 +111,8 @@
     "P2180": "identifier__kansallisbiografia",
     "P2181": "identifier__eduskunta",
     "P2182": "identifier__valtioneuvostosta",
-    "P2280": "identifier__parlaments_at"
+    "P2280": "identifier__parlaments_at",
+    "P2611": "identifier__TED"
   },
   "skip": {
     "P7": "Brother",
