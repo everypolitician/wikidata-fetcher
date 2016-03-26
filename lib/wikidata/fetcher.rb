@@ -121,7 +121,10 @@ class WikiData
         [ redirected_from[p.last['title']] || p.last['title'], p.last['pageprops']['wikibase_item'] ]
       }
     }
-    Hash[ res.flatten(1) ]
+    results = Hash[ res.flatten(1) ]
+    missing = titles - results.keys
+    warn "Can't find Wikidata IDs for: #{missing.join(", ")} in #{lang}" if missing.any?
+    return results
   end
   
   class Category < WikiData
