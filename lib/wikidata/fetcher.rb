@@ -81,9 +81,9 @@ module EveryPolitician
             next
           end
           data[:original_wikiname] = name
-          data[:last_seen] = Date.today.to_s
           puts data if h[:output] == true
           ScraperWiki.save_sqlite([:id], data)
+          ScraperWiki.save_sqlite([:id], { id: data[:id], last_seen: Date.today.to_s }, 'lastseen')
         end
       end
     end
@@ -157,6 +157,12 @@ class WikiData
         all << search.data['categorymembers']
       end
       all.flatten.find_all { |m| m['ns'] == 0 }
+    end
+
+    def subcategories
+      search = _categorymembers_search
+      all = search.data['categorymembers']
+      all.flatten.select { |m| m['ns'] == 14 }.map { |m| m['title'] }
     end
 
     def member_ids
