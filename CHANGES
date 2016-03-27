@@ -1,3 +1,7 @@
+O.14.0  2016-03-27
+  - Add a `subcategories` method on Category
+  - Move the `last_seen` to a different table
+
 O.13.0  2016-03-26
   - Report on missing Wikidata IDs
   - Add a `last_seen` column
