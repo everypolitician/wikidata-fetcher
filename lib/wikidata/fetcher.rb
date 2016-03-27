@@ -159,6 +159,12 @@ class WikiData
       all.flatten.find_all { |m| m['ns'] == 0 }
     end
 
+    def subcategories
+      search = _categorymembers_search
+      all = search.data['categorymembers']
+      all.flatten.select { |m| m['ns'] == 14 }.map { |m| m['title'] }
+    end
+
     def member_ids
       members.map { |m| m['pageid'] }.sort
     end
