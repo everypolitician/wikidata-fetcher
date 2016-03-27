@@ -81,9 +81,9 @@ module EveryPolitician
             next
           end
           data[:original_wikiname] = name
-          data[:last_seen] = Date.today.to_s
           puts data if h[:output] == true
           ScraperWiki.save_sqlite([:id], data)
+          ScraperWiki.save_sqlite([:id], { id: data[:id], last_seen: Date.today.to_s }, 'lastseen')
         end
       end
     end
