@@ -253,6 +253,7 @@
     "P1950": "second_surname",
     "P1953": "identifier__discogs",
     "P1960": "identifier__google_scholar",
+    "P1980": "identifier__polsys",
     "P1986": "identifier__treccani",
     "P1996": "identifier__parliamentDOTuk",
     "P2002": "twitter",
