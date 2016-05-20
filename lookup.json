@@ -136,7 +136,8 @@
     "P2458": "Mackolik ID",
     "P2574": "NFT ID",
     "P2593": "Latvian Olympic athlete ID",
-    "P2632": "place of detention"
+    "P2632": "place of detention",
+    "P2818": "Sherdog ID"
   },
   "want": {
     "P18": "image",
