@@ -301,6 +301,7 @@
     "P2611": "identifier__TED",
     "P2626": "identifier__DNF",
     "P2639": "identifier__filmportal_de",
-    "P2686": "identifier__opensecrets"
+    "P2686": "identifier__opensecrets",
+    "P2799": "identifier__BVMC"
   }
 }
