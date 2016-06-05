@@ -70,6 +70,8 @@ module EveryPolitician
       langpairs = h[:names].map { |lang, names| WikiData.ids_from_pages(lang.to_s, names) }
       combined  = langpairs.reduce({}) { |h, people| h.merge(people.invert) }
       (h[:ids] ||= []).each { |id| combined[id] ||= nil }
+      # Clean out existing data
+      ScraperWiki.sqliteexecute('DELETE FROM data') rescue nil
 
       Hash[combined.to_a.shuffle].each_slice(h[:batch_size] || 10_000) do |slice|
         sliced = Hash[slice]
@@ -83,7 +85,6 @@ module EveryPolitician
           data[:original_wikiname] = name
           puts data if h[:output] == true
           ScraperWiki.save_sqlite([:id], data)
-          ScraperWiki.save_sqlite([:id], { id: data[:id], last_seen: Date.today.to_s }, 'lastseen')
         end
       end
     end

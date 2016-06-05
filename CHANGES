@@ -1,3 +1,6 @@
+O.15.0  2016-06-05
+  - Delete existing data before re-scraping
+
 O.14.0  2016-03-27
   - Add a `subcategories` method on Category
   - Move the `last_seen` to a different table
