@@ -149,7 +149,8 @@
     "P2777": "FIS snowboarder ID",
     "P2779": "IAT weightlifter ID",
     "P2796": "FIG gymnast ID",
-    "P2818": "Sherdog ID"
+    "P2818": "Sherdog ID",
+    "P2873": "time in space"
   },
   "want": {
     "P18": "image",
