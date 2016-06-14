@@ -1,3 +1,6 @@
+O.15.0  2016-06-14
+  - Better handling of errors from Wikisnakker
+
 O.15.0  2016-06-05
   - Delete existing data before re-scraping
 

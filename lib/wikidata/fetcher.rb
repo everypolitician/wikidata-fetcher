@@ -77,11 +77,18 @@ module EveryPolitician
         sliced = Hash[slice]
         found = WikiData::Fetcher.find(sliced.keys)
         sliced.each do |id, name|
-          data = found[id].data(langs) rescue nil
-          unless data
+          unless found[id]
             warn "No data for #{id}"
             next
           end
+
+          begin
+            data = found[id].data(langs)
+          rescue Exception => e
+            warn "Problem with #{id}: #{e}"
+            next
+          end
+
           data[:original_wikiname] = name
           puts data if h[:output] == true
           ScraperWiki.save_sqlite([:id], data)
@@ -251,7 +258,8 @@ class WikiData
 
       @@want.each do |property, how|
         d = @wd[property] or next
-        data[how.to_sym] = d.value.respond_to?(:label) ? d.value.label('en') : d.value
+        val = d.value rescue nil or next warn "Unknown value for #{property} for #{data[:id]}"
+        data[how.to_sym] = val.respond_to?(:label) ? val.label('en') : val 
         # warn " %s (%s): %s = %s".cyan % [data[:id], data[:name], how.first, data[how.first.to_sym]]
       end
 
