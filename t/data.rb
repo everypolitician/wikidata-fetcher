@@ -125,3 +125,16 @@ describe 'bracketed name' do
   end
 end
 
+describe 'untranslated property' do
+  around { |test| VCR.use_cassette('Lupu', &test) }
+
+  it 'should receive a warning' do
+    orig_err = $stderr
+    $stderr = StringIO.new
+      subject = WikiData::Fetcher.new(id: 'Q312340')
+      subject.data[:name__en].must_equal 'Marian Lupu'
+      $stderr.string.must_include 'Unknown value for P735 for Q312340'
+    $stderr = orig_err
+  end
+end
+
