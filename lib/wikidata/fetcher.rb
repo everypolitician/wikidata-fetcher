@@ -25,9 +25,10 @@ module EveryPolitician
     def self.morph_wikinames(h)
       morph_api_url = 'https://api.morph.io/%s/data.json' % h[:source]
       morph_api_key = ENV["MORPH_API_KEY"]
+      table = h[:table] || "data"
       result = RestClient.get morph_api_url, params: {
         key: morph_api_key,
-        query: "SELECT DISTINCT(#{h[:column]}) AS wikiname FROM #{h[:table] || data}"
+        query: "SELECT DISTINCT(#{h[:column]}) AS wikiname FROM #{table}"
       }
       JSON.parse(result, symbolize_names: true).map { |h| h[:wikiname] }.reject { |n| n.to_s.empty? }
     end
