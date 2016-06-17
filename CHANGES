@@ -1,4 +1,8 @@
-O.15.0  2016-06-14
+O.17.0  2016-06-17
+  - Can now specify an optional `table` parameter when fetching data
+    from a Morph scraper
+
+O.16.0  2016-06-14
   - Better handling of errors from Wikisnakker
 
 O.15.0  2016-06-05
