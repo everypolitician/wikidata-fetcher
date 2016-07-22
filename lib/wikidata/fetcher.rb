@@ -234,13 +234,13 @@ class WikiData
 
       @wd.labels.each do |k, v|
         # remove any bracketed element at the end
-        data["name__#{k.tr('-','_')}".to_sym] = v['value'].sub(/ \(.*?\)$/,'')
+        data["name__#{k.to_s.tr('-','_')}".to_sym] = v[:value].sub(/ \(.*?\)$/,'')
       end
 
       data[:name] = [lang, 'en'].flatten.map { |l| data["name__#{l}".to_sym] }.compact.first
 
       @wd.sitelinks.each do |k, v|
-        data["wikipedia__#{k.sub(/wiki$/,'')}".to_sym] = v.title
+        data["wikipedia__#{k.to_s.sub(/wiki$/,'')}".to_sym] = v.title
       end
 
       # Short-circuit if there are no claims
