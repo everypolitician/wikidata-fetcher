@@ -220,9 +220,11 @@ class WikiData
 
     LOOKUP_FILE = 'https://raw.githubusercontent.com/everypolitician/wikidata-fetcher/master/lookup.json'
     def load_lookup_data!
-      lookup = JSON.load(open(LOOKUP_FILE))
-      @@skip = lookup['skip']
-      @@want = lookup['want']
+      lookup = JSON.load(
+        open(LOOKUP_FILE), nil, symbolize_names: true, create_additions: false
+      )
+      @@skip = lookup[:skip]
+      @@want = lookup[:want]
     end
 
     def data(*lang)
