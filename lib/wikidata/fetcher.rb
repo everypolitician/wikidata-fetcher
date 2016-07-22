@@ -89,6 +89,7 @@ module EveryPolitician
             warn "Problem with #{id}: #{e}"
             next
           end
+          next unless data
 
           data[:original_wikiname] = name
           puts data if h[:output] == true
