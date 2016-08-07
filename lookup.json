@@ -324,6 +324,7 @@
     "P2799": "identifier__BVMC",
     "P2847": "identifier__google_plus",
     "P2924": "identifier__bigenc_ru",
-    "P2949": "identifier__wikitree"
+    "P2949": "identifier__wikitree",
+    "P2963": "identifier__goodreads"
   }
 }
