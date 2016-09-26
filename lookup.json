@@ -331,6 +331,7 @@
     "P2953": "identifier__etis_ee",
     "P2963": "identifier__goodreads",
     "P3029": "identifier__national_archives",
+    "P3072": "identifier__storting",
     "P3106": "identifier__guardian_topic"
   }
 }
