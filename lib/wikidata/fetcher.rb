@@ -67,10 +67,16 @@ module EveryPolitician
     require 'scraperwiki'
 
     def self.scrape_wikidata(h)
-      langs = ((h[:lang] || (h[:names] ||= {}).keys) + [:en]).flatten.uniq
-      langpairs = h[:names].map { |lang, names| WikiData.ids_from_pages(lang.to_s, names) }
-      combined  = langpairs.reduce({}) { |h, people| h.merge(people.invert) }
-      (h[:ids] ||= []).each { |id| combined[id] ||= nil }
+      h[:names] ||= {}
+      langs = ((h[:lang_precedence] || h[:names].keys) + [:en]).flatten.uniq
+      combined =
+        if h[:names].empty?
+          {}
+        else
+          lang_pairs = h[:names].map { |lang, names| WikiData.ids_from_pages(lang.to_s, names).invert }
+          lang_pairs.reduce({}) { |h, people| h.merge(people) }
+        end
+      (h[:ids] || []).each { |id| combined[id] ||= nil }
       # Clean out existing data
       ScraperWiki.sqliteexecute('DELETE FROM data') rescue nil
 
@@ -228,7 +234,7 @@ class WikiData
       @@want = lookup[:want]
     end
 
-    def data(*lang)
+    def data(*langs)
       return unless @wd
 
       data = { 
@@ -240,7 +246,7 @@ class WikiData
         data["name__#{k.to_s.tr('-','_')}".to_sym] = v[:value].sub(/ \(.*?\)$/,'')
       end
 
-      data[:name] = [lang, 'en'].flatten.map { |l| data["name__#{l}".to_sym] }.compact.first
+      data[:name] = [langs, 'en'].flatten.map { |l| data["name__#{l}".to_sym] }.compact.first
 
       @wd.sitelinks.each do |k, v|
         data["wikipedia__#{k.to_s.sub(/wiki$/,'')}".to_sym] = v.title
