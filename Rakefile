@@ -1,4 +1,4 @@
-require "bundler/gem_tasks"
+require 'bundler/gem_tasks'
 
 require 'rake/testtask'
 require 'rubocop/rake_task'
@@ -10,5 +10,3 @@ Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'
   t.test_files = FileList['t/*.rb']
 end
-
-
