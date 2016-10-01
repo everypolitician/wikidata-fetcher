@@ -1,6 +1,6 @@
 language: ruby
 script:
-  - bundle exec rake test
+  - bundle exec rake test rubocop
 rvm:
   - 2.3.1
   - 2.2
