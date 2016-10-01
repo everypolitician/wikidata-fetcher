@@ -2,7 +2,6 @@ require "wikidata/fetcher/version"
 
 require 'colorize'
 require 'digest/sha1'
-require 'diskcached'
 require 'json'
 require 'mediawiki_api'
 require 'wikidata'
@@ -109,13 +108,6 @@ module EveryPolitician
 end
 
 class WikiData
-
-  @@cache_dir = '.cache'
-  @@cache_time = 60 * 60 * 12
-  def cached
-    @_cache ||= Diskcached.new(@@cache_dir, @@cache_time)
-  end
-
   def self.ids_from_pages(lang, titles)
     client = MediawikiApi::Client.new "https://#{lang}.wikipedia.org/w/api.php"
     res = titles.compact.each_slice(50).map { |sliced|
@@ -156,7 +148,7 @@ class WikiData
         list: 'categorymembers',
         cmlimit: '500'
       }.merge(args)
-      cached.cache("mems-#{Digest::SHA1.hexdigest cat_args.to_s}") { client.action :query, cat_args }
+      client.action :query, cat_args
     end
 
     def members
@@ -192,7 +184,7 @@ class WikiData
           pageids: ids.join("|"),
           token_type: false,
         }
-        response = cached.cache("wbids-#{Digest::SHA1.hexdigest page_args.to_s}") { client.action :query, page_args }
+        response = client.action :query, page_args
         response.data['pages'].find_all { |p| p.last.key? 'pageprops' }.map { |p| p.last['pageprops']['wikibase_item'] }
       }.flatten
     end
