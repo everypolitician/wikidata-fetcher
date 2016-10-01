@@ -16,4 +16,3 @@ describe 'data' do
     subject['Q13570003'].data('et')[:name].must_equal 'Kadri Simson'
   end
 end
-
