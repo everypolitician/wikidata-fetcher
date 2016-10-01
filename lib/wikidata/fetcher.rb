@@ -27,7 +27,7 @@ module EveryPolitician
         key:   morph_api_key,
         query: "SELECT DISTINCT(#{h[:column]}) AS wikiname FROM #{table}",
       }
-      JSON.parse(result, symbolize_names: true).map { |h| h[:wikiname] }.reject { |n| n.to_s.empty? }
+      JSON.parse(result, symbolize_names: true).map { |e| e[:wikiname] }.reject { |n| n.to_s.empty? }
     end
 
     require 'pry'
@@ -66,7 +66,7 @@ module EveryPolitician
     def self.scrape_wikidata(h)
       langs = ((h[:lang] || (h[:names] ||= {}).keys) + [:en]).flatten.uniq
       langpairs = h[:names].map { |lang, names| WikiData.ids_from_pages(lang.to_s, names) }
-      combined  = langpairs.reduce({}) { |h, people| h.merge(people.invert) }
+      combined  = langpairs.reduce({}) { |a, e| a.merge(e.invert) }
       (h[:ids] ||= []).each { |id| combined[id] ||= nil }
       # Clean out existing data
       ScraperWiki.sqliteexecute('DELETE FROM data') rescue nil
@@ -82,7 +82,7 @@ module EveryPolitician
 
           begin
             data = found[id].data(langs)
-          rescue Exception => e
+          rescue StandardError => e
             warn "Problem with #{id}: #{e}"
             next
           end
