@@ -20,7 +20,6 @@ describe 'category' do
   it 'should include someone from the end of the list' do
     subject.wikidata_ids.must_include 'Q20528676'
   end
-
 end
 
 describe 'large category' do
@@ -38,6 +37,4 @@ describe 'large category' do
   it 'should include someone from the end of the list' do
     subject.wikidata_ids.must_include 'Q20732037'
   end
-
 end
-
