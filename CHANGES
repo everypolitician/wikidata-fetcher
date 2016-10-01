@@ -1,3 +1,7 @@
+O.18.0  2016-10-01
+  - We no longer cache MediaWiki API query results. If you need to do
+    something like that, you should be doing it locally.
+
 O.17.0  2016-06-17
   - Can now specify an optional `table` parameter when fetching data
     from a Morph scraper
