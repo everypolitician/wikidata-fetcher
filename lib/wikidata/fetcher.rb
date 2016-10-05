@@ -118,8 +118,8 @@ class WikiData
       }
       response = client.action :query, page_args
       redirected_from = Hash[(response.data['redirects'] || []).map { |h| [h['to'], h['from']] }]
-      response.data['pages'].select { |p| p.last.key? 'pageprops' }.map do |p|
-        [redirected_from[p.last['title']] || p.last['title'], p.last['pageprops']['wikibase_item']]
+      response.data['pages'].select { |_k, v| v.key? 'pageprops' }.map do |_k, v|
+        [redirected_from[v['title']] || v['title'], v['pageprops']['wikibase_item']]
       end
     end
     results = Hash[res.flatten(1)]
