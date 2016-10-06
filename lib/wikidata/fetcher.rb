@@ -38,9 +38,7 @@ class WikiData
     def data(*lang)
       return unless @wd
 
-      data = {
-        id: @wd.id,
-      }
+      data = { id: @wd.id }
 
       @wd.labels.each do |k, v|
         # remove any bracketed element at the end
