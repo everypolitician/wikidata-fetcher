@@ -16,6 +16,10 @@ describe 'data' do
     it 'has a YouTube username' do
       subject[:youtube].must_equal 'IKMitsotakis'
     end
+
+    it 'has a Flickr key' do
+      subject.key?(:flickr).must_equal true
+    end
   end
 
   describe 'when person has no websites' do
