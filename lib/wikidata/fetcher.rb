@@ -57,6 +57,8 @@ class WikiData
         return nil
       end
 
+      data[:youtube] = '' if @wd.P553s.map { |property| property.value.label('en') }.include?('YouTube')
+
       @wd.properties.reject { |c| skip[c] || want[c] }.each do |c|
         puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{@wd.id}"
       end
