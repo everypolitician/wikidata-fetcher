@@ -10,21 +10,20 @@ describe 'data' do
     end
 
     it 'has a YouTube key' do
-      subject.key?(:youtube).must_equal true
+      subject.key?(:identifier__youtube).must_equal true
     end
 
     it 'has a YouTube username' do
-      subject[:youtube].must_equal 'IKMitsotakis'
+      subject[:identifier__youtube].must_equal 'IKMitsotakis'
     end
 
     it 'has a Flickr key' do
-      subject.key?(:flickr).must_equal true
+      subject.key?(:identifier__flickr).must_equal true
     end
 
     it 'has a Flickr username' do
-      subject[:flickr].must_equal 'mitsotakis'
+      subject[:identifier__flickr].must_equal 'mitsotakis'
     end
-
   end
 
   describe 'when person has no websites' do
@@ -32,11 +31,11 @@ describe 'data' do
     subject { WikiData::Fetcher.new(id: 'Q312894').data }
 
     it 'doesnt have a YouTube key' do
-      subject.key?(:youtube).must_equal false
+      subject.key?(:identifier__youtube).must_equal false
     end
 
     it 'doesnt have a Flickr key' do
-      subject.key?(:flickr).must_equal false
+      subject.key?(:identifier__flickr).must_equal false
     end
   end
 end

@@ -244,9 +244,8 @@ class WikiData
         return nil
       end
 
-      data[:youtube] = @wd.P553.qualifiers.P554.value if @wd.P553s.map { |property| property.value.label('en') }.include?('YouTube')
-
-      data[:flickr] = @wd.P553s.last.qualifiers.P554.value if @wd.P553s.map { |property| property.value.label('en') }.include?('Flickr')
+      data[:identifier__youtube] = @wd.P553s.first.qualifiers.P554.value if @wd.P553s.map { |property| property.value.label('en') }.include?('YouTube')
+      data[:identifier__flickr]  = @wd.P553s.last.qualifiers.P554.value if @wd.P553s.map  { |property| property.value.label('en') }.include?('Flickr')
 
       @wd.properties.reject { |c| @@skip[c] || @@want[c] }.each do |c|
         puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{@wd.id}"
