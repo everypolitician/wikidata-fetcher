@@ -226,7 +226,7 @@ class WikiData
         data["name__#{k.to_s.tr('-', '_')}".to_sym] = v[:value].sub(/ \(.*?\)$/, '')
       end
 
-      data[:name] = [lang, 'en'].flatten.map { |l| data["name__#{l}".to_sym] }.compact.first
+      data[:name] = first_label_used(data, [lang, 'en'].flatten)
 
       @wd.sitelinks.each do |k, v|
         data["wikipedia__#{k.to_s.sub(/wiki$/, '')}".to_sym] = v.title
@@ -268,5 +268,9 @@ class WikiData
 
   def website_username(p553_property)
     p553_property.qualifiers.P554.value rescue ''
+  end
+
+  def first_label_used(data, language_codes)
+    language_codes.map { |l| data["name__#{l}".to_sym] }.compact.first
   end
 end
