@@ -57,8 +57,7 @@ class WikiData
         return nil
       end
 
-      data[custom_identifier(@wd.P553s.first)] = website_username(@wd.P553s.first) if @wd.P553s.map { |property| property.value.label('en') }.include?('YouTube')
-      data[custom_identifier(@wd.P553s.last)]  = website_username(@wd.P553s.last)  if @wd.P553s.map { |property| property.value.label('en') }.include?('Flickr')
+      @wd.P553s.each { |property| data[custom_identifier(property)] = website_username(property) }
 
       @wd.properties.reject { |c| skip[c] || want[c] }.each do |c|
         puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{@wd.id}"
