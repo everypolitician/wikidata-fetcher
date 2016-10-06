@@ -57,8 +57,8 @@ class WikiData
         return nil
       end
 
-      data[:identifier__youtube] = @wd.P553s.first.qualifiers.P554.value if @wd.P553s.map { |property| property.value.label('en') }.include?('YouTube')
-      data[:identifier__flickr]  = @wd.P553s.last.qualifiers.P554.value if @wd.P553s.map  { |property| property.value.label('en') }.include?('Flickr')
+      data[custom_identifier(@wd.P553s.first)] = @wd.P553s.first.qualifiers.P554.value if @wd.P553s.map { |property| property.value.label('en') }.include?('YouTube')
+      data[custom_identifier(@wd.P553s.last)]  = @wd.P553s.last.qualifiers.P554.value if @wd.P553s.map  { |property| property.value.label('en') }.include?('Flickr')
 
       @wd.properties.reject { |c| skip[c] || want[c] }.each do |c|
         puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{@wd.id}"
@@ -93,5 +93,12 @@ class WikiData
 
   def first_label_used(data, language_codes)
     language_codes.map { |l| data["name__#{l}".to_sym] }.compact.first
+  end
+
+  private
+
+  def custom_identifier(property)
+    custom_id = property.value.label('en')
+    "identifier__#{custom_id}".downcase.to_sym
   end
 end
