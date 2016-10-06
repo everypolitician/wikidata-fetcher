@@ -96,6 +96,11 @@ class WikiData
 
   private
 
+  def property_value(property)
+    val = @wd[property].value rescue nil or return
+    val.respond_to?(:label) ? val.label('en') : val
+  end
+
   def custom_identifier(property)
     custom_id = property.value.label('en')
     "identifier__#{custom_id}".downcase.to_sym
