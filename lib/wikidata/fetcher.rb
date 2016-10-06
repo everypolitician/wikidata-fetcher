@@ -57,8 +57,8 @@ class WikiData
         return nil
       end
 
-      data[custom_identifier(@wd.P553s.first)] = @wd.P553s.first.qualifiers.P554.value if @wd.P553s.map { |property| property.value.label('en') }.include?('YouTube')
-      data[custom_identifier(@wd.P553s.last)]  = @wd.P553s.last.qualifiers.P554.value if @wd.P553s.map  { |property| property.value.label('en') }.include?('Flickr')
+      data[custom_identifier(@wd.P553s.first)] = website_username(@wd.P553s.first) if @wd.P553s.map { |property| property.value.label('en') }.include?('YouTube')
+      data[custom_identifier(@wd.P553s.last)]  = website_username(@wd.P553s.last)  if @wd.P553s.map { |property| property.value.label('en') }.include?('Flickr')
 
       @wd.properties.reject { |c| skip[c] || want[c] }.each do |c|
         puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{@wd.id}"
@@ -100,5 +100,9 @@ class WikiData
   def custom_identifier(property)
     custom_id = property.value.label('en')
     "identifier__#{custom_id}".downcase.to_sym
+  end
+
+  def website_username(p553_property)
+    p553_property.qualifiers.P554.value
   end
 end
