@@ -269,6 +269,6 @@ class WikiData
   end
 
   def website_username(p553_property)
-    p553_property.qualifiers.P554.value
+    p553_property.qualifiers.P554.value rescue ''
   end
 end
