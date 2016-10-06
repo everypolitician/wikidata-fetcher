@@ -65,9 +65,8 @@ class WikiData
         puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{@wd.id}"
       end
 
-      @@want.each do |property, how|
-        d = @wd[property] or next
-        val = d.value rescue nil or next warn "Unknown value for #{property} for #{data[:id]}"
+      @@want.select { |property| @wd[property] }.each do |property, how|
+        val = @wd[property].value rescue nil or next warn "Unknown value for #{property} for #{data[:id]}"
         data[how.to_sym] = val.respond_to?(:label) ? val.label('en') : val
       end
 
