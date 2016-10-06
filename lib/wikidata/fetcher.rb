@@ -104,4 +104,8 @@ class WikiData
   def website_username(p553_property)
     p553_property.qualifiers.P554.value rescue ''
   end
+
+  def first_label_used(data, language_codes)
+    language_codes.map { |l| data["name__#{l}".to_sym] }.compact.first
+  end
 end
