@@ -69,7 +69,6 @@ class WikiData
         d = @wd[property] or next
         val = d.value rescue nil or next warn "Unknown value for #{property} for #{data[:id]}"
         data[how.to_sym] = val.respond_to?(:label) ? val.label('en') : val
-        # warn " %s (%s): %s = %s".cyan % [data[:id], data[:name], how.first, data[how.first.to_sym]]
       end
 
       data
