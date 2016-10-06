@@ -59,7 +59,7 @@ class WikiData
 
       data[:youtube] = @wd.P553.qualifiers.P554.value if @wd.P553s.map { |property| property.value.label('en') }.include?('YouTube')
 
-      data[:flickr] = '' if @wd.P553s.map { |property| property.value.label('en') }.include?('Flickr')
+      data[:flickr] = @wd.P553s.last.qualifiers.P554.value if @wd.P553s.map { |property| property.value.label('en') }.include?('Flickr')
 
       @wd.properties.reject { |c| skip[c] || want[c] }.each do |c|
         puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{@wd.id}"

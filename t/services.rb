@@ -20,6 +20,11 @@ describe 'data' do
     it 'has a Flickr key' do
       subject.key?(:flickr).must_equal true
     end
+
+    it 'has a Flickr username' do
+      subject[:flickr].must_equal 'mitsotakis'
+    end
+
   end
 
   describe 'when person has no websites' do
