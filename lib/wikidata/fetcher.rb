@@ -66,8 +66,9 @@ class WikiData
       end
 
       @@want.select { |property| @wd[property] }.each do |property, how|
-        val = @wd[property].value rescue nil or next warn "Unknown value for #{property} for #{data[:id]}"
-        data[how.to_sym] = val.respond_to?(:label) ? val.label('en') : val
+        val = property_value(property)
+        next warn "Unknown value for #{property} for #{data[:id]}" unless val
+        data[how.to_sym] = val
       end
 
       data
@@ -75,6 +76,11 @@ class WikiData
   end
 
   private
+
+  def property_value(property)
+    val = @wd[property].value rescue nil or return
+    val.respond_to?(:label) ? val.label('en') : val
+  end
 
   def first_label_used(data, language_codes)
     language_codes.map { |l| data["name__#{l}".to_sym] }.compact.first
