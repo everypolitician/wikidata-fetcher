@@ -33,9 +33,5 @@ describe 'data' do
     it 'doesnt have a YouTube key' do
       subject.key?(:identifier__youtube).must_equal false
     end
-
-    it 'doesnt have a Flickr key' do
-      subject.key?(:identifier__flickr).must_equal false
-    end
   end
 end
