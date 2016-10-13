@@ -24,3 +24,4 @@ mkmf.log
 *.swp
 
 *.cache
+.rubocop-https---raw-githubusercontent-com-everypolitician-everypolitician-data-master--rubocop-base-yml
