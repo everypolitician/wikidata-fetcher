@@ -10,3 +10,5 @@ Rake::TestTask.new(:test) do |t|
   t.libs << 'lib'
   t.test_files = FileList['t/*.rb']
 end
+
+task default: %i(test rubocop)
