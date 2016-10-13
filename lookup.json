@@ -333,6 +333,7 @@
     "P3029": "identifier__national_archives",
     "P3072": "identifier__storting",
     "P3106": "identifier__guardian_topic",
-    "P3185": "identifier__vkontakte"
+    "P3185": "identifier__vkontakte",
+    "P3188": "identifier__nobel_prize"
   }
 }
