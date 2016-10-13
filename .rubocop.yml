@@ -12,3 +12,10 @@ Style/AndOr:
   Exclude:
     - 'lib/wikidata/fetcher.rb'
 
+# depsite Rubocop's insistence, we can't replace .find_all with .select
+# everywhere, as they do very different things on a Hash
+# http://stackoverflow.com/questions/20999192/is-find-all-and-select-the-same-thing/21000136#21000136
+Style/CollectionMethods:
+  Exclude:
+    - 'lib/wikidata/category.rb'
+

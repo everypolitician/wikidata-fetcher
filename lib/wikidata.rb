@@ -128,4 +128,3 @@ module EveryPolitician
     end
   end
 end
-
