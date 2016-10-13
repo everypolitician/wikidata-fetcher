@@ -33,10 +33,3 @@ Metrics/PerceivedComplexity:
 Style/ClassVars:
   Exclude:
     - 'lib/wikidata/fetcher.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: PreferredMethods.
-Style/CollectionMethods:
-  Exclude:
-    - 'lib/wikidata/fetcher.rb'

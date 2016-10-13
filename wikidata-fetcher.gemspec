@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'diskcached'
   spec.add_dependency 'colorize'
   spec.add_dependency 'json'
+  spec.add_dependency 'require_all'
   spec.add_dependency 'rest-client'
   spec.add_dependency 'scraperwiki'
   spec.add_dependency 'nokogiri'
