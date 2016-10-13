@@ -7,6 +7,30 @@ require 'wikisnakker'
 
 require_rel '.'
 
+class WikiData
+  def self.ids_from_pages(lang, titles)
+    client = MediawikiApi::Client.new "https://#{lang}.wikipedia.org/w/api.php"
+    res = titles.compact.each_slice(50).map do |sliced|
+      page_args = {
+        prop:       'pageprops',
+        ppprop:     'wikibase_item',
+        redirects:  1,
+        titles:     sliced.join('|'),
+        token_type: false,
+      }
+      response = client.action :query, page_args
+      redirected_from = Hash[(response.data['redirects'] || []).map { |h| [h['to'], h['from']] }]
+      response.data['pages'].select { |_k, v| v.key? 'pageprops' }.map do |_k, v|
+        [redirected_from[v['title']] || v['title'], v['pageprops']['wikibase_item']]
+      end
+    end
+    results = Hash[res.flatten(1)]
+    missing = titles - results.keys
+    warn "Can't find Wikidata IDs for: #{missing.join(', ')} in #{lang}" if missing.any?
+    results
+  end
+end
+
 module EveryPolitician
   module Wikidata
     WDQ_URL = 'https://wdq.wmflabs.org/api'.freeze
@@ -105,26 +129,3 @@ module EveryPolitician
   end
 end
 
-class WikiData
-  def self.ids_from_pages(lang, titles)
-    client = MediawikiApi::Client.new "https://#{lang}.wikipedia.org/w/api.php"
-    res = titles.compact.each_slice(50).map do |sliced|
-      page_args = {
-        prop:       'pageprops',
-        ppprop:     'wikibase_item',
-        redirects:  1,
-        titles:     sliced.join('|'),
-        token_type: false,
-      }
-      response = client.action :query, page_args
-      redirected_from = Hash[(response.data['redirects'] || []).map { |h| [h['to'], h['from']] }]
-      response.data['pages'].select { |_k, v| v.key? 'pageprops' }.map do |_k, v|
-        [redirected_from[v['title']] || v['title'], v['pageprops']['wikibase_item']]
-      end
-    end
-    results = Hash[res.flatten(1)]
-    missing = titles - results.keys
-    warn "Can't find Wikidata IDs for: #{missing.join(', ')} in #{lang}" if missing.any?
-    results
-  end
-end
