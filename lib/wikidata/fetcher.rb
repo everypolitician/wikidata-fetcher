@@ -13,8 +13,8 @@ class WikiData
       Hash[Wikisnakker::Item.find(ids).map { |item| [item.id, new(item: item)] }]
     end
 
-    def self.lookup
-      @lookup ||= JSON.parse(open(LOOKUP_FILE).read, symbolize_names: true)
+    def self.wikidata_properties
+      @wikidata_properties ||= JSON.parse(open(LOOKUP_FILE).read, symbolize_names: true)
     end
 
     def initialize(h)
@@ -73,11 +73,11 @@ class WikiData
     private
 
     def skip
-      @skip ||= self.class.lookup[:skip]
+      @skip ||= self.class.wikidata_properties[:skip]
     end
 
     def want
-      @want ||= self.class.lookup[:want]
+      @want ||= self.class.wikidata_properties[:want]
     end
   end
 
