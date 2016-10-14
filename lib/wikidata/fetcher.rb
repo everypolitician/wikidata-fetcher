@@ -7,8 +7,14 @@ require_rel '..'
 
 class WikiData
   class Fetcher < WikiData
+    LOOKUP_FILE = 'https://raw.githubusercontent.com/everypolitician/wikidata-fetcher/master/lookup.json'.freeze
+
     def self.find(ids)
       Hash[Wikisnakker::Item.find(ids).map { |item| [item.id, new(item: item)] }]
+    end
+
+    def self.wikidata_properties
+      @wikidata_properties ||= JSON.parse(open(LOOKUP_FILE).read, symbolize_names: true)
     end
 
     def initialize(h)
@@ -23,16 +29,6 @@ class WikiData
       else
         raise 'No id'
       end
-      load_lookup_data!
-    end
-
-    LOOKUP_FILE = 'https://raw.githubusercontent.com/everypolitician/wikidata-fetcher/master/lookup.json'.freeze
-    def load_lookup_data!
-      lookup = JSON.load(
-        open(LOOKUP_FILE), nil, symbolize_names: true, create_additions: false
-      )
-      @@skip = lookup[:skip]
-      @@want = lookup[:want]
     end
 
     def data(*lang)
@@ -61,17 +57,27 @@ class WikiData
         return nil
       end
 
-      @wd.properties.reject { |c| @@skip[c] || @@want[c] }.each do |c|
+      @wd.properties.reject { |c| skip[c] || want[c] }.each do |c|
         puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{@wd.id}"
       end
 
-      @@want.select { |property| @wd[property] }.each do |property, how|
+      want.select { |property| @wd[property] }.each do |property, how|
         val = property_value(property)
         next warn "Unknown value for #{property} for #{data[:id]}" unless val
         data[how.to_sym] = val
       end
 
       data
+    end
+
+    private
+
+    def skip
+      @skip ||= self.class.wikidata_properties[:skip]
+    end
+
+    def want
+      @want ||= self.class.wikidata_properties[:want]
     end
   end
 
