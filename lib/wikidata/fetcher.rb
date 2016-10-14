@@ -29,8 +29,6 @@ class WikiData
       else
         raise 'No id'
       end
-      @@skip = self.class.lookup[:skip]
-      @@want = self.class.lookup[:want]
     end
 
     def data(*lang)
@@ -61,11 +59,11 @@ class WikiData
         return nil
       end
 
-      @wd.properties.reject { |c| @@skip[c] || @@want[c] }.each do |c|
+      @wd.properties.reject { |c| skip[c] || want[c] }.each do |c|
         puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{@wd.id}"
       end
 
-      @@want.each do |property, how|
+      want.each do |property, how|
         d = @wd[property] or next
         val = d.value rescue nil or next warn "Unknown value for #{property} for #{data[:id]}"
         data[how.to_sym] = val.respond_to?(:label) ? val.label('en') : val
@@ -73,6 +71,16 @@ class WikiData
       end
 
       data
+    end
+
+    private
+
+    def skip
+      @skip ||= self.class.lookup[:skip]
+    end
+
+    def want
+      @want ||= self.class.lookup[:want]
     end
   end
 end
