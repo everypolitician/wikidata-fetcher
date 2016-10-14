@@ -34,16 +34,14 @@ class WikiData
     def data(*lang)
       return unless @wd
 
-      data = {
-        id: @wd.id,
-      }
+      data = { id: @wd.id }
 
       @wd.labels.each do |k, v|
         # remove any bracketed element at the end
         data["name__#{k.to_s.tr('-', '_')}".to_sym] = v[:value].sub(/ \(.*?\)$/, '')
       end
 
-      data[:name] = [lang, 'en'].flatten.map { |l| data["name__#{l}".to_sym] }.compact.first
+      data[:name] = first_label_used(data, [lang, 'en'].flatten)
 
       @wd.sitelinks.each do |k, v|
         data["wikipedia__#{k.to_s.sub(/wiki$/, '')}".to_sym] = v.title
@@ -63,11 +61,10 @@ class WikiData
         puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{@wd.id}"
       end
 
-      want.each do |property, how|
-        d = @wd[property] or next
-        val = d.value rescue nil or next warn "Unknown value for #{property} for #{data[:id]}"
-        data[how.to_sym] = val.respond_to?(:label) ? val.label('en') : val
-        # warn " %s (%s): %s = %s".cyan % [data[:id], data[:name], how.first, data[how.first.to_sym]]
+      want.select { |property| @wd[property] }.each do |property, how|
+        val = property_value(property)
+        next warn "Unknown value for #{property} for #{data[:id]}" unless val
+        data[how.to_sym] = val
       end
 
       data
@@ -82,5 +79,16 @@ class WikiData
     def want
       @want ||= self.class.lookup[:want]
     end
+  end
+
+  private
+
+  def property_value(property)
+    val = @wd[property].value rescue nil or return
+    val.respond_to?(:label) ? val.label('en') : val
+  end
+
+  def first_label_used(data, language_codes)
+    language_codes.map { |l| data["name__#{l}".to_sym] }.compact.first
   end
 end
