@@ -41,6 +41,16 @@ module EveryPolitician
       json[:items].map { |id| "Q#{id}" }
     end
 
+    WIKIDATA_SPARQL_URL = 'https://query.wikidata.org/sparql'.freeze
+
+    def self.sparql(query)
+      result = RestClient.get WIKIDATA_SPARQL_URL, params: { query: query, format: 'json' }
+      json = JSON.parse(result, symbolize_names: true)
+      json[:results][:bindings].map { |res| res[:item][:value].split('/').last }
+    rescue RestClient::Exception => e
+      raise "Wikidata query #{query} failed: #{e.message}"
+    end
+
     require 'rest-client'
 
     def self.morph_wikinames(h)
