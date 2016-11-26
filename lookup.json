@@ -339,6 +339,8 @@
     "P3188": "identifier__nobel_prize",
     "P3221": "identifier__nyt_topic",
     "P3258": "identifier__livejournal",
-    "P3267": "identifier__flickr"
+    "P3267": "identifier__flickr",
+    "P3297": "identifier__flemish_parliament",
+    "P3298": "identifier__belgian_senate"
   }
 }
