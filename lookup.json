@@ -341,6 +341,7 @@
     "P3258": "identifier__livejournal",
     "P3267": "identifier__flickr",
     "P3297": "identifier__flemish_parliament",
-    "P3298": "identifier__belgian_senate"
+    "P3298": "identifier__belgian_senate",
+    "P3348": "identifier__nlg"
   }
 }
