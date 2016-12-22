@@ -154,7 +154,8 @@
     "P2796": "FIG gymnast ID",
     "P2818": "Sherdog ID",
     "P3065": "identifier__rero",
-    "P3172": "World Bridge Federation ID"
+    "P3172": "World Bridge Federation ID",
+    "P3373": "sibling"
   },
   "want": {
     "P18": "image",
