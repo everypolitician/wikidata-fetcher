@@ -346,6 +346,7 @@
     "P3298": "identifier__belgian_senate",
     "P3344": "identifier__votesmart",
     "P3348": "identifier__nlg",
-    "P3417": "identifier__quora"
+    "P3417": "identifier__quora",
+    "P3430": "identifier__snac"
   }
 }
