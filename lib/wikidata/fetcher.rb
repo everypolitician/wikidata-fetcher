@@ -57,6 +57,8 @@ class WikiData
         return nil
       end
 
+      @wd.P553s.each { |property| data[custom_identifier(property)] = website_username(property) }
+
       @wd.properties.reject { |c| skip[c] || want[c] }.each do |c|
         puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{@wd.id}"
       end
@@ -86,6 +88,26 @@ class WikiData
   def property_value(property)
     val = @wd[property].value rescue nil or return
     val.respond_to?(:label) ? val.label('en') : val
+  end
+
+  def first_label_used(data, language_codes)
+    language_codes.map { |l| data["name__#{l}".to_sym] }.compact.first
+  end
+
+  private
+
+  def property_value(property)
+    val = @wd[property].value rescue nil or return
+    val.respond_to?(:label) ? val.label('en') : val
+  end
+
+  def custom_identifier(property)
+    custom_id = property.value.label('en')
+    "identifier__#{custom_id}".downcase.to_sym
+  end
+
+  def website_username(p553_property)
+    p553_property.qualifiers.P554.value rescue ''
   end
 
   def first_label_used(data, language_codes)
