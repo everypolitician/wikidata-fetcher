@@ -34,7 +34,7 @@ class WikiData
     def data(*lang)
       return unless item
 
-      data = { id: item.id }
+      data = { id: id }
 
       item.labels.each do |k, v|
         # remove any bracketed element at the end
@@ -53,17 +53,17 @@ class WikiData
       # Short-circuit if this is not a human
       typeof = item.P31s.map { |p| p.value.label('en') }
       unless typeof.include? 'human'
-        warn "‼ #{data[:id]} is_instance_of #{typeof.join(' & ')}. Skipping"
+        warn "‼ #{id} is_instance_of #{typeof.join(' & ')}. Skipping"
         return nil
       end
 
       item.properties.reject { |c| skip[c] || want[c] }.each do |c|
-        puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{item.id}"
+        puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{id}"
       end
 
       want.select { |property| item[property] }.each do |property, how|
         val = property_value(property)
-        next warn "Unknown value for #{property} for #{data[:id]}" unless val
+        next warn "Unknown value for #{property} for #{id}" unless val
         data[how.to_sym] = val
       end
 
