@@ -35,8 +35,8 @@ class WikiData
       return unless item
 
       data = {
-        id: id,
-        name: first_label_used(lang | ['en'])
+        id:   id,
+        name: first_label_used(lang | ['en']),
       }.merge(labels).merge(wikipedia_links)
 
       # Short-circuit if there are no claims
@@ -92,7 +92,7 @@ class WikiData
     def labels
       # remove any bracketed element at the end
       Hash[item.labels.map do |k, v|
-        [ "name__#{k.to_s.tr('-', '_')}".to_sym, v[:value].sub(/ \(.*?\)$/, '') ]
+        ["name__#{k.to_s.tr('-', '_')}".to_sym, v[:value].sub(/ \(.*?\)$/, '')]
       end]
     end
 
