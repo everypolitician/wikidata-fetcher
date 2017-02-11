@@ -93,16 +93,14 @@ class WikiData
         [ "name__#{k.to_s.tr('-', '_')}".to_sym, v[:value].sub(/ \(.*?\)$/, '') ]
       end]
     end
-  end
 
-  private
+    def property_value(property)
+      val = item[property].value rescue nil or return
+      val.respond_to?(:label) ? val.label('en') : val
+    end
 
-  def property_value(property)
-    val = item[property].value rescue nil or return
-    val.respond_to?(:label) ? val.label('en') : val
-  end
-
-  def first_label_used(data, language_codes)
-    language_codes.map { |l| data["name__#{l}".to_sym] }.compact.first
+    def first_label_used(data, language_codes)
+      language_codes.map { |l| data["name__#{l}".to_sym] }.compact.first
+    end
   end
 end
