@@ -52,10 +52,10 @@ class WikiData
         puts "⁇ Unknown property: https://www.wikidata.org/wiki/Property:#{p} for #{id}"
       end
 
-      want.select { |property| item[property] }.each do |property, how|
-        val = property_value(property)
-        next warn "Unknown value for #{property} for #{id}" unless val
-        data[how.to_sym] = val
+      wanted_properties.each do |p|
+        val = property_value(p)
+        next warn "Unknown value for #{p} for #{id}" unless val
+        data[want[p].to_sym] = val
       end
 
       data
@@ -83,6 +83,10 @@ class WikiData
 
     def unknown_properties
       item.properties.reject { |c| skip[c] || want[c] }
+    end
+
+    def wanted_properties
+      item.properties & want.keys
     end
 
     def labels
