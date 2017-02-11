@@ -36,7 +36,7 @@ class WikiData
 
       data = {
         id: id,
-        name: first_label_used([lang, 'en'].flatten)
+        name: first_label_used(lang | ['en'])
       }.merge(labels)
 
       item.sitelinks.each do |k, v|
