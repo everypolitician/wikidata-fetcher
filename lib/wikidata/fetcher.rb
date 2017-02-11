@@ -104,7 +104,9 @@ class WikiData
 
     def property_value(property)
       val = item[property].value rescue nil or return
-      val.respond_to?(:label) ? val.label('en') : val
+      return val unless val.respond_to?(:label)
+      return unless val.labels
+      val.label('en')
     end
 
     def first_label_used(language_codes)
