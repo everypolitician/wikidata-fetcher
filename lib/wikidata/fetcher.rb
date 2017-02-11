@@ -10,7 +10,7 @@ class WikiData
     LOOKUP_FILE = 'https://raw.githubusercontent.com/everypolitician/wikidata-fetcher/master/lookup.json'.freeze
 
     def self.find(ids)
-      Hash[Wikisnakker::Item.find(ids).map { |item| [item.id, new(item: item)] }]
+      Hash[Wikisnakker::Item.find(ids).map { |wditem| [wditem.id, new(item: wditem)] }]
     end
 
     def self.wikidata_properties
@@ -19,58 +19,51 @@ class WikiData
 
     def initialize(h)
       if h[:id]
-        @wd = Wikisnakker::Item.find(h[:id]) or raise "No such item #{h[:id]}"
-        @id = @wd.id or raise "No ID for #{h[:id]} = #{@wd}"
+        @item = Wikisnakker::Item.find(h[:id]) or raise "No such item #{h[:id]}"
+        @id = @item.id or raise "No ID for #{h[:id]} = #{@item}"
         warn "Different ID (#{@id}) for #{h[:id]}" if @id != h[:id]
       elsif h[:item]
         # Already have a Wikisnakker::Item, eg from a bulk lookup
-        @wd = h[:item]
-        @id = @wd.id or raise "No ID for #{h[:id]} = #{@wd}"
+        @item = h[:item]
+        @id = @item.id or raise "No ID for #{h[:id]} = #{@item}"
       else
         raise 'No id'
       end
     end
 
     def data(*lang)
-      return unless @wd
+      return unless item
 
-      data = { id: @wd.id }
-
-      @wd.labels.each do |k, v|
-        # remove any bracketed element at the end
-        data["name__#{k.to_s.tr('-', '_')}".to_sym] = v[:value].sub(/ \(.*?\)$/, '')
-      end
-
-      data[:name] = first_label_used(data, [lang, 'en'].flatten)
-
-      @wd.sitelinks.each do |k, v|
-        data["wikipedia__#{k.to_s.sub(/wiki$/, '')}".to_sym] = v.title
-      end
+      data = {
+        id:   id,
+        name: first_label_used(lang | ['en']),
+      }.merge(labels).merge(wikipedia_links)
 
       # Short-circuit if there are no claims
-      return data if @wd.properties.empty?
+      return data if item.properties.empty?
 
       # Short-circuit if this is not a human
-      typeof = @wd.P31s.map { |p| p.value.label('en') }
-      unless typeof.include? 'human'
-        warn "‼ #{data[:id]} is_instance_of #{typeof.join(' & ')}. Skipping"
+      unless human?
+        warn "‼ #{id} is_instance_of #{type.join(' & ')}. Skipping"
         return nil
       end
 
-      @wd.properties.reject { |c| skip[c] || want[c] }.each do |c|
-        puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{@wd.id}"
+      unknown_properties.each do |p|
+        puts "⁇ Unknown property: https://www.wikidata.org/wiki/Property:#{p} for #{id}"
       end
 
-      want.select { |property| @wd[property] }.each do |property, how|
-        val = property_value(property)
-        next warn "Unknown value for #{property} for #{data[:id]}" unless val
-        data[how.to_sym] = val
+      wanted_properties.each do |p|
+        val = property_value(p)
+        next warn "Unknown value for #{p} for #{id}" unless val
+        data[want[p].to_sym] = val
       end
 
       data
     end
 
     private
+
+    attr_reader :item, :id
 
     def skip
       @skip ||= self.class.wikidata_properties[:skip]
@@ -79,16 +72,46 @@ class WikiData
     def want
       @want ||= self.class.wikidata_properties[:want]
     end
-  end
 
-  private
+    def type
+      item.P31s.map { |p| p.value.label('en') }
+    end
 
-  def property_value(property)
-    val = @wd[property].value rescue nil or return
-    val.respond_to?(:label) ? val.label('en') : val
-  end
+    def human?
+      type.include? 'human'
+    end
 
-  def first_label_used(data, language_codes)
-    language_codes.map { |l| data["name__#{l}".to_sym] }.compact.first
+    def unknown_properties
+      item.properties.reject { |c| skip[c] || want[c] }
+    end
+
+    def wanted_properties
+      item.properties & want.keys
+    end
+
+    def labels
+      # remove any bracketed element at the end
+      Hash[item.labels.map do |k, v|
+        ["name__#{k.to_s.tr('-', '_')}".to_sym, v[:value].sub(/ \(.*?\)$/, '')]
+      end]
+    end
+
+    def wikipedia_links
+      Hash[item.sitelinks.map do |k, v|
+        ["wikipedia__#{k.to_s.sub(/wiki$/, '')}".to_sym, v.title]
+      end]
+    end
+
+    def property_value(property)
+      val = item[property].value rescue nil or return
+      return val unless val.respond_to?(:label)
+      return unless val.labels
+      val.label('en')
+    end
+
+    def first_label_used(language_codes)
+      prefered = (item.labels.keys & language_codes.map(&:to_sym)).first or return
+      item.labels[prefered][:value]
+    end
   end
 end
