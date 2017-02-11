@@ -37,11 +37,7 @@ class WikiData
       data = {
         id: id,
         name: first_label_used(lang | ['en'])
-      }.merge(labels)
-
-      item.sitelinks.each do |k, v|
-        data["wikipedia__#{k.to_s.sub(/wiki$/, '')}".to_sym] = v.title
-      end
+      }.merge(labels).merge(wikipedia_links)
 
       # Short-circuit if there are no claims
       return data if item.properties.empty?
@@ -93,6 +89,12 @@ class WikiData
       # remove any bracketed element at the end
       Hash[item.labels.map do |k, v|
         [ "name__#{k.to_s.tr('-', '_')}".to_sym, v[:value].sub(/ \(.*?\)$/, '') ]
+      end]
+    end
+
+    def wikipedia_links
+      Hash[item.sitelinks.map do |k, v|
+        ["wikipedia__#{k.to_s.sub(/wiki$/, '')}".to_sym, v.title]
       end]
     end
 
