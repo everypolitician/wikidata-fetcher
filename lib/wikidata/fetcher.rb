@@ -56,8 +56,8 @@ class WikiData
         return nil
       end
 
-      item.properties.reject { |c| skip[c] || want[c] }.each do |c|
-        puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{id}"
+      unknown_properties.each do |p|
+        puts "⁇ Unknown property: https://www.wikidata.org/wiki/Property:#{p} for #{id}"
       end
 
       want.select { |property| item[property] }.each do |property, how|
@@ -87,6 +87,10 @@ class WikiData
 
     def human?
       type.include? 'human'
+    end
+
+    def unknown_properties
+      item.properties.reject { |c| skip[c] || want[c] }
     end
   end
 
