@@ -32,36 +32,36 @@ class WikiData
     end
 
     def data(*lang)
-      return unless @wd
+      return unless wd
 
-      data = { id: @wd.id }
+      data = { id: wd.id }
 
-      @wd.labels.each do |k, v|
+      wd.labels.each do |k, v|
         # remove any bracketed element at the end
         data["name__#{k.to_s.tr('-', '_')}".to_sym] = v[:value].sub(/ \(.*?\)$/, '')
       end
 
       data[:name] = first_label_used(data, [lang, 'en'].flatten)
 
-      @wd.sitelinks.each do |k, v|
+      wd.sitelinks.each do |k, v|
         data["wikipedia__#{k.to_s.sub(/wiki$/, '')}".to_sym] = v.title
       end
 
       # Short-circuit if there are no claims
-      return data if @wd.properties.empty?
+      return data if wd.properties.empty?
 
       # Short-circuit if this is not a human
-      typeof = @wd.P31s.map { |p| p.value.label('en') }
+      typeof = wd.P31s.map { |p| p.value.label('en') }
       unless typeof.include? 'human'
         warn "‼ #{data[:id]} is_instance_of #{typeof.join(' & ')}. Skipping"
         return nil
       end
 
-      @wd.properties.reject { |c| skip[c] || want[c] }.each do |c|
-        puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{@wd.id}"
+      wd.properties.reject { |c| skip[c] || want[c] }.each do |c|
+        puts "⁇ Unknown claim: https://www.wikidata.org/wiki/Property:#{c} for #{wd.id}"
       end
 
-      want.select { |property| @wd[property] }.each do |property, how|
+      want.select { |property| wd[property] }.each do |property, how|
         val = property_value(property)
         next warn "Unknown value for #{property} for #{data[:id]}" unless val
         data[how.to_sym] = val
@@ -71,6 +71,8 @@ class WikiData
     end
 
     private
+
+    attr_reader :wd, :id
 
     def skip
       @skip ||= self.class.wikidata_properties[:skip]
@@ -84,7 +86,7 @@ class WikiData
   private
 
   def property_value(property)
-    val = @wd[property].value rescue nil or return
+    val = wd[property].value rescue nil or return
     val.respond_to?(:label) ? val.label('en') : val
   end
 
