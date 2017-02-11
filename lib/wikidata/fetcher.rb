@@ -34,8 +34,10 @@ class WikiData
     def data(*lang)
       return unless item
 
-      data = { id: id }.merge(labels)
-      data[:name] = first_label_used(data, [lang, 'en'].flatten)
+      data = {
+        id: id,
+        name: first_label_used([lang, 'en'].flatten)
+      }.merge(labels)
 
       item.sitelinks.each do |k, v|
         data["wikipedia__#{k.to_s.sub(/wiki$/, '')}".to_sym] = v.title
@@ -99,8 +101,9 @@ class WikiData
       val.respond_to?(:label) ? val.label('en') : val
     end
 
-    def first_label_used(data, language_codes)
-      language_codes.map { |l| data["name__#{l}".to_sym] }.compact.first
+    def first_label_used(language_codes)
+      prefered = (item.labels.keys & language_codes.map(&:to_sym)).first or return
+      item.labels[prefered][:value]
     end
   end
 end
