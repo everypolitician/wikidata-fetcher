@@ -34,13 +34,7 @@ class WikiData
     def data(*lang)
       return unless item
 
-      data = { id: id }
-
-      item.labels.each do |k, v|
-        # remove any bracketed element at the end
-        data["name__#{k.to_s.tr('-', '_')}".to_sym] = v[:value].sub(/ \(.*?\)$/, '')
-      end
-
+      data = { id: id }.merge(labels)
       data[:name] = first_label_used(data, [lang, 'en'].flatten)
 
       item.sitelinks.each do |k, v|
@@ -91,6 +85,13 @@ class WikiData
 
     def unknown_properties
       item.properties.reject { |c| skip[c] || want[c] }
+    end
+
+    def labels
+      # remove any bracketed element at the end
+      Hash[item.labels.map do |k, v|
+        [ "name__#{k.to_s.tr('-', '_')}".to_sym, v[:value].sub(/ \(.*?\)$/, '') ]
+      end]
     end
   end
 
