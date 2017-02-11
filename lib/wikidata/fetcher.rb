@@ -51,9 +51,8 @@ class WikiData
       return data if item.properties.empty?
 
       # Short-circuit if this is not a human
-      typeof = item.P31s.map { |p| p.value.label('en') }
-      unless typeof.include? 'human'
-        warn "‼ #{id} is_instance_of #{typeof.join(' & ')}. Skipping"
+      unless human?
+        warn "‼ #{id} is_instance_of #{type.join(' & ')}. Skipping"
         return nil
       end
 
@@ -80,6 +79,14 @@ class WikiData
 
     def want
       @want ||= self.class.wikidata_properties[:want]
+    end
+
+    def type
+      item.P31s.map { |p| p.value.label('en') }
+    end
+
+    def human?
+      type.include? 'human'
     end
   end
 
