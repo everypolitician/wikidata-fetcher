@@ -19,6 +19,10 @@ describe 'data' do
   it 'should have a birth date' do
     subject[:birth_date].must_equal '1966-08-27'
   end
+
+  it 'has correct wikiquote link' do
+    subject[:wikiquote__et].must_equal 'Juhan Parts'
+  end
 end
 
 describe 'non-English' do

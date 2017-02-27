@@ -37,7 +37,7 @@ class WikiData
       data = {
         id:   id,
         name: first_label_used(lang | ['en']),
-      }.merge(labels).merge(wikipedia_links)
+      }.merge(labels).merge(wikipedia_links).merge(wikiquote_links)
 
       # Short-circuit if there are no claims
       return data if item.properties.empty?
@@ -97,8 +97,14 @@ class WikiData
     end
 
     def wikipedia_links
-      Hash[item.sitelinks.map do |k, v|
+      Hash[item.sitelinks.select { |k, v| k.to_s.end_with? 'wiki' }.map do |k, v|
         ["wikipedia__#{k.to_s.sub(/wiki$/, '')}".to_sym, v.title]
+      end]
+    end
+
+    def wikiquote_links
+      Hash[item.sitelinks.select { |k, v| k.to_s.include? 'wikiquote' }.map do |k, v|
+        ["wikiquote__#{k.to_s.sub('wikiquote', '')}".to_sym, v.title]
       end]
     end
 
