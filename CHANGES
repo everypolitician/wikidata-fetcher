@@ -1,3 +1,6 @@
+0.20.0  2017-02-27
+  - Correct formatting of Wikinews links (thanks to @wfdd)
+
 O.19.0  2016-11-26
   - Add new EveryPolitician::Wikidata.sparql method for running SPARQL
     queries
