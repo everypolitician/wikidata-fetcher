@@ -155,7 +155,8 @@
     "P2818": "Sherdog ID",
     "P3065": "identifier__rero",
     "P3172": "World Bridge Federation ID",
-    "P3373": "sibling"
+    "P3373": "sibling",
+    "P3605": "90minut ID"
   },
   "want": {
     "P18": "image",
