@@ -19,10 +19,16 @@ class WikiData
         token_type: false,
       }
       response = client.action :query, page_args
-      redirected_from = Hash[(response.data['redirects'] || []).map { |h| [h['to'], h['from']] }]
-      response.data['pages'].select { |_k, v| v.key? 'pageprops' }.map do |_k, v|
-        [redirected_from[v['title']] || v['title'], v['pageprops']['wikibase_item']]
+      redirected_from = Hash[(response.data['redirects'] || []).map { |h| [h['from'], h['to']] }]
+      titles_and_ids = response.data['pages'].select { |_k, v| v.key? 'pageprops' }.map do |_k, v|
+        [v['title'], v['pageprops']['wikibase_item']]
       end
+      redirect_titles_and_ids = redirected_from.map do |k, v|
+        title_and_id = titles_and_ids.find { |a| a.include? v }
+        [k, title_and_id.last]
+      end
+
+      titles_and_ids + redirect_titles_and_ids
     end
     results = Hash[res.flatten(1)]
     missing = titles - results.keys
