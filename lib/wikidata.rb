@@ -18,16 +18,49 @@ class WikiData
         titles:     sliced.join('|'),
         token_type: false,
       }
-      response = client.action :query, page_args
-      redirected_from = Hash[(response.data['redirects'] || []).map { |h| [h['to'], h['from']] }]
-      response.data['pages'].select { |_k, v| v.key? 'pageprops' }.map do |_k, v|
-        [redirected_from[v['title']] || v['title'], v['pageprops']['wikibase_item']]
-      end
+      TitlesAndIds.new(titles, client.action(:query, page_args)).all
     end
     results = Hash[res.flatten(1)]
     missing = titles - results.keys
     warn "Can't find Wikidata IDs for: #{missing.join(', ')} in #{lang}" if missing.any?
     results
+  end
+
+  class TitlesAndIds
+    def initialize(titles, response)
+      @response = response
+      @titles = titles
+    end
+
+    def all
+      # response.data['pages'] contains the direct title of the article
+      # regardless of whether the query contains the direct title or not. To
+      # ensure we return only the titles requested, we map the results to the
+      # titles provided, so that any unrequested direct titles are not
+      # included in the result.
+      titles.reduce([]) do |arr, title|
+        arr << [title, titles_hash[title]] unless titles_hash[title].nil?
+      end
+    end
+
+    private
+
+    attr_reader :response, :titles
+    def titles_hash
+      Hash[direct_titles + redirect_titles]
+    end
+
+    def direct_titles
+      response.data['pages'].values.select { |v| v.key? 'pageprops' }.map do |v|
+        [v['title'], v['pageprops']['wikibase_item']]
+      end
+    end
+
+    def redirect_titles
+      (response.data['redirects'] || []).map do |h|
+        [h['from'], Hash[direct_titles][h['to']]]
+      end
+    end
   end
 end
 
