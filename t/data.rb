@@ -50,7 +50,7 @@ describe 'Kadri Simpson' do
   end
 
   it 'can fetch multiple names' do
-    data = subject.data('en', 'et')
+    data = subject.data(%w(en et))
     data[:name__et].must_equal 'Kadri Simson'
     data[:name__en].must_equal 'Kadri Simson'
     data[:name].must_equal 'Kadri Simson'
@@ -62,7 +62,7 @@ describe 'Kadri Simpson' do
   end
 
   it 'knows multiple wikipedia pages' do
-    data = subject.data('en', 'et')
+    data = subject.data(%i(en et))
     data[:wikipedia__et].must_equal 'Kadri Simson'
     data[:wikipedia__en].must_equal 'Kadri Simson'
   end
