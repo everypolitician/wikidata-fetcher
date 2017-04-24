@@ -1,7 +1,7 @@
 require 'test_helper'
 
 describe 'Wikidata#ids_from_pages' do
-  around { |test| VCR.use_cassette(titles.join, &test) }
+  around { |test| VCR.use_cassette(titles.join('__and__'), &test) }
   subject { WikiData.ids_from_pages('en', titles) }
 
   describe 'Direct links' do

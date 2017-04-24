@@ -21,7 +21,7 @@ http_interactions:
       message: OK
     headers:
       Date:
-      - Mon, 24 Apr 2017 09:19:51 GMT
+      - Mon, 24 Apr 2017 11:18:24 GMT
       Content-Type:
       - application/json; charset=utf-8
       Content-Length:
@@ -29,7 +29,7 @@ http_interactions:
       Connection:
       - keep-alive
       Server:
-      - mw2211.codfw.wmnet
+      - mw2203.codfw.wmnet
       X-Powered-By:
       - HHVM/3.12.14
       X-Content-Type-Options:
@@ -44,9 +44,9 @@ http_interactions:
       Vary:
       - Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
       Backend-Timing:
-      - D=22657 t=1493025591319619
+      - D=25325 t=1493032703991052
       X-Varnish:
-      - 907667611, 195634294, 1002734849
+      - 809256182, 930882261, 1063506594
       Via:
       - 1.1 varnish-v4, 1.1 varnish-v4, 1.1 varnish-v4
       Accept-Ranges:
@@ -54,7 +54,7 @@ http_interactions:
       Age:
       - '0'
       X-Cache:
-      - cp2001 pass, cp3041 pass, cp3031 pass
+      - cp2004 pass, cp3042 pass, cp3031 pass
       X-Cache-Status:
       - pass
       Strict-Transport-Security:
@@ -74,5 +74,5 @@ http_interactions:
       string: '{"batchcomplete":"","query":{"pages":{"8091":{"pageid":8091,"ns":0,"title":"Douglas
         Adams","pageprops":{"wikibase_item":"Q42"}},"165767":{"pageid":165767,"ns":0,"title":"Towel","pageprops":{"wikibase_item":"Q131696"}}}}}'
     http_version: 
-  recorded_at: Mon, 24 Apr 2017 09:19:51 GMT
+  recorded_at: Mon, 24 Apr 2017 11:18:24 GMT
 recorded_with: VCR 3.0.3
