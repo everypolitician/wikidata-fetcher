@@ -22,9 +22,8 @@ describe 'Wikidata#ids_from_pages' do
     describe 'non-existent tiles' do
       let(:titles) { ['Non_existent_title'] }
       it 'warns that it cannot find wikidata ids' do
-        $stderr = StringIO.new
-        subject.must_equal({})
-        $stderr.string.must_include "Can't find Wikidata IDs for: Non_existent_title in en"
+        _out, err = capture_io { subject.must_equal({}) }
+        err.must_include "Can't find Wikidata IDs for: Non_existent_title in en"
       end
     end
   end
