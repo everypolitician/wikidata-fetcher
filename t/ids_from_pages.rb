@@ -13,7 +13,7 @@ describe 'Wikidata#ids_from_pages' do
     end
 
     describe 'multiple titles' do
-      let(:titles) { ['Towel', 'Douglas Adams'] }
+      let(:titles) { ['Douglas Adams', 'Towel'] }
       it 'pairs an id with each title' do
         subject.must_equal('Douglas Adams' => 'Q42', 'Towel' => 'Q131696')
       end
