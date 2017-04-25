@@ -106,7 +106,12 @@ class WikiData
       Hash[item.P553s.map { |property| [property.value.label('en'), property.qualifiers.P554.value] }]
     end
 
-    WANTED_ACCOUNTS = %w(YouTube Flickr).freeze
+    # See accounts in use via SPARQL: http://tinyurl.com/kdlkcw9
+    WANTED_ACCOUNTS = %w(
+      YouTube Tumblr Pinterest Odnoklassniki Vimeo Quora Facebook LiveJournal LinkedIn Blogger
+      Twitter VK Instagram Medium Periscope Flickr
+    ).freeze
+
     def account_data
       Hash[all_account_data.select { |k, _v| WANTED_ACCOUNTS.include? k }.map do |k, v|
         ["identifier__#{k.downcase}".to_sym, v]
