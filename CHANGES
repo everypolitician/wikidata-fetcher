@@ -1,3 +1,6 @@
+0.20.0  2017-04-25
+  - Extract account names for various websites in P553
+
 O.19.0  2016-11-26
   - Add new EveryPolitician::Wikidata.sparql method for running SPARQL
     queries
