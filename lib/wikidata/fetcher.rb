@@ -58,7 +58,7 @@ class WikiData
         data[want[p].to_sym] = val
       end
 
-      data
+      data.merge(account_data)
     end
 
     private
@@ -99,6 +99,22 @@ class WikiData
     def wikipedia_links
       Hash[item.sitelinks.map do |k, v|
         ["wikipedia__#{k.to_s.sub(/wiki$/, '')}".to_sym, v.title]
+      end]
+    end
+
+    def all_account_data
+      Hash[item.P553s.map { |property| [property.value.label('en'), property.qualifiers.P554.value] }]
+    end
+
+    # See accounts in use via SPARQL: http://tinyurl.com/kdlkcw9
+    WANTED_ACCOUNTS = %w(
+      YouTube Tumblr Pinterest Odnoklassniki Vimeo Quora Facebook LiveJournal LinkedIn Blogger
+      Twitter VK Instagram Medium Periscope Flickr
+    ).freeze
+
+    def account_data
+      Hash[all_account_data.select { |k, _v| WANTED_ACCOUNTS.include? k }.map do |k, v|
+        ["identifier__#{k.downcase}".to_sym, v]
       end]
     end
 
