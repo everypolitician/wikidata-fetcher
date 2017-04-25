@@ -1,0 +1,78 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&ppprop=wikibase_item&prop=pageprops&redirects=1&titles=Non_existent_title
+    headers:
+      User-Agent:
+      - Faraday v0.12.0.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 21 Apr 2017 16:04:21 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '135'
+      Connection:
+      - keep-alive
+      Server:
+      - mw2126.codfw.wmnet
+      X-Powered-By:
+      - HHVM/3.12.14
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      P3p:
+      - CP="This is not a P3P policy! See https://en.wikipedia.org/wiki/Special:CentralAutoLogin/P3P
+        for more info."
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+      Backend-Timing:
+      - D=28864 t=1492790661757709
+      X-Varnish:
+      - 999997164, 174491086, 436359417
+      Via:
+      - 1.1 varnish-v4, 1.1 varnish-v4, 1.1 varnish-v4
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp2019 pass, cp3033 pass, cp3030 pass
+      X-Cache-Status:
+      - pass
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Set-Cookie:
+      - GeoIP=GB:::54.00:-2.00:v4; Path=/; secure; Domain=.wikipedia.org
+      - WMF-Last-Access-Global=21-Apr-2017;Path=/;Domain=.wikipedia.org;HttpOnly;secure;Expires=Tue,
+        23 May 2017 12:00:00 GMT
+      - WMF-Last-Access=21-Apr-2017;Path=/;HttpOnly;secure;Expires=Tue, 23 May 2017
+        12:00:00 GMT
+      X-Analytics:
+      - ns=-1;special=Badtitle;https=1;nocookies=1
+      X-Client-Ip:
+      - 2a00:23c5:18d3:b600:84fe:406e:ff86:e30c
+    body:
+      encoding: ASCII-8BIT
+      string: '{"batchcomplete":"","query":{"normalized":[{"from":"Non_existent_title","to":"Non
+        existent title"}],"pages":{"-1":{"ns":0,"title":"Non existent title","missing":""}}}}'
+    http_version: 
+  recorded_at: Fri, 21 Apr 2017 16:04:21 GMT
+recorded_with: VCR 3.0.3
