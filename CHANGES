@@ -1,3 +1,7 @@
+0.20.1  2017-05-15
+  - Ensure that bracketed parts are stripped from 'name', not just
+    aliases.
+
 0.20.0  2017-04-25
   - Extract account names for various websites in P553
 
