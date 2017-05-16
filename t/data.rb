@@ -21,6 +21,19 @@ describe 'data' do
   end
 end
 
+describe 'bracketed names' do
+  around { |test| VCR.use_cassette('Picard', &test) }
+  subject { WikiData::Fetcher.new(id: 'Q21178739').data }
+
+  it 'should know its ID' do
+    subject[:id].must_equal 'Q21178739'
+  end
+
+  it 'should strip brackets from names' do
+    subject[:name].must_equal 'Michel Picard'
+  end
+end
+
 describe 'non-English' do
   around { |test| VCR.use_cassette('Bierasniewa', &test) }
   subject { WikiData::Fetcher.new(id: 'Q14917860') }
