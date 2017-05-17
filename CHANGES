@@ -1,3 +1,6 @@
+0.20.2  2017-05-15
+  - Ensure that preference orders passed to `data` are reflected
+
 0.20.1  2017-05-15
   - Ensure that bracketed parts are stripped from 'name', not just
     aliases.
