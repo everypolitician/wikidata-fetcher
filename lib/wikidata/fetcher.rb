@@ -126,7 +126,7 @@ class WikiData
     end
 
     def first_label_used(language_codes)
-      prefered = (item.labels.keys & language_codes.flatten.map(&:to_sym)).first or return
+      prefered = (language_codes.flatten.map(&:to_sym) & item.labels.keys).first or return
       labels["name__#{prefered}".to_sym]
     end
   end
