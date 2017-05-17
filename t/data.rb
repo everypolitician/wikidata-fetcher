@@ -21,6 +21,44 @@ describe 'data' do
   end
 end
 
+describe 'data preferences' do
+  around { |test| VCR.use_cassette('Parts', &test) }
+  subject { WikiData::Fetcher.new(id: 'Q312894').data(:be) }
+
+  it 'can prefer Estonian' do
+    data = WikiData::Fetcher.new(id: 'Q312894').data(%i(et be))
+    data[:name].must_equal 'Juhan Parts'
+  end
+
+  it 'can prefer Belarussian' do
+    data = WikiData::Fetcher.new(id: 'Q312894').data(%i(be et))
+    data[:name].must_equal 'Юган Партс'
+  end
+
+  it 'can fall back on second preference' do
+    data = WikiData::Fetcher.new(id: 'Q312894').data(%i(se be et))
+    data[:name__se].must_be_nil
+    data[:name].must_equal 'Юган Партс'
+  end
+
+  it 'falls back on English if no suitable language' do
+    data = WikiData::Fetcher.new(id: 'Q312894').data(%i(se si))
+    data[:name__se].must_be_nil
+    data[:name__si].must_be_nil
+    data[:name].must_equal 'Juhan Parts'
+  end
+
+  it 'can take a single string' do
+    data = WikiData::Fetcher.new(id: 'Q312894').data('lv')
+    data[:name].must_equal 'Juhans Partss'
+  end
+
+  it 'can take a single symbol' do
+    data = WikiData::Fetcher.new(id: 'Q312894').data(:lv)
+    data[:name].must_equal 'Juhans Partss'
+  end
+end
+
 describe 'bracketed names' do
   around { |test| VCR.use_cassette('Picard', &test) }
   subject { WikiData::Fetcher.new(id: 'Q21178739').data }
