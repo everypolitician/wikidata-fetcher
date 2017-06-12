@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'wikidata/fetcher'
 
 require 'minitest/autorun'
