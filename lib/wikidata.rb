@@ -1,3 +1,4 @@
+# frozen_string_literal: true
 require 'colorize'
 require 'digest/sha1'
 require 'json'
@@ -33,7 +34,7 @@ end
 
 module EveryPolitician
   module Wikidata
-    WDQ_URL = 'https://wdq.wmflabs.org/api'.freeze
+    WDQ_URL = 'https://wdq.wmflabs.org/api'
 
     def self.wdq(query)
       result = RestClient.get WDQ_URL, params: { q: query }
@@ -41,7 +42,7 @@ module EveryPolitician
       json[:items].map { |id| "Q#{id}" }
     end
 
-    WIKIDATA_SPARQL_URL = 'https://query.wikidata.org/sparql'.freeze
+    WIKIDATA_SPARQL_URL = 'https://query.wikidata.org/sparql'
 
     def self.sparql(query)
       result = RestClient.get WIKIDATA_SPARQL_URL, params: { query: query, format: 'json' }
