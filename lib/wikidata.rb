@@ -10,7 +10,7 @@ require_rel '.'
 class WikiData
   def self.ids_from_pages(lang, titles)
     client = MediawikiApi::Client.new "https://#{lang}.wikipedia.org/w/api.php"
-    res = titles.compact.each_slice(50).map do |sliced|
+    results = titles.compact.each_slice(50).flat_map do |sliced|
       page_args = {
         prop:       'pageprops',
         ppprop:     'wikibase_item',
@@ -18,47 +18,42 @@ class WikiData
         titles:     sliced.join('|'),
         token_type: false,
       }
-      TitlesAndIds.new(titles, client.action(:query, page_args)).all
-    end
-    results = Hash[res.flatten(1)]
+      titles_and_ids = titles.zip(WikidataIds.new(titles, client.action(:query, page_args)).to_a)
+      Hash[titles_and_ids].reject { |_k, v| v.nil? }
+    end.first
     missing = titles - results.keys
     warn "Can't find Wikidata IDs for: #{missing.join(', ')} in #{lang}" if missing.any?
     results
   end
 
-  class TitlesAndIds
+  class WikidataIds
     def initialize(titles, response)
       @response = response
       @titles = titles
     end
 
-    def all
-      # response.data['pages'] contains the direct title of the article
-      # regardless of whether the query contains the direct title or not. To
-      # ensure we return only the titles requested, we map the results to the
-      # titles provided, so that any unrequested direct titles are not
-      # included in the result.
-      titles.reduce([]) do |arr, title|
-        arr << [title, titles_hash[title]] unless titles_hash[title].nil?
-      end
+    def to_a
+      titles.map { |t| titles_and_ids[t] }
     end
 
     private
 
     attr_reader :response, :titles
-    def titles_hash
-      Hash[direct_titles + redirect_titles]
+
+    def titles_and_ids
+      Hash[direct_titles_and_ids + redirect_titles_and_ids]
     end
 
-    def direct_titles
+    def direct_titles_and_ids
       response.data['pages'].values.select { |v| v.key? 'pageprops' }.map do |v|
         [v['title'], v['pageprops']['wikibase_item']]
       end
     end
 
-    def redirect_titles
-      (response.data['redirects'] || []).map do |h|
-        [h['from'], Hash[direct_titles][h['to']]]
+    def redirect_titles_and_ids
+      return [] unless response.data['redirects']
+      response.data['redirects'].map do |redirect|
+        [redirect['from'], Hash[direct_titles_and_ids][redirect['to']]]
       end
     end
   end
