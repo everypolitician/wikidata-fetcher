@@ -340,6 +340,7 @@
     "P3072": "identifier__storting",
     "P3106": "identifier__guardian_topic",
     "P3124": "identifier__polish_scientist",
+    "P3171": "identifier__ioc_athlete",
     "P3185": "identifier__vkontakte",
     "P3188": "identifier__nobel_prize",
     "P3221": "identifier__nyt_topic",
@@ -353,7 +354,9 @@
     "P3391": "identifier__verkhovna_rada",
     "P3417": "identifier__quora",
     "P3430": "identifier__snac",
+    "P3478": "identifier__songkick",
     "P3479": "identifier__omni",
-    "P3495": "identifier__filmpolski"
+    "P3495": "identifier__filmpolski",
+    "P3857": "identifier__cinenacional"
   }
 }
