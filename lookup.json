@@ -134,6 +134,7 @@
     "P2091": "FISA ID",
     "P2174": "MOMA ID",
     "P2193": "Soccerbase ID",
+    "P2218": "net worth",
     "P2276": "UEFA ID",
     "P2350": "Speedskatingbase.eu ID",
     "P2416": "sports discipline",
@@ -158,6 +159,7 @@
     "P3065": "identifier__rero",
     "P3172": "World Bridge Federation ID",
     "P3373": "sibling",
+    "P3537": "FootballDatabase.eu ID",
     "P3602": "candidacy in election",
     "P3605": "90minut ID"
   },
@@ -358,6 +360,8 @@
     "P3478": "identifier__songkick",
     "P3479": "identifier__omni",
     "P3495": "identifier__filmpolski",
+    "P3747": "identifier__ssrn",
+    "P3788": "identifier__bna",
     "P3857": "identifier__cinenacional"
   }
 }
