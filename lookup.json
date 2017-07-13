@@ -363,6 +363,7 @@
     "P3747": "identifier__ssrn",
     "P3788": "identifier__bna",
     "P3857": "identifier__cinenacional",
-    "P4123": "identifier__assemblee_nationale"
+    "P4123": "identifier__assemblee_nationale",
+    "P4126": "identifier__esec"
   }
 }
