@@ -62,6 +62,10 @@ describe 'Wikidata#ids_from_pages' do
         subject['Wikkit Gate'].must_equal 'Q259299'
         subject['Infinite Improbability Drive'].must_equal 'Q259299'
       end
+
+      it 'knows the redirected-to page ID' do
+        subject["Technology in The Hitchhiker's Guide to the Galaxy"].must_equal 'Q259299'
+      end
     end
   end
 end
