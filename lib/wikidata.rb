@@ -10,7 +10,7 @@ require_rel '.'
 class WikiData
   def self.ids_from_pages(lang, titles)
     client = MediawikiApi::Client.new "https://#{lang}.wikipedia.org/w/api.php"
-    results = titles.compact.each_slice(50).flat_map do |sliced|
+    results = titles.compact.each_slice(50).map do |sliced|
       page_args = {
         prop:       'pageprops',
         ppprop:     'wikibase_item',
@@ -18,44 +18,17 @@ class WikiData
         titles:     sliced.join('|'),
         token_type: false,
       }
-      titles_and_ids = titles.zip(WikidataIds.new(titles, client.action(:query, page_args)).to_a)
-      Hash[titles_and_ids].reject { |_k, v| v.nil? }
-    end.first
+      response = client.action :query, page_args
+
+      data = Hash[response.data['pages'].select { |_k, v| v.key? 'pageprops' }.map do |_k, v|
+        [v['title'], v['pageprops']['wikibase_item']]
+      end]
+      (response.data['redirects'] || []).each { |r| data[r['from']] = data[r['to']] }
+      data
+    end.reduce(&:merge)
     missing = titles - results.keys
     warn "Can't find Wikidata IDs for: #{missing.join(', ')} in #{lang}" if missing.any?
     results
-  end
-
-  class WikidataIds
-    def initialize(titles, response)
-      @response = response
-      @titles = titles
-    end
-
-    def to_a
-      titles.map { |t| titles_and_ids[t] }
-    end
-
-    private
-
-    attr_reader :response, :titles
-
-    def titles_and_ids
-      Hash[direct_titles_and_ids + redirect_titles_and_ids]
-    end
-
-    def direct_titles_and_ids
-      response.data['pages'].values.select { |v| v.key? 'pageprops' }.map do |v|
-        [v['title'], v['pageprops']['wikibase_item']]
-      end
-    end
-
-    def redirect_titles_and_ids
-      return [] unless response.data['redirects']
-      response.data['redirects'].map do |redirect|
-        [redirect['from'], Hash[direct_titles_and_ids][redirect['to']]]
-      end
-    end
   end
 end
 
