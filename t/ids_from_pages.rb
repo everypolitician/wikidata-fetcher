@@ -33,7 +33,7 @@ describe 'Wikidata#ids_from_pages' do
       let(:titles) { ['The Deeper Meaning of Liff'] }
 
       it 'pairs link with wikidata ID' do
-        subject.must_equal('The Deeper Meaning of Liff' => 'Q875382')
+        subject['The Deeper Meaning of Liff'].must_equal 'Q875382'
       end
     end
 
@@ -41,7 +41,8 @@ describe 'Wikidata#ids_from_pages' do
       let(:titles) { ['The Deeper Meaning of Liff', 'The Meaning of Liff'] }
 
       it 'pairs both redirecting link and direct link with wikidata ID' do
-        subject.must_equal('The Deeper Meaning of Liff' => 'Q875382', 'The Meaning of Liff' => 'Q875382')
+        subject['The Deeper Meaning of Liff'].must_equal 'Q875382'
+        subject['The Meaning of Liff'].must_equal 'Q875382'
       end
     end
 
@@ -49,8 +50,8 @@ describe 'Wikidata#ids_from_pages' do
       let(:titles) { ['The Deeper Meaning of Liff', 'Marvin the Paranoid Android'] }
 
       it 'returns wikidata ids paired with redirecting links and direct links' do
-        subject.must_equal('The Deeper Meaning of Liff'  => 'Q875382',
-                           'Marvin the Paranoid Android' => 'Q264685')
+        subject['The Deeper Meaning of Liff'].must_equal 'Q875382'
+        subject['Marvin the Paranoid Android'].must_equal 'Q264685'
       end
     end
 
@@ -58,8 +59,8 @@ describe 'Wikidata#ids_from_pages' do
       let(:titles) { ['Wikkit Gate', 'Infinite Improbability Drive'] }
 
       it 'returns wikidata ids paired with redirecting links and direct links' do
-        subject.must_equal('Wikkit Gate'                  => 'Q259299',
-                           'Infinite Improbability Drive' => 'Q259299')
+        subject['Wikkit Gate'].must_equal 'Q259299'
+        subject['Infinite Improbability Drive'].must_equal 'Q259299'
       end
     end
   end
