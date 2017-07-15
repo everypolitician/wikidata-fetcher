@@ -1,3 +1,7 @@
+0.21.0  2017-07-15
+  - Ensure that `ids_from_pages` includes the correct data when multiple
+    links on a page all redirect to the same base page.
+
 0.20.2  2017-05-15
   - Ensure that preference orders passed to `data` are reflected
 

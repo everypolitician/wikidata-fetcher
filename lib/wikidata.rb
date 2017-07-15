@@ -8,26 +8,47 @@ require 'wikisnakker'
 require_rel '.'
 
 class WikiData
+  def initialize(lang, titles)
+    @lang = lang
+    @titles = titles
+  end
+
   def self.ids_from_pages(lang, titles)
-    client = MediawikiApi::Client.new "https://#{lang}.wikipedia.org/w/api.php"
-    res = titles.compact.each_slice(50).map do |sliced|
-      page_args = {
-        prop:       'pageprops',
-        ppprop:     'wikibase_item',
-        redirects:  1,
-        titles:     sliced.join('|'),
-        token_type: false,
-      }
-      response = client.action :query, page_args
-      redirected_from = Hash[(response.data['redirects'] || []).map { |h| [h['to'], h['from']] }]
-      response.data['pages'].select { |_k, v| v.key? 'pageprops' }.map do |_k, v|
-        [redirected_from[v['title']] || v['title'], v['pageprops']['wikibase_item']]
-      end
-    end
-    results = Hash[res.flatten(1)]
-    missing = titles - results.keys
-    warn "Can't find Wikidata IDs for: #{missing.join(', ')} in #{lang}" if missing.any?
-    results
+    data = new(lang, titles)
+    warn "Can't find Wikidata IDs for: #{data.missing.join(', ')} in #{lang}" if data.missing.any?
+    data.results
+  end
+
+  def results
+    @ids ||= titles.compact.each_slice(50).map { |slice| id_map(slice) }.reduce(&:merge)
+  end
+
+  def missing
+    titles - results.keys
+  end
+
+  private
+
+  attr_reader :lang, :titles
+
+  def client
+    @client ||= MediawikiApi::Client.new "https://#{lang}.wikipedia.org/w/api.php"
+  end
+
+  def id_map(page_slice)
+    page_args = {
+      prop:       'pageprops',
+      ppprop:     'wikibase_item',
+      redirects:  1,
+      titles:     page_slice.join('|'),
+      token_type: false,
+    }
+    response = client.action :query, page_args
+    data = Hash[response.data['pages'].select { |_k, v| v.key? 'pageprops' }.map do |_k, v|
+      [v['title'], v['pageprops']['wikibase_item']]
+    end]
+    (response.data['redirects'] || []).each { |r| data[r['from']] = data[r['to']] }
+    data
   end
 end
 

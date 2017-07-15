@@ -1,0 +1,81 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://en.wikipedia.org/w/api.php
+    body:
+      encoding: UTF-8
+      string: action=query&format=json&ppprop=wikibase_item&prop=pageprops&redirects=1&titles=Wikkit+Gate%7CInfinite+Improbability+Drive
+    headers:
+      User-Agent:
+      - Faraday v0.12.1
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 25 Apr 2017 15:47:13 GMT
+      Content-Type:
+      - application/json; charset=utf-8
+      Content-Length:
+      - '238'
+      Connection:
+      - keep-alive
+      Server:
+      - mw2139.codfw.wmnet
+      X-Powered-By:
+      - HHVM/3.12.14
+      X-Content-Type-Options:
+      - nosniff
+      Cache-Control:
+      - private, must-revalidate, max-age=0
+      P3p:
+      - CP="This is not a P3P policy! See https://en.wikipedia.org/wiki/Special:CentralAutoLogin/P3P
+        for more info."
+      X-Frame-Options:
+      - SAMEORIGIN
+      Vary:
+      - Accept-Encoding,Treat-as-Untrusted,X-Forwarded-Proto,Cookie,Authorization
+      Backend-Timing:
+      - D=51486 t=1493135233116423
+      X-Varnish:
+      - 119325544, 867337965, 882085110
+      Via:
+      - 1.1 varnish-v4, 1.1 varnish-v4, 1.1 varnish-v4
+      Accept-Ranges:
+      - bytes
+      Age:
+      - '0'
+      X-Cache:
+      - cp2007 pass, cp3030 pass, cp3041 pass
+      X-Cache-Status:
+      - pass
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+      Set-Cookie:
+      - GeoIP=GB:ENG:Bristol:51.45:-2.58:v4; Path=/; secure; Domain=.wikipedia.org
+      - WMF-Last-Access-Global=25-Apr-2017;Path=/;Domain=.wikipedia.org;HttpOnly;secure;Expires=Sat,
+        27 May 2017 12:00:00 GMT
+      - WMF-Last-Access=25-Apr-2017;Path=/;HttpOnly;secure;Expires=Sat, 27 May 2017
+        12:00:00 GMT
+      X-Analytics:
+      - ns=-1;special=Badtitle;https=1;nocookies=1
+      X-Client-Ip:
+      - 5.148.47.8
+    body:
+      encoding: ASCII-8BIT
+      string: '{"batchcomplete":"","query":{"redirects":[{"from":"Infinite Improbability
+        Drive","to":"Technology in The Hitchhiker''s Guide to the Galaxy","tofragment":"Infinite
+        Improbability Drive"},{"from":"Wikkit Gate","to":"Technology in The Hitchhiker''s
+        Guide to the Galaxy","tofragment":"Wikkit gate"}],"pages":{"19728139":{"pageid":19728139,"ns":0,"title":"Technology
+        in The Hitchhiker''s Guide to the Galaxy","pageprops":{"wikibase_item":"Q259299"}}}}}'
+    http_version: 
+  recorded_at: Tue, 25 Apr 2017 15:47:13 GMT
+recorded_with: VCR 3.0.3
