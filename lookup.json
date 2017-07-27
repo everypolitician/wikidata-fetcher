@@ -161,7 +161,8 @@
     "P3373": "sibling",
     "P3537": "FootballDatabase.eu ID",
     "P3602": "candidacy in election",
-    "P3605": "90minut ID"
+    "P3605": "90minut ID",
+    "P4042": "ESBL athlete ID"
   },
   "want": {
     "P18": "image",
