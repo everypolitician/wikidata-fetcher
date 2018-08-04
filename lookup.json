@@ -375,6 +375,8 @@
     "P4453": "identifier__argentine_senate",
     "P4471": "identifier__rush",
     "P4651": "identifier__welsh_assembly",
-    "P4690": "identifier__oireachtas"
+    "P4690": "identifier__oireachtas",
+    "P4928": "identifier__ricorso",
+    "P4929": "identifier__ainm"
   }
 }
