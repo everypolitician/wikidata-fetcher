@@ -379,6 +379,7 @@
     "P4690": "identifier__oireachtas",
     "P4928": "identifier__ricorso",
     "P4929": "identifier__ainm",
+    "P4966": "identifier__orszaggyules",
     "P5355": "identifier__abgeordnetenwatch"
   }
 }
