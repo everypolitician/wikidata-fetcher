@@ -19,15 +19,15 @@ class WikiData
       @wikidata_properties ||= JSON.parse(open(LOOKUP_FILE).read, symbolize_names: true)
     end
 
-    def initialize(h)
-      if h[:id]
-        @item = Wikisnakker::Item.find(h[:id]) or raise "No such item #{h[:id]}"
-        @id = @item.id or raise "No ID for #{h[:id]} = #{@item}"
-        warn "Different ID (#{@id}) for #{h[:id]}" if @id != h[:id]
-      elsif h[:item]
+    def initialize(args)
+      if args[:id]
+        @item = Wikisnakker::Item.find(args[:id]) or raise "No such item #{args[:id]}"
+        @id = @item.id or raise "No ID for #{args[:id]} = #{@item}"
+        warn "Different ID (#{@id}) for #{args[:id]}" if @id != args[:id]
+      elsif args[:item]
         # Already have a Wikisnakker::Item, eg from a bulk lookup
-        @item = h[:item]
-        @id = @item.id or raise "No ID for #{h[:id]} = #{@item}"
+        @item = args[:item]
+        @id = @item.id or raise "No ID for #{args[:id]} = #{@item}"
       else
         raise 'No id'
       end

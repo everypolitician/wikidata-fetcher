@@ -10,7 +10,7 @@ class WikiData
     end
 
     def client
-      @_client ||= MediawikiApi::Client.new "https://#{@_lang}.wikipedia.org/w/api.php"
+      @client ||= MediawikiApi::Client.new "https://#{@_lang}.wikipedia.org/w/api.php"
     end
 
     def _categorymembers_search(args = {})
