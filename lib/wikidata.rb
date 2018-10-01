@@ -85,7 +85,6 @@ module EveryPolitician
       JSON.parse(result, symbolize_names: true).map { |e| e[:wikiname] }.reject { |n| n.to_s.empty? }
     end
 
-    require 'pry'
     def self.wikipedia_xpath(h)
       noko = noko_for(URI.decode(h[:url]))
 
@@ -102,7 +101,10 @@ module EveryPolitician
       end
 
       names = noko.xpath(h[:xpath]).map(&:text).uniq
-      binding.pry if h[:debug] == true
+      if h[:debug] == true
+        require 'pry'
+        binding.pry
+      end
       raise "No names found in #{h[:url]}" if names.count.zero?
       names
     end
