@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'json'
 require 'open-uri'
 require 'require_all'
@@ -7,7 +9,7 @@ require_rel '..'
 
 class WikiData
   class Fetcher < WikiData
-    LOOKUP_FILE = 'https://raw.githubusercontent.com/everypolitician/wikidata-fetcher/master/lookup.json'.freeze
+    LOOKUP_FILE = 'https://raw.githubusercontent.com/everypolitician/wikidata-fetcher/master/lookup.json'
 
     def self.find(ids)
       Hash[Wikisnakker::Item.find(ids).map { |wditem| [wditem.id, new(item: wditem)] }]
@@ -55,6 +57,7 @@ class WikiData
       wanted_properties.each do |p|
         val = property_value(p)
         next warn "Unknown value for #{p} for #{id}" unless val
+
         data[want[p].to_sym] = val
       end
 
@@ -107,10 +110,10 @@ class WikiData
     end
 
     # See accounts in use via SPARQL: http://tinyurl.com/kdlkcw9
-    WANTED_ACCOUNTS = %w(
+    WANTED_ACCOUNTS = %w[
       YouTube Tumblr Pinterest Odnoklassniki Vimeo Quora Facebook LiveJournal LinkedIn Blogger
       Twitter VK Instagram Medium Periscope Flickr
-    ).freeze
+    ].freeze
 
     def account_data
       Hash[all_account_data.select { |k, _v| WANTED_ACCOUNTS.include? k }.map do |k, v|
@@ -122,6 +125,7 @@ class WikiData
       val = item[property].value rescue nil or return
       return val unless val.respond_to?(:label)
       return unless val.labels
+
       val.label('en')
     end
 
