@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'test_helper'
 
 describe 'data' do
@@ -26,23 +28,23 @@ describe 'data preferences' do
   subject { WikiData::Fetcher.new(id: 'Q312894').data(:be) }
 
   it 'can prefer Estonian' do
-    data = WikiData::Fetcher.new(id: 'Q312894').data(%i(et be))
+    data = WikiData::Fetcher.new(id: 'Q312894').data(%i[et be])
     data[:name].must_equal 'Juhan Parts'
   end
 
   it 'can prefer Belarussian' do
-    data = WikiData::Fetcher.new(id: 'Q312894').data(%i(be et))
+    data = WikiData::Fetcher.new(id: 'Q312894').data(%i[be et])
     data[:name].must_equal 'Юган Партс'
   end
 
   it 'can fall back on second preference' do
-    data = WikiData::Fetcher.new(id: 'Q312894').data(%i(se be et))
+    data = WikiData::Fetcher.new(id: 'Q312894').data(%i[se be et])
     data[:name__se].must_be_nil
     data[:name].must_equal 'Юган Партс'
   end
 
   it 'falls back on English if no suitable language' do
-    data = WikiData::Fetcher.new(id: 'Q312894').data(%i(se si))
+    data = WikiData::Fetcher.new(id: 'Q312894').data(%i[se si])
     data[:name__se].must_be_nil
     data[:name__si].must_be_nil
     data[:name].must_equal 'Juhan Parts'
@@ -101,7 +103,7 @@ describe 'Kadri Simpson' do
   end
 
   it 'can fetch multiple names' do
-    data = subject.data(%w(en et))
+    data = subject.data(%w[en et])
     data[:name__et].must_equal 'Kadri Simson'
     data[:name__en].must_equal 'Kadri Simson'
     data[:name].must_equal 'Kadri Simson'
@@ -113,7 +115,7 @@ describe 'Kadri Simpson' do
   end
 
   it 'knows multiple wikipedia pages' do
-    data = subject.data(%i(en et))
+    data = subject.data(%i[en et])
     data[:wikipedia__et].must_equal 'Kadri Simson'
     data[:wikipedia__en].must_equal 'Kadri Simson'
   end
