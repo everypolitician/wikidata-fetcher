@@ -111,6 +111,11 @@ module EveryPolitician
       end
       raise "No names found in #{args[:url]}" if names.count.zero?
 
+      if args[:as_ids] == true
+        lang = URI.parse(args[:url]).host.split('.').first
+        return WikiData.ids_from_pages(lang, names).values.uniq
+      end
+
       names
     end
 
