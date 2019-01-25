@@ -202,8 +202,11 @@
     "P3602": "candidacy in election",
     "P3605": "90minut ID",
     "P3857": "identifier__cinenacional",
+    "P3889": "Swiss Federal Archives ID",
+    "P3987": "SHARE Catalogue author ID",
     "P4042": "ESBL athlete ID",
-    "P5389": "permanent resident of"
+    "P5389": "permanent resident of",
+    "P6231": "BDEL id"
   },
   "want": {
     "P18": "image",
