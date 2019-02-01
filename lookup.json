@@ -202,6 +202,7 @@
     "P3124": "identifier__polish_scientist",
     "P3171": "identifier__ioc_athlete",
     "P3172": "World Bridge Federation ID",
+    "P3219": "Encyclopædia Universalis ID",
     "P3373": "sibling",
     "P3478": "identifier__songkick",
     "P3495": "identifier__filmpolski",
@@ -212,8 +213,13 @@
     "P3889": "Swiss Federal Archives ID",
     "P3987": "SHARE Catalogue author ID",
     "P4042": "ESBL athlete ID",
+    "P4293": "PM20 folder ID",
+    "P5361": "BNB id",
     "P5389": "permanent resident of",
-    "P6231": "BDEL id"
+    "P5587": "Libris-URI",
+    "P5731": "Angelicum author ID",
+    "P6231": "BDEL id",
+    "P6414": "DIZIE ID"
   },
   "want": {
     "P18": "image",
