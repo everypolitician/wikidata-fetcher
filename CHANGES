@@ -1,3 +1,6 @@
+0.24.0  2019-02-04
+  - use Yajl to parse JSON, to help reduce memory usage
+
 0.23.0  2019-02-04
   - remove obsolete `notify_rebuilder` and `wdq` methods
   - minimum supported ruby version is now 2.3

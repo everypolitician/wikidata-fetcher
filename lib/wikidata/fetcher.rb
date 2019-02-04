@@ -16,7 +16,7 @@ class WikiData
     end
 
     def self.wikidata_properties
-      @wikidata_properties ||= JSON.parse(open(LOOKUP_FILE).read, symbolize_names: true)
+      @wikidata_properties ||= Yajl::Parser.parse(open(LOOKUP_FILE), symbolize_keys: true)
     end
 
     def initialize(args)

@@ -54,12 +54,14 @@ class WikiData
 end
 
 module EveryPolitician
+  require 'yajl'
+
   module Wikidata
     WIKIDATA_SPARQL_URL = 'https://query.wikidata.org/sparql'
 
     def self.sparql(query)
       result = RestClient.get WIKIDATA_SPARQL_URL, params: { query: query, format: 'json' }
-      json = JSON.parse(result, symbolize_names: true)
+      json = Yajl::Parser.parse(result, symbolize_keys: true)
       json[:results][:bindings].map { |res| res[:item][:value].split('/').last }
     rescue RestClient::Exception => e
       raise "Wikidata query #{query} failed: #{e.message}"
@@ -75,7 +77,7 @@ module EveryPolitician
         key:   morph_api_key,
         query: "SELECT DISTINCT(#{args[:column]}) AS wikiname FROM #{table}",
       }
-      JSON.parse(result, symbolize_names: true).map { |e| e[:wikiname] }.reject { |n| n.to_s.empty? }
+      Yajl::Parser.parse(result, symbolize_keys: true).map { |e| e[:wikiname] }.reject { |n| n.to_s.empty? }
     end
 
     def self.wikipedia_xpath(args)
