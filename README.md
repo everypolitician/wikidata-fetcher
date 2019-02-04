@@ -43,18 +43,10 @@ EveryPolitician::Wikidata.scrape_wikidata(names: { en: names })
 
 # NB: this can take multiple lists, and can also output the data as it fetches it:
 
-EveryPolitician::Wikidata.scrape_wikidata(names: { 
+EveryPolitician::Wikidata.scrape_wikidata(names: {
   es: es_names,
   en: en_names,
 }, output: true)
-
-#-----------------------------
-# Step 3: Notify the Rebuilder
-#-----------------------------
-
-EveryPolitician::Wikidata.notify_rebuilder
-
-(This requires MORPH_REBUILDER_URL to be set in the environment)
 
 ```
 

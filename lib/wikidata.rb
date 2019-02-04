@@ -161,13 +161,5 @@ module EveryPolitician
         end
       end
     end
-
-    #-------------------------------------------------------------------
-
-    require 'rest-client'
-
-    def self.notify_rebuilder
-      RestClient.post ENV['MORPH_REBUILDER_URL'], {} if ENV['MORPH_REBUILDER_URL']
-    end
   end
 end
