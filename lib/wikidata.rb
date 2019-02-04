@@ -56,14 +56,6 @@ end
 
 module EveryPolitician
   module Wikidata
-    WDQ_URL = 'https://wdq.wmflabs.org/api'
-
-    def self.wdq(query)
-      result = RestClient.get WDQ_URL, params: { q: query }
-      json = JSON.parse(result, symbolize_names: true)
-      json[:items].map { |id| "Q#{id}" }
-    end
-
     WIKIDATA_SPARQL_URL = 'https://query.wikidata.org/sparql'
 
     def self.sparql(query)

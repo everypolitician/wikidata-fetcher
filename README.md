@@ -32,9 +32,6 @@ names = EveryPolitician::Wikidata.morph_wikinames(source: 'tmtmtmtm/tuvalu-parli
 # or from a SPARQL query
 ids = EveryPolitician::Wikidata.sparql('SELECT ?item WHERE { ?item wdt:P39 wd:Q18229570 . }')
 
-# or from a WDQ query
-ids = EveryPolitician::Wikidata.wdq('claim[463:21124329]')
-
 #-----------------------------------------------------------
 # Step 2: Scrape the data from Wikidata based on these names
 #-----------------------------------------------------------
