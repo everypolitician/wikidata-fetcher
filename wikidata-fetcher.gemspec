@@ -19,8 +19,8 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ['lib']
 
-  spec.add_dependency 'colorize'
-  spec.add_dependency 'diskcached'
+  spec.required_ruby_version = '>= 2.3.0'
+
   spec.add_dependency 'json'
   spec.add_dependency 'mediawiki_api'
   spec.add_dependency 'nokogiri'
@@ -30,7 +30,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'wikidata-client', '~> 0.0.7'
   spec.add_dependency 'wikisnakker'
 
-  spec.add_development_dependency 'bundler', '~> 1.6'
+  spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'minitest'
   spec.add_development_dependency 'minitest-around'
   spec.add_development_dependency 'pry'

@@ -1,3 +1,7 @@
+0.23.0  2019-02-04
+  - remove obsolete `notify_rebuilder` and `wdq` methods
+  - minimum supported ruby version is now 2.3
+
 0.22.0  2018-10-10
   - convert results of Wikipedia scraping to Wikidata IDs if requested
 

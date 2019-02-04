@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'colorize'
 require 'digest/sha1'
 require 'json'
 require 'mediawiki_api'
@@ -56,14 +55,6 @@ end
 
 module EveryPolitician
   module Wikidata
-    WDQ_URL = 'https://wdq.wmflabs.org/api'
-
-    def self.wdq(query)
-      result = RestClient.get WDQ_URL, params: { q: query }
-      json = JSON.parse(result, symbolize_names: true)
-      json[:items].map { |id| "Q#{id}" }
-    end
-
     WIKIDATA_SPARQL_URL = 'https://query.wikidata.org/sparql'
 
     def self.sparql(query)
@@ -160,14 +151,6 @@ module EveryPolitician
           ScraperWiki.save_sqlite([:id], data)
         end
       end
-    end
-
-    #-------------------------------------------------------------------
-
-    require 'rest-client'
-
-    def self.notify_rebuilder
-      RestClient.post ENV['MORPH_REBUILDER_URL'], {} if ENV['MORPH_REBUILDER_URL']
     end
   end
 end
