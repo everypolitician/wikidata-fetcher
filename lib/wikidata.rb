@@ -1,6 +1,5 @@
 # frozen_string_literal: true
 
-require 'colorize'
 require 'digest/sha1'
 require 'json'
 require 'mediawiki_api'
