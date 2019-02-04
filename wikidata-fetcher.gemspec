@@ -29,6 +29,7 @@ Gem::Specification.new do |spec|
   spec.add_dependency 'scraperwiki'
   spec.add_dependency 'wikidata-client', '~> 0.0.7'
   spec.add_dependency 'wikisnakker'
+  spec.add_dependency 'yajl-ruby'
 
   spec.add_development_dependency 'bundler'
   spec.add_development_dependency 'minitest'
