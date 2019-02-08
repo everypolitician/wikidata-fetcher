@@ -407,6 +407,7 @@
     "P5451": "identifier__chambredesrepresentants",
     "P5870": "identifier__ni_assembly",
     "P6199": "identifier__parlamento",
-    "P6213": "identifier__ukparliamentid"
+    "P6213": "identifier__ukparliamentid",
+    "P6465": "identifier__democracyclub"
   }
 }
